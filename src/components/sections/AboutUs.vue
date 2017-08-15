@@ -2,6 +2,7 @@
     <section class="container">
         <breadcrumbs :crumbs="crumbs"></breadcrumbs>
         <h1 class="main-ttl"><span>Sobre Repuestos LN</span></h1>
+
         <div class="row">
 
             <div class="stylization col-md-8 text-justify">
@@ -10,8 +11,7 @@
                 <p>Mantenemos en stock e Importamos repuestos originales y alternativos de comprobada calidad, tanto nueva como usada. Los valores de repuestos de nuestra página incluyen IVA.</p>
                 <p>
                     Este es un negocio virtual, realizamos entrega en nuestro domicilio de Las Condes, en horarios a acordar con cliente. También hacemos envíos a provincias por Chilexpress o Turbus. Podemos recibir tus consultas por medio de nuestro formulario de contacto, donde
-                    <b>es importante que nos envíen el VIN y número de motor de su vehículo para poder cotizar</b>.(Pueden encontrar el número de VIN en el siguiente diagrama).
-
+                    <b>es importante que nos envíen el VIN y número de motor de su vehículo para poder cotizar</b>.(Pueden encontrar el número de VIN en el <a class="fancybox" rel="group" :href="img_vin">siguiente diagrama</a>).
                 </p>
 
                 <p>Además si estás buscando un repuesto en específico que no tengamos en stock puedes contactarnos para evaluar la posibilidad de traerlo de forma especial.</p>
@@ -37,8 +37,12 @@
                 crumbs: [
                     { 'title': 'Sobre Nosotros',  'path': null }
                 ],
-                img_logo_volvo: 'src/assets/img/logo-volvo.png'
+                img_logo_volvo: 'src/assets/img/logo-volvo.png',
+                img_vin: 'src/assets/img/vin.png'
             }
+        },
+        created: function () {
+            this.fbox = $(".fancybox").fancybox();
         },
         components: {
             Breadcrumbs
