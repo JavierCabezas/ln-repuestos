@@ -11,6 +11,5 @@ const AboutUs = resolve => {
 
 export const routes = [
     { path: '', component: Home },
-    { path: '/inicio', component: Home },
     { path: '/sobre-nosotros', component: AboutUs }
 ];
