@@ -3,10 +3,14 @@
         <div class="container">
             <ul class="contactinfo nav nav-pills">
                 <li>
-                    <i class='fa fa-phone'></i> +56 9 56433982
+                    <a href="tel:56956433982" target="_top">
+                        <i class='fa fa-phone'></i> +56 9 56433982
+                    </a>
                 </li>
                 <li>
-                    <i class="fa fa-envelope"></i> contacto@lnrepuestos.cl
+                    <a href="mailto:contacto@lnrepuestos.cl" target="_top">
+                        <i class="fa fa-envelope"></i> contacto@lnrepuestos.cl
+                    </a>
                 </li>
             </ul>
         </div>
