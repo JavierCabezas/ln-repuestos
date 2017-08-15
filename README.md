@@ -1,6 +1,6 @@
-# massive-web
+# LN Repuestos
 
-> Official website of massivewave.audio
+> Official website of lnrepuestos.cl
 
 ## Build Setup
 
