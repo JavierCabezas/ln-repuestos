@@ -8,40 +8,13 @@
                 <div class="container">
                     <ul class="contactinfo nav nav-pills">
                         <li>
-                            <i class='fa fa-phone'></i> +7 777 123 1575
+                            <i class='fa fa-phone'></i> +56 9 56433982
                         </li>
                         <li>
-                            <i class="fa fa-envelope"></i> admin@real-web.pro
+                            <i class="fa fa-envelope"></i> contacto@lnrepuestos.cl
                         </li>
                     </ul>
-                    <!-- Social links -->
-                    <ul class="social-icons nav navbar-nav">
-                        <li>
-                            <a href="http://facebook.com" rel="nofollow" target="_blank">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://google.com" rel="nofollow" target="_blank">
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://twitter.com" rel="nofollow" target="_blank">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://vk.com" rel="nofollow" target="_blank">
-                                <i class="fa fa-vk"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://instagram.com" rel="nofollow" target="_blank">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </li>
-                    </ul>		</div>
+                </div>
             </div>
             <!-- Topbar - end -->
 
@@ -50,48 +23,8 @@
                 <div class="container header-middle-cont">
                     <div class="toplogo">
                         <a href="index.html">
-                            <img src="src/assets/img/logo.png" alt="AllStore - MultiConcept eCommerce Template">
+                            <img src="src/assets/img/logo.png" alt="LN Repuestos">
                         </a>
-                    </div>
-                    <div class="shop-menu">
-                        <ul>
-
-                            <li>
-                                <a href="wishlist.html">
-                                    <i class="fa fa-heart"></i>
-                                    <span class="shop-menu-ttl">Wishlist</span>
-                                    (<span id="topbar-favorites">1</span>)
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="compare.html">
-                                    <i class="fa fa-bar-chart"></i>
-                                    <span class="shop-menu-ttl">Compare</span> (5)
-                                </a>
-                            </li>
-
-                            <li class="topauth">
-                                <a href="auth.html">
-                                    <i class="fa fa-lock"></i>
-                                    <span class="shop-menu-ttl">Registration</span>
-                                </a>
-                                <a href="auth.html">
-                                    <span class="shop-menu-ttl">Login</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <div class="h-cart">
-                                    <a href="cart.html">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        <span class="shop-menu-ttl">Cart</span>
-                                        (<b>0</b>)
-                                    </a>
-                                </div>
-                            </li>
-
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -2390,124 +2323,13 @@
                     </div>
                 </div>
 
-
-                <!-- Testimonials -->
-                <div class="reviews-wrap">
-                    <div class="reviewscar-wrap">
-                        <div class="swiper-container reviewscar">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>Corrupti velit, vero esse, aperiam error magni illum quos, accusantium debitis et possimus recusandae tempora ad itaque dolorem veniam non voluptatem impedit iste? Dicta doloremque hic porro aspernatur. Dolores eligendi similique, cumque, eius veritatis</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>Distinctio modi, quos, vero quibusdam ab deserunt doloribus eligendi velit temporibus ratione at est officia repellat? Adipisci nemo expedita rerum distinctio laudantium nihil voluptatem ullam vel ex magnam velit aliquid voluptate voluptatum excepturi</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>Similique delectus totam ex cum magnam quasi, ipsam officiis amet temporibus enim modi rerum quo maxime reprehenderit, deserunt, libero quas distinctio quos! Ullam harum nesciunt omnis consectetur distinctio? Iste sunt, dolorem deserunt quibusdam</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>Tempora ea ratione vel nisi, qui perferendis nulla, fugit aut, beatae, tempore modi. Minus sequi iste, nam nobis, excepturi nihil consequuntur reprehenderit ipsam, quam consequatur in. Esse, doloremque consectetur veniam quo ut voluptas necessitatibus</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>Perferendis recusandae consequuntur quasi, non culpa. Minus porro officiis veniam facilis praesentium expedita doloribus, recusandae aut dolore autem, modi consequuntur rem perferendis dolores quisquam, sequi quas. Iusto et, eius laboriosam beatae</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>Aliquid soluta nisi incidunt, dolores sequi itaque sunt et nesciunt delectus ipsam est molestias illo obcaecati, totam ducimus cumque consequuntur modi, laudantium! Temporibus vero odit quis, quibusdam maiores voluptatum sunt dolor tempora architecto fugiat quam.</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>Ea reiciendis modi, molestiae dolores beatae facere quas	consequatur delectus ducimus, magni voluptates, eius, quia unde ut vitae doloribus illum! Optio saepe, modi aliquid perferendis veniam</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>Ea reiciendis modi, molestiae dolores beatae facere quas	consequatur delectus ducimus, magni voluptates, eius, quia unde ut vitae doloribus illum! Optio saepe, modi aliquid perferendis veniam</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>Quod soluta corrupti earum officia vel inventore vitae quidem, consequuntur odit impedit, eaque dolorem odio praesentium iusto amet voluptatum distinctio iste dicta maiores doloremque porro. Ipsa doloremque illum animi laborum quo in nemo delectus</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>Eveniet nobis minus possimus eius, doloribus ex similique debitis nihil at facere delectus unde, commodi, alias. Eius facilis, dolore officia veritatis, doloribus voluptatem aliquid rem corporis quam officiis at dignissimos dolorum, velit assumenda</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-container reviewscar-thumbs">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="Aureole Jayde">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">Aureole Jayde</a></h3>
-                                    <p class="reviewscar-post">Director</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="Benjy Darrin">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">Benjy Darrin</a></h3>
-                                    <p class="reviewscar-post">Designer</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="Jeni Margie">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">Jeni Margie</a></h3>
-                                    <p class="reviewscar-post">Developer</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="Edweena Chelsea">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">Edweena Chelsea</a></h3>
-                                    <p class="reviewscar-post">Manager</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="Sean Rudolph">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">Sean Rudolph</a></h3>
-                                    <p class="reviewscar-post">Designer</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="Brigham Murphy">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">Brigham Murphy</a></h3>
-                                    <p class="reviewscar-post">Director</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="Barrie Roderick">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">Barrie Roderick</a></h3>
-                                    <p class="reviewscar-post">Developer</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="John Doe">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">John Doe</a></h3>
-                                    <p class="reviewscar-post">Manager</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="Shirlee Annabel">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">Shirlee Annabel</a></h3>
-                                    <p class="reviewscar-post">Developer</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="Lettice Alyce">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">Lettice Alyce</a></h3>
-                                    <p class="reviewscar-post">Director</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="Meriel Glory">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">Meriel Glory</a></h3>
-                                    <p class="reviewscar-post">Manager</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="http://placehold.it/120x120" alt="Janene Alaina">
-                                    <h3 class="reviewscar-ttl"><a href="reviews.html">Janene Alaina</a></h3>
-                                    <p class="reviewscar-post">Manager</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Subscribe Form -->
                 <div class="newsletter">
-                    <h3>Subscribe to us</h3>
-                    <p>Enter your email if you want to receive our news</p>
+                    <h3>Subscríbete a nosotros</h3>
+                    <p>Ingresa tu dirección de correo electrónico para recibir ofertas</p>
                     <form action="#">
-                        <input placeholder="Your e-mail" type="text">
-                        <input name="OK" value="Subscribe" type="submit">
+                        <input placeholder="Tu dirección de correo electrónico" type="text">
+                        <input name="OK" value="Subscribirse" type="submit">
                     </form>
                 </div>
 
@@ -2691,8 +2513,8 @@
                     <div class="row">
                         <div class="companyinfo">
                             <a href="index.html">
-                                <img src="src/assets/img/logo-b.png" alt="AllStore - MultiConcept eCommerce Responsive HTML5 Template">
-                                AllStore - MultiConcept eCommerce Responsive HTML5 Template
+                                <img src="src/assets/img/logo.png" alt="LN Repuestos">
+                                Especialistas en Volvo
                             </a>
                         </div>
                         <div class="f-block-list">
@@ -2849,35 +2671,8 @@
             <div class="footer-bottom">
                 <div class="container">
                     <div class="row">
-                        <ul class="social-icons nav navbar-nav">
-                            <li>
-                                <a href="http://facebook.com/" rel="nofollow" target="_blank">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://google.com/" rel="nofollow" target="_blank">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://twitter.com/" rel="nofollow" target="_blank">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://vk.com/" rel="nofollow" target="_blank">
-                                    <i class="fa fa-vk"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://instagram.com/" rel="nofollow" target="_blank">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </li>
-                        </ul>
                         <div class="footer-copyright">
-                            <i><a href="https://themeforest.net/user/real-web?ref=real-web">Real-Web</a></i> © Copyright 2017
+                            LN Repuestos © Todos los derechos reservados 2017
                         </div>
                     </div>
                 </div>
