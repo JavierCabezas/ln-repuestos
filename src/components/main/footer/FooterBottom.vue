@@ -1,0 +1,11 @@
+<template>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="footer-copyright">
+                    LN Repuestos © Todos los derechos reservados 2017
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
