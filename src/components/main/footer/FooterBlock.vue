@@ -1,6 +1,6 @@
 <template>
     <div class="f-block-wrap">
-        <div class="f-block">
+        <div class="f-block" @click="go_up()">
             <router-link :to="block.path" class="f-block-btn">
                 <div class="iframe-img">
                     <img :src="block.img_src" :alt="block.section_name">
@@ -17,6 +17,11 @@
 
 <script>
     export default {
-        props: ["block"]
+        props: ["block"],
+        methods: {
+            go_up: function() {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            }
+        }
     }
 </script>

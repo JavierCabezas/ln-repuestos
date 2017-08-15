@@ -389,6 +389,8 @@
                 <ul class="mainmenu">
                     <li> <router-link to="/"> Inicio </router-link> </li>
                     <li> <router-link to="sobre-nosotros"> Sobre Nosotros </router-link> </li>
+                    <li> <router-link to="contacto"> Contacto </router-link> </li>
+
                     <li class="menu-item-has-children">
                         <a href="catalog-list.html">
                             Catalog <i class="fa fa-angle-down"></i>
@@ -443,65 +445,7 @@
                             Elements
                         </a>
                     </li>
-                    <li class="menu-item-has-children">
-                        <a href="blog.html">
-                            Blog <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="blog.html">
-                                    Blog - Style 1
-                                </a>
-                            </li>
-                            <li>
-                                <a href="blog-2.html">
-                                    Blog - Style 2
-                                </a>
-                            </li>
-                            <li>
-                                <a href="post.html">
-                                    Single Post
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">
-                            Pages <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="contacts.html">
-                                    Contacts
-                                </a>
-                            </li>
-                            <li>
-                                <a href="cart.html">
-                                    Cart
-                                </a>
-                            </li>
-                            <li>
-                                <a href="auth.html">
-                                    Authorization
-                                </a>
-                            </li>
-                            <li>
-                                <a href="compare.html">
-                                    Compare
-                                </a>
-                            </li>
-                            <li>
-                                <a href="wishlist.html">
-                                    Wishlist
-                                </a>
-                            </li>
-                            <li>
-                                <a href="404.html">
-                                    Error 404
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li class="mainmenu-more">
                         <span>...</span>
                         <ul class="mainmenu-sub"></ul>

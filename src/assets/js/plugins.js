@@ -42,29 +42,6 @@ $(document).ready(function () {
 		}
 	});
 
-	// Footer Modal Blocks
-	if ($('.f-block-btn').length > 0) {
-		$('.f-block-btn').each(function () {
-			var f_block_btn = $(this);
-			var f_block_content;
-			if ($(this).data('content')) {
-				f_block_content = $(this).data('content');
-			} else {
-				f_block_content = $(f_block_btn.data('id'));
-			}
-			$(f_block_btn).fancybox({
-				content: f_block_content,
-				wrapCSS : 'f-block-modal-wrap',
-				padding: 0,
-				helpers: {
-					overlay: {
-						locked: false
-					}
-				}
-			});
-		});
-	}
-
 	// Frontpage Slider
 	if ($('.fr-slider').length > 0) {
 		$('.fr-slider').flexslider({
