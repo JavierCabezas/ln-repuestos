@@ -1,7 +1,6 @@
 <template>
     <section class="container stylization maincont">
-
-        <!-- Breadcrumbs -->
+        <breadcrumbs :crumbs="crumbs"></breadcrumbs>
 
         <h1 class="main-ttl"><span>Contacto</span></h1>
         <br>
@@ -36,3 +35,20 @@
         <br>
     </section>
 </template>
+
+<script>
+    import Breadcrumbs from '../main/Breadcrumbs.vue';
+
+    export default {
+        data () {
+            return {
+                crumbs: [
+                    { 'title': 'Contacto',  'path': null }
+                ]
+            }
+        },
+        components: {
+            Breadcrumbs
+        }
+    }
+</script>
