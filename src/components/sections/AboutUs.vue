@@ -1,25 +1,6 @@
 <template>
     <section class="container">
-        <ul class="b-crumbs">
-            <li>
-                <a href="index.html">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="blog.html">
-                    Blog
-                </a>
-            </li>
-            <li>
-                <a href="blog.html">
-                    News
-                </a>
-            </li>
-            <li>
-                <span>Hic quod maxime deserunt</span>
-            </li>
-        </ul>
+        <breadcrumbs :crumbs="crumbs"></breadcrumbs>
         <h1 class="main-ttl"><span>Hic quod maxime deserunt</span></h1>
         <div class="post-wrap stylization">
             <img class="post-img" src="http://placehold.it/1140x580" alt="">
@@ -46,3 +27,20 @@
         </div>
     </section>
 </template>
+
+<script>
+    import Breadcrumbs from '../main/Breadcrumbs.vue';
+
+    export default {
+        data () {
+            return {
+                crumbs: [
+                    { 'title': 'Sobre Nosotros',  'path': null }
+                ],
+            }
+        },
+        components: {
+            Breadcrumbs
+        }
+    }
+</script>
