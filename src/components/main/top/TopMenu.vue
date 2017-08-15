@@ -387,11 +387,8 @@
                 <button type="button" class="mainmenu-btn">Menu</button>
 
                 <ul class="mainmenu">
-                    <li>
-                        <a href="index.html" class="active">
-                            Home
-                        </a>
-                    </li>
+                    <li> <router-link to="/"> Inicio </router-link> </li>
+                    <li> <router-link to="sobre-nosotros"> Sobre Nosotros </router-link> </li>
                     <li class="menu-item-has-children">
                         <a href="catalog-list.html">
                             Catalog <i class="fa fa-angle-down"></i>
