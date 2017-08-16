@@ -1512,11 +1512,12 @@ ul.b-crumbs {
 	-webkit-transform: translate(0, -50%);
 	transform: translate(0, -50%);
 	font-size: 13px;
-	padding: 0 30px 0 0;
+	background-color: rgba(204, 204, 204, 0.8);
+	padding: 2%;
 }
 .fr-slider .slides .fr-slider-cont h3 {
 	font-size: 48px;
-	color: #ffffff;
+	color: #373d54;
 	font-weight: 700;
 	margin: 0 0 23px;
 	line-height: 1.2;
@@ -1526,7 +1527,7 @@ ul.b-crumbs {
 .fr-slider .slides .fr-slider-cont p {
 	padding: 0 0 0;
 	margin: 0 0 45px;
-	color: #ffffff;
+	color: #373d54;
 }
 .fr-slider .slides .fr-slider-cont .fr-slider-more-wrap {
 	margin: 45px 0;
