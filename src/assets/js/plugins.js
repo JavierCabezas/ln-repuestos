@@ -42,13 +42,6 @@ $(document).ready(function () {
 		}
 	});
 
-	// Frontpage Slider
-	if ($('.fr-slider').length > 0) {
-		$('.fr-slider').flexslider({
-			directionNav: false,
-		});
-    }
-
 	// Product Related
 	if ($('#prod-related-car').length > 0) {
 	    $('#prod-related-car').flexslider({
