@@ -8336,6 +8336,7 @@ body .component-desc.component-desc-ct {
 	margin: 0 auto 80px;
 	max-width: 570px;
 	padding: 35px 40px 21px;
+	text-align: right;
 }
 .newsletter h3 {
 	text-transform: uppercase;
