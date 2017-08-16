@@ -11,12 +11,12 @@
                 <p>Mantenemos en stock e Importamos repuestos originales y alternativos de comprobada calidad, tanto nueva como usada. Los valores de repuestos de nuestra página incluyen IVA.</p>
                 <p>
                     Este es un negocio virtual, realizamos entrega en nuestro domicilio de Las Condes, en horarios a acordar con cliente. También hacemos envíos a provincias por Chilexpress o Turbus. Podemos recibir tus consultas por medio de nuestro formulario de contacto, donde
-                    <b>es importante que nos envíen el VIN y número de motor de su vehículo para poder cotizar</b>.(Pueden encontrar el número de VIN en el <a class="fancybox" rel="group" :href="img_vin">siguiente diagrama</a>).
+                    <b>es importante que nos envíen el VIN y número de motor de su vehículo para poder cotizar</b>.(Pueden encontrar el número de VIN en el <vin></vin>).
                 </p>
 
                 <p>Además si estás buscando un repuesto en específico que no tengamos en stock puedes contactarnos para evaluar la posibilidad de traerlo de forma especial.</p>
 
-                <p>Nuestra vía de contacto es el formulario de <router-link to="contacto">contacto</router-link> o el correo electrónico. Una vez recibida la consulta le responderemos en 24 horas, con su cotización y condiciones comerciales. </p>
+                <p>Nuestra vía de contacto es el formulario de <span @click="go_up()"><router-link to="contacto">contacto</router-link></span> o el correo electrónico. Una vez recibida la consulta le responderemos en 24 horas, con su cotización y condiciones comerciales. </p>
 
             </div>
             <div class="col-md-4 container-img">
@@ -29,7 +29,8 @@
 </template>
 
 <script>
-    import Breadcrumbs from '../main/Breadcrumbs.vue';
+    import Breadcrumbs from '../other/Breadcrumbs.vue';
+    import Vin from '../other/Vin.vue'
 
     export default {
         data () {
@@ -38,14 +39,16 @@
                     { 'title': 'Sobre Nosotros',  'path': null }
                 ],
                 img_logo_volvo: 'src/assets/img/logo-volvo.png',
-                img_vin: 'src/assets/img/vin.png'
             }
         },
-        created: function () {
-            this.fbox = $(".fancybox").fancybox();
-        },
         components: {
-            Breadcrumbs
+            Breadcrumbs,
+            Vin
+        },
+        methods: {
+            go_up: function() {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            }
         }
     }
 </script>

@@ -7,6 +7,8 @@
 
         <p>Si necesitas contactarnos, por favor completa el siguiente formulario y nos comunicaremos a la brevedad.</p>
 
+        <p>Si nos escribes por la cotización o de un repuesto en específico por favor ingresa el número de VIN (disponible en el <vin></vin>) para agilizar el trámite.</p>
+
         <!-- Contact Form -->
         <div class="contactform-wrap">
             <form action="#" class="form-validate">
@@ -23,6 +25,10 @@
                     <label class="contactform-label">Teléfono (opcional)</label>
                     <span class="contactform-input"><input placeholder="Tu número de teléfono" type="text" name="email" data-required="text"></span>
                 </p>
+                <p class="contactform-field contactform-email">
+                    <label class="contactform-label">VIN (opcional)</label>
+                    <span class="contactform-input"><input placeholder="Tu número de VIN" type="text" name="email" data-required="text"></span>
+                </p>
                 <p class="contactform-field contactform-textarea">
                     <label class="contactform-label">Mensaje</label>
                     <span class="contactform-input"><textarea placeholder="Tu mensaje o detalles para realización de cotización" name="mess"></textarea></span>
@@ -37,7 +43,8 @@
 </template>
 
 <script>
-    import Breadcrumbs from '../main/Breadcrumbs.vue';
+    import Breadcrumbs from '../other/Breadcrumbs.vue';
+    import Vin from '../other/Vin.vue'
 
     export default {
         data () {
@@ -48,7 +55,8 @@
             }
         },
         components: {
-            Breadcrumbs
+            Breadcrumbs,
+            Vin
         }
     }
 </script>
