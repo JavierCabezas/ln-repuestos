@@ -6,15 +6,12 @@
         <div class="row">
 
             <div class="stylization col-md-8 text-justify">
-                <p>Somos una empresa que se dedica a la venta de repuestos para automóviles Volvo. Contamos con soporte técnico de manuales de piezas y partes, para tener la mejor opción a sus necesidades.</p>
-                <p>Además, disponemos de un scanner para revisar su vehículo Volvo. El valor de este servicio es de $30.000 y le dará derecho a un 5 % de descuento su compra, con tope del valor del scanner.</p>
-                <p>Mantenemos en stock e Importamos repuestos originales y alternativos de comprobada calidad, tanto nueva como usada. Los valores de repuestos de nuestra página incluyen IVA.</p>
-                <p>
-                    Este es un negocio virtual, realizamos entrega en nuestro domicilio de Las Condes, en horarios a acordar con cliente. También hacemos envíos a provincias por Chilexpress o Turbus. Podemos recibir tus consultas por medio de nuestro formulario de contacto, donde
-                    <b>es importante que nos envíen el VIN y número de motor de su vehículo para poder cotizar</b>.(Pueden encontrar el número de VIN en el <vin></vin>).
-                </p>
-
-                <p>Además si estás buscando un repuesto en específico que no tengamos en stock puedes contactarnos para evaluar la posibilidad de traerlo de forma especial.</p>
+                <p>Ofrecemos venta de repuestos importados para automóviles Volvo, originales y alternativos de comprobada calidad, tanto nuevos y usados, en stock y a pedido. </p>
+                <p>Tenemos experiencia comprobada de 3 años en el rubro.</p>
+                <p>Soporte técnico de Manual de Piezas y Partes de la marca, para garantizar el repuesto adecuado.</p>
+                <p>Servicio de scanner Volvo.</p>
+                <p>Estamos ubicados en Santiago, comuna de Las Condes.</p>
+                <p>Despachos, por pagar, a todo Chile.</p>
 
                 <p>Nuestra vía de contacto es el formulario de <span @click="go_up()"><router-link to="contacto">contacto</router-link></span> o el correo electrónico. Una vez recibida la consulta le responderemos en 24 horas, con su cotización y condiciones comerciales. </p>
 

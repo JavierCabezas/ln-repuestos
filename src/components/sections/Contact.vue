@@ -9,10 +9,11 @@
 
         <p>Si nos escribes por la cotización o de un repuesto en específico por favor ingresa el número de VIN (disponible en el <vin></vin>) para agilizar el trámite.</p>
 
+        <p>Recuerda que también podemos darte cotizaciones por productos que no tengamos en el sitio web.</p>
+
         <!-- Contact Form -->
         <div class="contactform-wrap">
             <form action="#" class="form-validate">
-                <p class="component-desc component-desc-ct">Recuerda que también podemos darte cotizaciones por productos que no tengamos en el sitio web.</p>
                 <p class="contactform-field contactform-text">
                     <label class="contactform-label">Nombre</label>
                     <span class="contactform-input"><input placeholder="Tu nombre" type="text" name="name"></span>
