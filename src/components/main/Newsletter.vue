@@ -1,11 +1,22 @@
 <template>
-    <div class="newsletter">
-        <h3>Subscríbete a nosotros</h3>
-        <p>Ingresa tu dirección de correo electrónico para recibir ofertas y promociones exclusivas.</p>
-        <form action="#">
-            <input class="form-control" placeholder="Tu dirección de correo electrónico" type="email" v-model="input_mail">
-            <input class="form-control" name="OK" value="Subscribirse" type="submit" @click.prevent="add_to_database()">
-        </form>
+    <div>
+        <div class="newsletter" v-if="section === 'top'">
+            <h3>Subscríbete a nosotros</h3>
+            <p>Ingresa tu dirección de correo electrónico para recibir ofertas y promociones exclusivas.</p>
+            <form action="#">
+                <input class="form-control" placeholder="Tu dirección de correo electrónico" type="email" v-model="input_mail">
+                <input class="form-control" name="OK" value="Subscribirse" type="submit" @click.prevent="add_to_database()">
+            </form>
+        </div>
+
+        <div class="f-subscribe" v-if="section === 'bottom'">
+            <h3>Subscríbete a nostros</h3>
+            <form class="f-subscribe-form" action="#">
+                <input placeholder="Tu correo electrónico" v-model="input_mail" type="email">
+                <button type="submit" @click.prevent="add_to_database()"><i class="fa fa-paper-plane"></i></button>
+            </form>
+            <p>Ingresa tu correo electrónico para recibir exclusivas ofertas y promociones.</p>
+        </div>
     </div>
 </template>
 
@@ -18,6 +29,7 @@
                 input_mail: '',
             }
         },
+        props: ["section"],
         methods: {
             is_email: function(email) {
                 let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;

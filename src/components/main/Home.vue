@@ -5,7 +5,7 @@
                 <slider></slider>
                 <popular-products></popular-products>
                 <special-offer></special-offer>
-                <newsletter></newsletter>
+                <newsletter section="top"></newsletter>
             </section>
         </main>
     </div>

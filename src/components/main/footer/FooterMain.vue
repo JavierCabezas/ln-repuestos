@@ -13,7 +13,7 @@
         <div class="container f-menu-list">
             <div class="row">
                 <footer-menu></footer-menu>
-                <footer-subscribe></footer-subscribe>
+                <newsletter section="bottom"></newsletter>
             </div>
         </div>
         <footer-bottom></footer-bottom>
@@ -24,16 +24,16 @@
 <script>
     import FooterBottom from './FooterBottom.vue'
     import FooterMenu from './FooterMenu.vue'
-    import FooterSubscribe from './FooterSubscribe.vue'
     import FooterCompanyInfo from './FooterCompanyInfo.vue'
     import FooterBlockList from './FooterBlockList.vue'
     import FooterDelivery from './FooterDelivery.vue'
+    import Newsletter from '../Newsletter.vue'
 
     export default {
         components: {
             FooterBottom,
             FooterMenu,
-            FooterSubscribe,
+            Newsletter,
             FooterCompanyInfo,
             FooterBlockList,
             FooterDelivery
