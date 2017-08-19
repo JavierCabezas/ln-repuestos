@@ -181,33 +181,6 @@ $(window).load(function () {
 		});
 	}
 
-	// Popular Products Carousel
-	if ($('.fr-pop-tab').length > 0) {
-		$(".fr-pop-tab").each(function () {
-		    var fr_pop_this = $(this);
-			var flexslider_slider = { vars:{} };
-			$(this).flexslider({
-		        animation: "slide",
-		        controlNav: true,
-		        slideshow: false,
-		        itemWidth: 270,
-		        itemMargin: 12,
-		        minItems: getGridSize_pop(),
-		        maxItems: getGridSize_pop(),
-			    start: function(slider){
-			    	flexslider_slider = slider;
-			        fr_pop_this.resize();
-			    }
-		    });
-			$(window).resize(function() {
-				var gridSize = getGridSize_pop();
-		    	if (typeof flexslider_slider.vars !== "undefined") {
-					flexslider_slider.vars.minItems = gridSize;
-					flexslider_slider.vars.maxItems = gridSize;
-				}
-			});
-		});
-	}
 
 	// Brands Carousel
 	if ($('.brands-list').length > 0) {
