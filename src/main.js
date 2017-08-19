@@ -13,7 +13,7 @@ Vue.mixin({
     data: function() {
         return {
             get url_backend() {
-                return "http://localhost/backend";
+                return "http://localhost/lnrepuestos/backend/web/index.php/api/";
             }
         }
     }
