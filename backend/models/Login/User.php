@@ -6,7 +6,7 @@
  * Time: 3:46 PM
  */
 use Yii;
-
+use app\models\Razgo\UserLoginTrait;
 /**
  * This is the model class for table "user".
  *
@@ -20,6 +20,8 @@ use Yii;
  */
 class User extends \yii\db\ActiveRecord
 {
+    use UserLoginTrait;
+
     /**
      * @inheritdoc
      */
