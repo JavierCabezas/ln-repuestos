@@ -129,57 +129,28 @@ $(window).load(function () {
 	
 	// Reviews Carousel
     if ($('.reviewscar').length > 0) {
-    	$('.reviewscar').each(function () {
-		    var galleryTop = new Swiper($(this), {
+        $('.reviewscar').each(function () {
+            var galleryTop = new Swiper($(this), {
                 roundLengths: true,
-		        loop:true,
-		        autoHeight:true,
-		        loopedSlides: 9, //looped slides should be the same
-		        spaceBetween: 10,
-		    });
-		    var galleryThumbs = new Swiper($(this).next('.reviewscar-thumbs'), {
-		        spaceBetween: 10,
-		        centeredSlides: true,
-		        slidesPerView: 'auto',
-		        touchRatio: 0.2,
+                loop: true,
+                autoHeight: true,
+                loopedSlides: 9, //looped slides should be the same
+                spaceBetween: 10,
+            });
+            var galleryThumbs = new Swiper($(this).next('.reviewscar-thumbs'), {
+                spaceBetween: 10,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                touchRatio: 0.2,
                 roundLengths: true,
-		        loop:true,
-		        loopedSlides: 9, //looped slides should be the same2
-		        slideToClickedSlide: true
-		    });
-		    galleryTop.params.control = galleryThumbs;
-		    galleryThumbs.params.control = galleryTop;
-		});
-	}
-
-	// Special Offer Carousel
-    if ($('.discounts-list').length > 0) {
-    	$('.discounts-list').each(function () {
-		    var flexslider_discounts = { vars:{} };
-		    var discounts_this = $(this);
-		    $(this).flexslider({
-		        animation: "slide",
-		        controlNav: false,
-		        slideshow: false,
-		        itemWidth: 288,
-		        itemMargin: 30,
-		        minItems: getGridSize_discounts(),
-		        maxItems: getGridSize_discounts(),
-			    start: function(slider){
-			    	flexslider_discounts = slider;
-			        discounts_this.resize();
-			    }
-		    });
-		    $(window).resize(function () {
-		    	var gridSize = getGridSize_discounts();
-		    	if (typeof flexslider_discounts.vars !== "undefined") {
-		    		flexslider_discounts.vars.minItems = gridSize;
-		    		flexslider_discounts.vars.maxItems = gridSize;
-		    	}
-		    });
-
-		});
-	}
+                loop: true,
+                loopedSlides: 9, //looped slides should be the same2
+                slideToClickedSlide: true
+            });
+            galleryTop.params.control = galleryThumbs;
+            galleryThumbs.params.control = galleryTop;
+        });
+    }
 
 
 	// Brands Carousel

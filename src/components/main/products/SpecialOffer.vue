@@ -99,3 +99,37 @@
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        mounted() {
+            if ($('.discounts-list').length > 0) {
+                $('.discounts-list').each(function () {
+                    var flexslider_discounts = { vars:{} };
+                    var discounts_this = $(this);
+                    $(this).flexslider({
+                        animation: "slide",
+                        controlNav: false,
+                        slideshow: false,
+                        itemWidth: 288,
+                        itemMargin: 30,
+                        minItems: getGridSize_discounts(),
+                        maxItems: getGridSize_discounts(),
+                        start: function(slider){
+                            flexslider_discounts = slider;
+                            discounts_this.resize();
+                        }
+                    });
+                    $(window).resize(function () {
+                        var gridSize = getGridSize_discounts();
+                        if (typeof flexslider_discounts.vars !== "undefined") {
+                            flexslider_discounts.vars.minItems = gridSize;
+                            flexslider_discounts.vars.maxItems = gridSize;
+                        }
+                    });
+
+                });
+            }
+        }
+    }
+</script>
