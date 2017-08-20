@@ -10,7 +10,7 @@ use yii\web\Response;
 use yii\rest\Controller;
 use Yii;
 
-class NewsletterController extends Controller
+class CommunicationsController extends Controller
 {
     public function actionAdd(){
         Yii::$app->response->format = Response::FORMAT_JSON;

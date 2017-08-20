@@ -42,7 +42,7 @@
                     swal("Oops...", "La dirección de correo electrónico ingresada no es correcta.", "error");
                 }else{
                     $.ajax({
-                        url: vm.url_backend + 'newsletter/add',
+                        url: vm.url_backend + 'communications/add',
                         data: { client_email: vm.input_mail },
                         method: 'POST',
                         success: function (result) {
