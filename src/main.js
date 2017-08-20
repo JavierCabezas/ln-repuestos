@@ -19,6 +19,10 @@ Vue.mixin({
     }
 });
 
+Vue.filter('money', function (value) {
+    return '$' + parseInt(value)
+});
+
 new Vue({
     el: '#app',
     router,
