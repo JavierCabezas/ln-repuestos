@@ -54,11 +54,11 @@
                     { 'title': 'Contacto',  'path': null }
                 ],
                 form: {
-                    name: 'Javier',
-                    email: 'jcleyton@gmail.com',
+                    name: '',
+                    email: '',
                     telephone: '',
                     vin: '',
-                    message: 'test 123'
+                    message: ''
                 }
             }
         },
