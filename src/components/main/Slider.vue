@@ -2,43 +2,13 @@
     <div class="fr-slider-wrap">
         <div class="fr-slider">
             <ul class="slides">
-                <li>
-                    <img src="src/assets/img/slider/volvo_xc90.png" alt="">
+                <li v-for="s in slides">
+                    <img :src="s.img_src" :alt="s.title">
                     <div class="fr-slider-cont">
-                        <h3>MEGA SALE -30%</h3>
-                        <p>Winter collection for women's. <br>We all have choices for you. Check it out!</p>
-                        <p class="fr-slider-more-wrap">
-                            <a class="fr-slider-more" href="#">View collection</a>
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <img src="src/assets/img/slider/logo_volvo_rejilla.png" alt="">
-                    <div class="fr-slider-cont">
-                        <h3>NEW COLLECTION</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>Aliquam consequuntur dolorem doloribus fuga harum</p>
-                        <p class="fr-slider-more-wrap">
-                            <a class="fr-slider-more" href="#">Shopping now</a>
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <img src="src/assets/img/slider/motor_volvo.png" alt="">
-                    <div class="fr-slider-cont">
-                        <h3>SUMMER TRENDS</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>Aliquam consequuntur dolorem doloribus fuga harum</p>
-                        <p class="fr-slider-more-wrap">
-                            <a class="fr-slider-more" href="#">Start shopping</a>
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <img src="src/assets/img/slider/volvo_antiguo.png" alt="">
-                    <div class="fr-slider-cont">
-                        <h3>SUMMER TRENDS</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>Aliquam consequuntur dolorem doloribus fuga harum</p>
-                        <p class="fr-slider-more-wrap">
-                            <a class="fr-slider-more" href="#">Start shopping</a>
+                        <h3> {{ s.title }} </h3>
+                        <p> {{ s.subtitle }}</p>
+                        <p class="fr-slider-more-wrap" v-if="s.has_button">
+                            <router-link class="fr-slider-more" :to="s.button_url">Ver más</router-link>
                         </p>
                     </div>
                 </li>
@@ -49,12 +19,29 @@
 
 <script>
     export default {
-        mounted() {
-            this.$nextTick(function () {
+        data () {
+            return {
+                slides: [ ],
+            }
+        },
+        created: function () {
+            let vm = this;
+            $.ajax({
+                url: vm.url_backend + 'site/slider',
+                success: function (result) {
+                    vm.slides = result;
+                    vm.$nextTick(function () {
+                        vm.call_flexslider();
+                    });
+                }
+            });
+        },
+        methods: {
+            call_flexslider () {
                 $('.fr-slider').flexslider({
                     directionNav: false,
                 });
-            });
+            }
         }
     }
 </script>

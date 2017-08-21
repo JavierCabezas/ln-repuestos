@@ -84,11 +84,11 @@
                         data: { contact_form: vm.form },
                         method: 'POST',
                         success: function (result) {
-                            //vm.form.name = '';
-                            //vm.form.email = '';
-                            //vm.form.telephone = '';
-                            //vm.form.vin = '';
-                            //vm.form.message = '';
+                            vm.form.name = '';
+                            vm.form.email = '';
+                            vm.form.telephone = '';
+                            vm.form.vin = '';
+                            vm.form.message = '';
                             swal("Éxito", "Recibimos su mensaje correctamente, le responderemos en el corto plazo.", "success")
                         }
                     });

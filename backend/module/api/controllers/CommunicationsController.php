@@ -28,6 +28,17 @@ class CommunicationsController extends Controller
         }
     }
 
+    /**
+     * Sends the contact message to contacto at lnrepuestos.cl
+     * @params $_POST['contact_form'][
+     *      'name' => required
+     *      'email' => required
+     *      'message' => required
+     *      'vin' => VIN number of the car (optional)
+     *      'telephone'  => optional
+     * ]
+     * @return bool
+     */
     public function actionContact()
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
