@@ -67,6 +67,7 @@ class SliderController extends Controller
     public function actionCreate()
     {
         $model = new Slider();
+        $model->priority = 10;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

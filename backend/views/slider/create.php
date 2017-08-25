@@ -11,7 +11,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Other\Slider */
 
-$this->title = 'Create Slider';
+$this->title = 'Añadiendo nuevo slider';
 $this->params['breadcrumbs'][] = ['label' => 'Sliders', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

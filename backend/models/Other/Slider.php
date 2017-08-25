@@ -20,6 +20,8 @@ use Yii;
  */
 class Slider extends \yii\db\ActiveRecord
 {
+    public $img_file;
+
     /**
      * @inheritdoc
      */
@@ -50,12 +52,12 @@ class Slider extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'content' => 'Content',
-            'picture_path' => 'Picture Path',
-            'has_link' => 'Has Link',
-            'link_path' => 'Link Path',
-            'priority' => 'Priority',
+            'title' => 'Texto principal',
+            'content' => 'Texto secundario',
+            'picture_path' => 'Path imagen',
+            'has_link' => '¿Tiene link?',
+            'link_path' => 'Link',
+            'priority' => 'Prioridad',
         ];
     }
 }
