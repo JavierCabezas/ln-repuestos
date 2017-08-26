@@ -20,7 +20,7 @@ use Yii;
  */
 class Slider extends \yii\db\ActiveRecord
 {
-    public $img_file;
+    public $imageFile;
 
     /**
      * @inheritdoc
@@ -36,6 +36,7 @@ class Slider extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png'],
             [['title'], 'required'],
             [['has_link', 'priority'], 'integer'],
             [['title'], 'string', 'max' => 40],
@@ -59,5 +60,15 @@ class Slider extends \yii\db\ActiveRecord
             'link_path' => 'Link',
             'priority' => 'Prioridad',
         ];
+    }
+
+    public function upload()
+    {
+        if ($this->validate()) {
+            $this->imageFile->saveAs('web/img/slider' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
