@@ -3,7 +3,7 @@
         <header class="header">
             <top-bar></top-bar>
             <logo></logo>
-            <top-menu></top-menu>
+            <top-menu :categories="categories"></top-menu>
         </header>
     </div>
 </template>
@@ -15,6 +15,7 @@
 
     export default {
         name: 'app',
+        props: ['categories'],
         components:{
             TopBar,
             Logo,

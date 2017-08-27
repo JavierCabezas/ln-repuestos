@@ -12,7 +12,7 @@
 
         <div class="container f-menu-list">
             <div class="row">
-                <footer-menu></footer-menu>
+                <footer-menu :categories="categories"></footer-menu>
                 <newsletter section="bottom"></newsletter>
             </div>
         </div>
@@ -30,6 +30,7 @@
     import Newsletter from '../Newsletter.vue'
 
     export default {
+        props: ['categories'],
         components: {
             FooterBottom,
             FooterMenu,
