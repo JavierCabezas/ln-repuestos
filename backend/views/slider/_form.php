@@ -16,13 +16,13 @@ $this->registerJsFile( '@web/js/slider_create.js',  ['depends' => [\yii\web\Jque
 
 <div class="slider-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'content')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'picture_path')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'imageFile')->fileInput() ?>
 
     <?= $form->field($model, 'priority')->textInput(['type' => 'number', 'min' => 1]) ?>
 

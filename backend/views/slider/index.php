@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Slider', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Slider', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -33,9 +33,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'picture_path',
             'has_link',
             // 'link_path',
-            // 'priority',
+            'priority',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                    'class' => 'yii\grid\ActionColumn',
+                    'template' => '{view}{delete}'
+            ],
         ],
     ]); ?>
 </div>

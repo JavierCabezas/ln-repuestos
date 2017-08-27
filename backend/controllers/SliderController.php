@@ -8,8 +8,7 @@
 use Yii;
 use app\models\Other\Slider;
 use yii\data\ActiveDataProvider;
-use yii\web\Controller;
-use yii\web\NotFoundHttpException;
+use yii\web\{Controller, NotFoundHttpException, UploadedFile};
 use yii\filters\VerbFilter;
 
 /**
@@ -69,13 +68,17 @@ class SliderController extends Controller
         $model = new Slider();
         $model->priority = 10;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        if(Yii::$app->request->isPost){
+            $model->load(Yii::$app->request->post());
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if($model->upload() && $model->save(false)) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
     /**

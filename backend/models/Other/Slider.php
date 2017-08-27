@@ -5,6 +5,7 @@
  * Date: 8/21/17
  * Time: 11:20 PM
  */
+use app\models\helpers\StringHelper;
 use Yii;
 
 /**
@@ -43,6 +44,7 @@ class Slider extends \yii\db\ActiveRecord
             [['content'], 'string', 'max' => 300],
             [['picture_path'], 'string', 'max' => 100],
             [['link_path'], 'string', 'max' => 50],
+            [['imageFile'], 'safe']
         ];
     }
 
@@ -59,16 +61,23 @@ class Slider extends \yii\db\ActiveRecord
             'has_link' => '¿Tiene link?',
             'link_path' => 'Link',
             'priority' => 'Prioridad',
+            'imageFile' => 'Imagen'
         ];
     }
+
 
     public function upload()
     {
         if ($this->validate()) {
-            $this->imageFile->saveAs('web/img/slider' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            $name = StringHelper::seo_url($this->title) .'.' . $this->imageFile->extension;
+            $this->imageFile->saveAs('img/slider/' . $name );
+            $this->picture_path = $name;
             return true;
-        } else {
-            return false;
         }
+        return false;
+    }
+
+    public function getImage(){
+        return StringHelper::base_url().'img/slider/'.$this->picture_path;
     }
 }

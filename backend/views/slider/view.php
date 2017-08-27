@@ -20,11 +20,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Volver al listado', 'index', ['class' => 'btn btn-success'])?>
+        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '¿Tienes seguridad de querer elimianr este elemento?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -36,10 +36,20 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'title',
             'content',
-            'picture_path',
-            'has_link',
-            'link_path',
+            [
+                'attribute' => 'has_link',
+                'value' => $model->has_link?'Sí':'No'
+            ],
+            [
+                'attribute' => 'link_path',
+                'value' => $model->link_path == ''? ' - ' : $model->link_path
+            ],
             'priority',
+            [
+                'attribute' => 'picture_path',
+                'value' => $model->image,
+                'format' => ['image',['width'=>'500','height'=>'250']],
+            ]
         ],
     ]) ?>
 
