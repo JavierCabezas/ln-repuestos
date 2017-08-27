@@ -6,7 +6,7 @@ class m170826_182346_add_product extends Migration
 {
     public function up()
     {
-        $this->createTable('Product', [
+        $this->createTable('product', [
             'id' => $this->primaryKey(),
             'category_id' => $this->integer(),
             'name' => $this->string(60)->notNull(),
@@ -20,6 +20,6 @@ class m170826_182346_add_product extends Migration
 
     public function down()
     {
-        $this->dropTable('Product');
+        $this->dropTable('product');
     }
 }
