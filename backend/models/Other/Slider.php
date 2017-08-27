@@ -77,7 +77,32 @@ class Slider extends \yii\db\ActiveRecord
         return false;
     }
 
+    /**
+     * Returns the URL location of the image on the server
+     * @return string
+     */
     public function getImage(){
         return StringHelper::base_url().'img/slider/'.$this->picture_path;
+    }
+
+    public function getImagePath(){
+        return Yii::getAlias('@webroot')."/img/slider/".$this->picture_path;
+    }
+
+    /**
+     * Returns an string representing the base64 encoded image of this instance of Slider.
+     * @return string
+     */
+    public function getBase64Image(){
+        $im = file_get_contents($this->imagePath);
+        return "data:image/png;base64,".base64_encode($im);
+    }
+
+    /**
+     * Returns a boolean value indicating if this instance of Slider has a link (stupid mysql witout a real boolean value)
+     * @return bool
+     */
+    public function getLinkBool(){
+        return $this->has_link == true;
     }
 }

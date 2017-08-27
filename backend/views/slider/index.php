@@ -32,12 +32,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'content',
             'picture_path',
             'has_link',
-            // 'link_path',
             'priority',
 
             [
-                    'class' => 'yii\grid\ActionColumn',
-                    'template' => '{view}{delete}'
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view}{delete}'
             ],
         ],
     ]); ?>
