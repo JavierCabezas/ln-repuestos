@@ -5,8 +5,10 @@
  * Date: 8/20/17
  * Time: 5:17 PM
  */
+use app\models\helpers\CategoriesHelper;
 use yii\web\Response;
 use yii\rest\Controller;
+
 use Yii;
 
 class ProductsController extends Controller
@@ -31,5 +33,10 @@ class ProductsController extends Controller
             ]);
         }
         return $out;
+    }
+
+    public function actionNestedCategories(){
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        return CategoriesHelper::all_categories();
     }
 }
