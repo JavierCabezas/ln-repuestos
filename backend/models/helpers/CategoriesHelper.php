@@ -10,11 +10,11 @@ class CategoriesHelper{
     private static $categories = [
         [
             'n' => 'Motor',
-            'l' => 'productos/motor',
+            'l' => '/productos/motor',
             's' => [
                 [
                     'n' => 'Block',
-                    'l' => 'productos/motor/block',
+                    'l' => '/productos/motor/block',
                     's' => [
                         [
                             'n' => 'Empaquetaduras',
@@ -54,11 +54,11 @@ class CategoriesHelper{
                 ],
                 [
                     'n' => 'Soportes motor',
-                    'l' => 'productos/motor/soportes-motor',
+                    'l' => '/productos/motor/soportes-motor',
                 ],
                 [
                     'n' => 'Sistema de lubricación',
-                    'l' => 'productos/motor/sistema-de-lubricacion',
+                    'l' => '/productos/motor/sistema-de-lubricacion',
                     's' => [
                         [
                             'n' => 'Filtros',
@@ -72,165 +72,165 @@ class CategoriesHelper{
                 ],
                 [
                     'n' => 'Enfriamiento',
-                    'l' => 'productos/motor/enfriamiento',
+                    'l' => '/productos/motor/enfriamiento',
                     's' => [
                         [
                             'n' => 'Radiadores',
-                            'l' => 'productos/motor/enfriamiento/radiadores'
+                            'l' => '/productos/motor/enfriamiento/radiadores'
                         ],
                         [
                             'n' => 'Depósitos de refrigerante',
-                            'l' => 'productos/motor/enfriamiento/depositos-refrigerante'
+                            'l' => '/productos/motor/enfriamiento/depositos-refrigerante'
                         ],
                         [
                             'n' => 'Bombas',
-                            'l' => 'productos/motor/enfriamiento/bombas'
+                            'l' => '/productos/motor/enfriamiento/bombas'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Encendido',
-                    'l' => 'productos/motor/encendido',
+                    'l' => '/productos/motor/encendido',
                     's' => [
                         [
                             'n' => 'Bobinas',
-                            'l' => 'productos/motor/encendido/bobinas'
+                            'l' => '/productos/motor/encendido/bobinas'
                         ],
                         [
                             'n' => 'Bujías',
-                            'l' => 'productos/motor/encendido/bujias'
+                            'l' => '/productos/motor/encendido/bujias'
                         ],
                         [
                             'n' => 'Cables',
-                            'l' => 'productos/motor/encendido/cables'
+                            'l' => '/productos/motor/encendido/cables'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Combustion',
-                    'l' => 'productos/motor/combustion',
+                    'l' => '/productos/motor/combustion',
                     's' => [
                         [
                             'n' => 'Filtro aire',
-                            'l' => 'productos/motor/combustion/filtro-aire'
+                            'l' => '/productos/motor/combustion/filtro-aire'
                         ],
                         [
                             'n' => 'Filtro combustible',
-                            'l' => 'productos/motor/combustion/filtro-combustible'
+                            'l' => '/productos/motor/combustion/filtro-combustible'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Otros',
-                    'l' => 'productos/motor/otros'
+                    'l' => '/productos/motor/otros'
                 ]
             ]
         ],
         [
             'n' => 'Transmisión',
-            'l' => 'productos/transision',
+            'l' => '/productos/transision',
             's' => [
                 [
                     'n' => 'Lubicantes',
-                    'l' => 'productos/transmision/lubricantes',
+                    'l' => '/productos/transmision/lubricantes',
                     's' => [
                         [
                             'n' => 'Aceite',
-                            'l' => 'productos/transmision/lubricantes/aceite'
+                            'l' => '/productos/transmision/lubricantes/aceite'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Otros',
-                    'l' => 'productos/transmision/otros'
+                    'l' => '/productos/transmision/otros'
                 ]
             ]
         ],
         [
             'n' => 'Sistema eléctrico',
-            'l' => 'productos/sistema-electrico',
+            'l' => '/productos/sistema-electrico',
             's' => [
                 [
                     'n' => 'Luces',
-                    'l' => 'productos/sistema-electrico/luces',
+                    'l' => '/productos/sistema-electrico/luces',
                     's' => [
                         [
                             'n' => 'Intermitente',
-                            'l' => 'productos/sistema-electrico/luces/intermitente'
+                            'l' => '/productos/sistema-electrico/luces/intermitente'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Otros',
-                    'l' => 'productos/sistema-electrico/otros'
+                    'l' => '/productos/sistema-electrico/otros'
                 ]
             ]
         ],
         [
             'n' => 'Frenos',
-            'l' => 'productos/frenos',
+            'l' => '/productos/frenos',
             's' => [
                 [
                     'n' => 'Pastillas',
-                    'l' => 'productos/frenos/pastillas',
+                    'l' => '/productos/frenos/pastillas',
                     's' => [
                         [
                             'n' => 'Delanteras',
-                            'l' => 'productos/frenos/pastillas/delanteras'
+                            'l' => '/productos/frenos/pastillas/delanteras'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Discos',
-                    'l' => 'productos/frenos/discos'
+                    'l' => '/productos/frenos/discos'
                 ],
                 [
                     'n' => 'Otros',
-                    'l' => 'productos/frenos/otros'
+                    'l' => '/productos/frenos/otros'
                 ]
             ]
         ],
         [
             'n' => 'Susprensión',
-            'l' => 'productos/suspension',
+            'l' => '/productos/suspension',
             's' => [
                 [
                     'n' => 'Bandejas',
-                    'l' => 'productos/suspension/bandejas'
+                    'l' => '/productos/suspension/bandejas'
                 ],
                 [
                     'n' => 'Bujes',
-                    'l' => 'productos/suspension/bujes'
+                    'l' => '/productos/suspension/bujes'
                 ],
                 [
                     'n' => 'Terminales',
-                    'l' => 'productos/suspension/terminales'
+                    'l' => '/productos/suspension/terminales'
                 ],
                 [
                     'n' => 'Amortiguadores',
-                    'l' => 'productos/suspension/amortiguadores'
+                    'l' => '/productos/suspension/amortiguadores'
                 ],
                 [
                     'n' => 'Otros',
-                    'l' => 'productos/suspension/otros'
+                    'l' => '/productos/suspension/otros'
                 ]
             ]
         ],
         [
             'n' => 'Accesorios',
-            'l' => 'productos/accesorios',
+            'l' => '/productos/accesorios',
             's' => [
                 [
                     'n' => 'Interior',
-                    'l' => 'productos/accesorios/interior'
+                    'l' => '/productos/accesorios/interior'
                 ],
                 [
                     'n' => 'Exterior',
-                    'l' => 'productos/accesorios/exterior',
+                    'l' => '/productos/accesorios/exterior',
                     's' => [
                         [
                             'n' => 'Espejo retrovisor',
-                            'l' => 'productos/accesorios/exterior/espejo-retrovisor'
+                            'l' => '/productos/accesorios/exterior/espejo-retrovisor'
                         ]
                     ]
                 ]

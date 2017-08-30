@@ -6,15 +6,15 @@
                     <router-link to="producto" class="topcatalog-btn">Catálogo</router-link>
                     <ul class="topcatalog-list">
                         <li v-for="cat in categories">
-                            <router-link :to="cat.l"> {{ cat.n }} </router-link>
+                            <router-link :to="cat.l" exact> {{ cat.n }} </router-link>
                             <i class="fa fa-angle-right"></i>
                             <ul>
                                 <li v-for="son in cat.s">
-                                    <router-link :to="son.l"> {{son.n}} </router-link>
+                                    <router-link :to="son.l" exact> {{son.n}} </router-link>
                                     <i v-if="son.s !== undefined" class="fa fa-angle-right"></i>
                                     <ul v-if="son.s !== undefined">
                                         <li v-for="grandon in son.s">
-                                            <router-link :to="grandon.l"> {{grandon.n}} </router-link>
+                                            <router-link :to="grandon.l" exact> {{grandon.n}} </router-link>
                                         </li>
                                     </ul>
                                 </li>
