@@ -11,6 +11,11 @@
                             <ul>
                                 <li v-for="son in cat.s">
                                     <router-link :to="son.l"> {{son.n}} </router-link>
+                                    <ul v-if="son.s !== undefined">
+                                        <li v-for="grandon in son.s">
+                                            <router-link :to="grandon.l"> {{grandon.n}} </router-link>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
