@@ -7,16 +7,16 @@ use yii\grid\GridView;
  * Date: 8/26/17
  * Time: 3:42 PM
  */
-$this->title = 'Products';
+$this->title = 'Productos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?= "" // $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Product', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear producto', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -26,14 +26,23 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'category_id',
+            [
+                'attribute' => 'category_id',
+                'value' => function ($model) {
+                    return $model->category;
+                },
+                'filter' => \app\models\helpers\CategoriesHelper::all_categories_flat()
+            ],
             'name',
-            'seo_name',
-            'description',
-            // 'price',
-            // 'is_featured',
-            // 'created_on',
-
+            'price',
+            [
+                'attribute' => 'is_featured',
+                'value' => function ($model){
+                    return $model->is_featured ? 'Sí' :' No';
+                },
+                'filter' => ['0' => 'No', '1' => 'Sí' ]
+            ],
+            'created_on',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
