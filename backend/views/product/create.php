@@ -7,7 +7,7 @@ use yii\helpers\Html;
  * Time: 3:42 PM
  */
 
-$this->title = 'Create Product';
+$this->title = 'Creación de producto';
 $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

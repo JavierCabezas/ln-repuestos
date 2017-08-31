@@ -11,13 +11,16 @@ use Yii;
  * This is the model class for table "product".
  *
  * @property int $id
- * @property int $category_id
+ * @property string $category_id
  * @property string $name
  * @property string $seo_name
  * @property string $description
  * @property int $price
  * @property int $is_featured
+ * @property int $is_ready
  * @property string $created_on
+ *
+ * @property ProductPicture[] $productPictures
  */
 class Product extends \yii\db\ActiveRecord
 {
@@ -35,9 +38,10 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['category_id', 'price', 'is_featured'], 'integer'],
             [['name', 'description'], 'required'],
+            [['price', 'is_featured', 'is_ready'], 'integer'],
             [['created_on'], 'safe'],
+            [['category_id'], 'string', 'max' => 30],
             [['name', 'seo_name'], 'string', 'max' => 60],
             [['description'], 'string', 'max' => 300],
         ];
@@ -50,13 +54,23 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'category_id' => 'Category ID',
-            'name' => 'Name',
-            'seo_name' => 'Seo Name',
-            'description' => 'Description',
-            'price' => 'Price',
-            'is_featured' => 'Is Featured',
+            'category_id' => 'Categoría',
+            'name' => 'Nombre',
+            'seo_name' => 'Nombre URL',
+            'description' => 'Descripción',
+            'price' => 'Precio',
+            'is_featured' => '¿Se muestra en portada?',
+            'is_ready' => 'Is Ready',
             'created_on' => 'Created On',
         ];
+    }
+
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProductPictures()
+    {
+        return $this->hasMany(ProductPicture::className(), ['product_id' => 'id']);
     }
 }
