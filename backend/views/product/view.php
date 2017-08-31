@@ -8,7 +8,7 @@ use yii\widgets\DetailView;
  * Time: 3:43 PM
  */
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Productos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-view">
@@ -16,29 +16,43 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Actualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '¿Tienes seguridad de querer eliminar este producto?',
                 'method' => 'post',
             ],
         ]) ?>
+        <a href="#" class="btn btn-lg btn-primary pull-right">
+            <span class="glyphicon glyphicon-picture"></span> Agregar fotos
+        </a>
     </p>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
-            'category_id',
+            [
+                'attribute' => 'category_id',
+                'value' => $model->category
+            ],
             'name',
-            'seo_name',
             'description',
-            'price',
-            'is_featured',
+            [
+                'attribute' => 'price',
+                'value' => \app\models\helpers\StringHelper::money($model->price)
+            ],
+            [
+                'attribute' => 'is_featured',
+                'value' => $model->is_featured ? 'Sí' : 'No'
+            ],
+            [
+                'attribute' => 'is_ready',
+                'value' =>  $model->is_ready ? 'Sí' : 'No (motivo: '.$model->reasonNotReady.')'
+            ],
             'created_on',
         ],
     ]) ?>
 
 </div>
-A Product of Yii Software LLC

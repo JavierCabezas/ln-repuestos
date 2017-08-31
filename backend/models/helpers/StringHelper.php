@@ -33,4 +33,13 @@ class StringHelper{
     public static function base_url(){
         return str_replace('index.php', '', Yii::$app->homeUrl);
     }
+
+    /**
+     * Returns the given ammount formatted as money
+     * @param $ammount
+     * @return string
+     */
+    public static function money($ammount){
+        return "$".number_format($ammount, 0, ',', '.');
+    }
 }

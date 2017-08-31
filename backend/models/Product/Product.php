@@ -5,6 +5,8 @@
  * Date: 8/26/17
  * Time: 3:37 PM
  */
+use app\models\helpers\CategoriesHelper;
+use app\models\helpers\StringHelper;
 use Yii;
 
 /**
@@ -61,10 +63,9 @@ class Product extends \yii\db\ActiveRecord
             'price' => 'Precio',
             'is_featured' => '¿Se muestra en portada?',
             'is_ready' => 'Is Ready',
-            'created_on' => 'Created On',
+            'created_on' => 'Fecha de creación',
         ];
     }
-
 
     /**
      * @return \yii\db\ActiveQuery
@@ -72,5 +73,40 @@ class Product extends \yii\db\ActiveRecord
     public function getProductPictures()
     {
         return $this->hasMany(ProductPicture::className(), ['product_id' => 'id']);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+           $this->seo_name = StringHelper::seo_url($this->name);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Gets the current category for this product as a legible string.
+     * @return string
+     */
+    public function getCategory(){
+        return CategoriesHelper::full_name($this->category_id);
+    }
+
+    /**
+     * Returns a legible cause of why the status of the product is not-ready
+     * @return string
+     */
+    public function getReasonNotReady(){
+        if($this->is_ready)
+            return '';
+
+        if(ProductPicture::find()->where(['product_id'=>$this->id])->count() == 0){
+            return 'No se han subido fotos del producto';
+        }
+
     }
 }

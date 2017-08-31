@@ -332,4 +332,9 @@ class CategoriesHelper{
         }
         return $out;
     }
+
+    public static function full_name($category_id){
+        $flat = self::all_categories_flat();
+        return $flat[$category_id] ?? 'Categoría no válida';
+    }
 }
