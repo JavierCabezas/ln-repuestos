@@ -6,15 +6,15 @@
                     <router-link to="producto" class="topcatalog-btn">Catálogo</router-link>
                     <ul class="topcatalog-list">
                         <li v-for="cat in categories">
-                            <router-link :to="cat.l" exact> {{ cat.n }} </router-link>
+                            <router-link :to="{name:'products_category', params: {category: cat.id}}"> {{cat.n}} </router-link>
                             <i class="fa fa-angle-right"></i>
                             <ul>
                                 <li v-for="son in cat.s">
-                                    <router-link :to="son.l" exact> {{son.n}} </router-link>
+                                    <router-link :to="{name:'products_subcategory', params: {category: cat.id, subcategory: son.id}}"> {{son.n}} </router-link>
                                     <i v-if="son.s !== undefined" class="fa fa-angle-right"></i>
                                     <ul v-if="son.s !== undefined">
-                                        <li v-for="grandon in son.s">
-                                            <router-link :to="grandon.l" exact> {{grandon.n}} </router-link>
+                                        <li v-for="grandson in son.s">
+                                            <router-link :to="{name: 'products_subsubcategory', params: {category: cat.id, subcategory: son.id, subsubcategory: grandson.id}}"> {{grandson.n}} </router-link>
                                         </li>
                                     </ul>
                                 </li>
@@ -31,10 +31,10 @@
                     <li> <router-link to="sobre-nosotros"> Sobre Nosotros </router-link> </li>
 
                     <li class="menu-item-has-children">
-                        <router-link to="producto">Productos <i class="fa fa-angle-down"></i></router-link>
+                        <router-link to="productos">Productos <i class="fa fa-angle-down"></i></router-link>
                         <ul class="sub-menu">
                             <li v-for="cat in categories">
-                                <router-link :to="cat.l"> {{cat.n}}</router-link>
+                                <router-link :to="{name: 'products_category', params:{category: cat.id}}"> {{cat.n}}</router-link>
                             </li>
                         </ul>
                     </li>
