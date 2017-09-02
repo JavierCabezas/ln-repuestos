@@ -7,6 +7,7 @@
  */
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\helpers\WebsiteHelper;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Other\Slider */
@@ -29,7 +30,7 @@ $this->registerJsFile( '@web/js/slider_create.js',  ['depends' => [\yii\web\Jque
     <?= $form->field($model, 'has_link')->checkbox(['id' => 'check_link_checkbox']) ?>
 
     <div id="path_field">
-        <?= $form->field($model, 'link_path')->textInput(['maxlength' => true, 'id' => 'path_field']) ?>
+        <?= $form->field($model, 'link_path')->dropDownList(WebsiteHelper::dropdown_sections()) ?>
     </div>
 
     <div class="form-group">

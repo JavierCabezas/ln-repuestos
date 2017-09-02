@@ -11,275 +11,227 @@ class CategoriesHelper{
         [
             'n' => 'Motor',
             'id' => 'motor',
-            'l' => '/productos/motor',
             's' => [
                 [
                     'n' => 'Block',
                     'id' => 'block',
-                    'l' => '/productos/motor/block',
                     's' => [
                         [
                             'n' => 'Empaquetaduras',
-                            'id' => 'empaquetaduras',
-                            'l' => 'produtos/motor/block/empaquetaduras'
+                            'id' => 'empaquetaduras'
                         ],
                         [
                             'n' => 'Retenes / Anillos',
-                            'id' => 'anillos',
-                            'l' => 'produtos/motor/retenes-anillos'
+                            'id' => 'anillos'
                         ],
                         [
                             'n' => 'Pistones',
-                            'id' => 'pistones',
-                            'l' => 'produtos/motor/block/pistones'
+                            'id' => 'pistones'
                         ],
                         [
                             'n' => 'Carter',
-                            'id' => 'carter',
-                            'l' => 'produtos/motor/block/carter'
+                            'id' => 'carter'
                         ],
                         [
                             'n' => 'Metales',
-                            'id' => 'metales',
-                            'l' => 'produtos/motor/block/metales'
+                            'id' => 'metales'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Correas',
                     'id' => 'correas',
-                    'l' => 'produtos/motor/correas',
                     's' => [
                         [
                             'n' => 'Distribución',
-                            'id' => 'distribucion',
-                            'l' => 'produtos/motor/correas/distribucion'
+                            'id' => 'distribucion'
                         ],
                         [
                             'n' => 'Accesorios',
-                            'id' => 'correas_accesorios',
-                            'l' => 'produtos/motor/correas/accesorios'
+                            'id' => 'correas_accesorios'
                         ],
                     ]
                 ],
                 [
                     'n' => 'Soportes motor',
-                    'id' => 'sorpotes_motor',
-                    'l' => '/productos/motor/soportes-motor',
+                    'id' => 'sorpotes_motor'
                 ],
                 [
                     'n' => 'Sistema de lubricación',
                     'id' => 'sistemas_lubricacion',
-                    'l' => '/productos/motor/sistema-de-lubricacion',
                     's' => [
                         [
                             'n' => 'Filtros',
-                            'id' => 'filtros',
-                            'l' => 'produtos/motor/sistema-de-lubricacion/filtros'
+                            'id' => 'filtros'
                         ],
                         [
                             'n' => 'Bombas',
-                            'id' => 'filtros',
-                            'l' => 'produtos/motor/sistema-de-lubricacion/bombas'
+                            'id' => 'filtros'
                         ],
                     ]
                 ],
                 [
                     'n' => 'Enfriamiento',
                     'id' => 'enfriamiento',
-                    'l' => '/productos/motor/enfriamiento',
                     's' => [
                         [
                             'n' => 'Radiadores',
-                            'id' => 'radiadores',
-                            'l' => '/productos/motor/enfriamiento/radiadores'
+                            'id' => 'radiadores'
                         ],
                         [
                             'n' => 'Depósitos de refrigerante',
-                            'id' => 'depositos_refrigerante',
-                            'l' => '/productos/motor/enfriamiento/depositos-refrigerante'
+                            'id' => 'depositos_refrigerante'
+
                         ],
                         [
                             'n' => 'Bombas',
-                            'id' => 'bombas',
-                            'l' => '/productos/motor/enfriamiento/bombas'
+                            'id' => 'bombas'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Encendido',
                     'id' => 'encendido',
-                    'l' => '/productos/motor/encendido',
                     's' => [
                         [
                             'n' => 'Bobinas',
-                            'id' => 'bobinas',
-                            'l' => '/productos/motor/encendido/bobinas'
+                            'id' => 'bobinas'
                         ],
                         [
                             'n' => 'Bujías',
-                            'id' => 'bujias',
-                            'l' => '/productos/motor/encendido/bujias'
+                            'id' => 'bujias'
                         ],
                         [
                             'n' => 'Cables',
-                            'id' => 'cables',
-                            'l' => '/productos/motor/encendido/cables'
+                            'id' => 'cables'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Combustion',
                     'id' => 'combustion',
-                    'l' => '/productos/motor/combustion',
                     's' => [
                         [
                             'n' => 'Filtro aire',
-                            'id' => 'filtro_aire',
-                            'l' => '/productos/motor/combustion/filtro-aire'
+                            'id' => 'filtro_aire'
                         ],
                         [
                             'n' => 'Filtro combustible',
-                            'id' => 'filtro_combustible',
-                            'l' => '/productos/motor/combustion/filtro-combustible'
+                            'id' => 'filtro_combustible'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Otros',
-                    'id' => 'motor_otros',
-                    'l' => '/productos/motor/otros'
+                    'id' => 'motor_otros'
                 ]
             ]
         ],
         [
             'n' => 'Transmisión',
             'id' => 'transmision',
-            'l' => '/productos/transision',
             's' => [
                 [
                     'n' => 'Lubicantes',
                     'id' => 'lubricantes',
-                    'l' => '/productos/transmision/lubricantes',
                     's' => [
                         [
                             'n' => 'Aceite',
-                            'id' => 'aceite',
-                            'l' => '/productos/transmision/lubricantes/aceite'
+                            'id' => 'aceite'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Otros',
-                    'id' => 'transmision_otros',
-                    'l' => '/productos/transmision/otros'
+                    'id' => 'transmision_otros'
                 ]
             ]
         ],
         [
             'n' => 'Sistema eléctrico',
             'id' => 'sistema_electrico',
-            'l' => '/productos/sistema-electrico',
             's' => [
                 [
                     'n' => 'Luces',
                     'id' => 'luces',
-                    'l' => '/productos/sistema-electrico/luces',
                     's' => [
                         [
                             'n' => 'Intermitente',
-                            'id' => 'intermitente',
-                            'l' => '/productos/sistema-electrico/luces/intermitente'
+                            'id' => 'intermitente'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Otros',
-                    'id' => 'sistema_electrico_otros',
-                    'l' => '/productos/sistema-electrico/otros'
+                    'id' => 'sistema_electrico_otros'
                 ]
             ]
         ],
         [
             'n' => 'Frenos',
             'id' => 'frenos',
-            'l' => '/productos/frenos',
             's' => [
                 [
                     'n' => 'Pastillas',
                     'id' => 'pastillas',
-                    'l' => '/productos/frenos/pastillas',
                     's' => [
                         [
                             'n' => 'Delanteras',
-                            'id' => 'delanteras',
-                            'l' => '/productos/frenos/pastillas/delanteras'
+                            'id' => 'delanteras'
                         ]
                     ]
                 ],
                 [
                     'n' => 'Discos',
-                    'id' => 'discos',
-                    'l' => '/productos/frenos/discos'
+                    'id' => 'discos'
                 ],
                 [
                     'n' => 'Otros',
-                    'id' => 'frenos_otros',
-                    'l' => '/productos/frenos/otros'
+                    'id' => 'frenos_otros'
                 ]
             ]
         ],
         [
             'n' => 'Susprensión',
             'id' => 'suspension',
-            'l' => '/productos/suspension',
             's' => [
                 [
                     'n' => 'Bandejas',
-                    'id' => 'bandejas',
-                    'l' => '/productos/suspension/bandejas'
+                    'id' => 'bandejas'
                 ],
                 [
                     'n' => 'Bujes',
-                    'id' => 'bujes',
-                    'l' => '/productos/suspension/bujes'
+                    'id' => 'bujes'
                 ],
                 [
                     'n' => 'Terminales',
-                    'id' => 'terminales',
-                    'l' => '/productos/suspension/terminales'
+                    'id' => 'terminales'
                 ],
                 [
                     'n' => 'Amortiguadores',
-                    'id' => 'amortiguadores',
-                    'l' => '/productos/suspension/amortiguadores'
+                    'id' => 'amortiguadores'
                 ],
                 [
                     'n' => 'Otros',
-                    'id' => 'suspension_otros',
-                    'l' => '/productos/suspension/otros'
+                    'id' => 'suspension_otros'
                 ]
             ]
         ],
         [
             'n' => 'Accesorios',
             'id' => 'accesorios',
-            'l' => '/productos/accesorios',
             's' => [
                 [
                     'n' => 'Interior',
-                    'id' => 'interior',
-                    'l' => '/productos/accesorios/interior'
+                    'id' => 'interior'
                 ],
                 [
                     'n' => 'Exterior',
                     'id' => 'exterior',
-                    'l' => '/productos/accesorios/exterior',
                     's' => [
                         [
                             'n' => 'Espejo retrovisor',
-                            'id' => 'espejo_retrovisor',
-                            'l' => '/productos/accesorios/exterior/espejo-retrovisor'
+                            'id' => 'espejo_retrovisor'
                         ]
                     ]
                 ]

@@ -22,9 +22,9 @@ const Product = resolve => {
 };
 
 export const routes = [
-    { path: '', component: Home },
-    { path: '/sobre-nosotros', component: AboutUs },
-    { path: '/contacto', component: Contact },
+    { path: '', component: Home, name:'home' },
+    { path: '/sobre-nosotros', component: AboutUs, name:'about-us' },
+    { path: '/contacto', component: Contact, name:'contact' },
     { path: '/productos', name:'products', component: Product },
     { path: '/productos/categoria/:category', name:'products_category', component: Product },
     { path: '/productos/categoria/:category/subcategoria/:subcategory', name:'products_subcategory', component: Product },
