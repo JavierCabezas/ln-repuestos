@@ -47,7 +47,6 @@
                     </li>
                 </ul>
 
-                <!-- Search - start -->
                 <div class="topsearch">
                     <a id="topsearch-btn" class="topsearch-btn" href="#"><i class="fa fa-search"></i></a>
                     <form class="topsearch-form" action="#">
@@ -55,9 +54,8 @@
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
-                <!-- Search - end -->
-
-            </nav>		</div>
+            </nav>
+        </div>
     </div>
 </template>
 
