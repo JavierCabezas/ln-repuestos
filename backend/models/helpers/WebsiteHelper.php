@@ -5,10 +5,24 @@
  * Date: 9/2/17
  * Time: 12:48 PM
  */
-class WebsiteHelper{
-
+class WebsiteHelper {
     /**
      * Returns an array with all the sections of this website
+     * @return array in the format [
+     *      [
+     *          'id' => Unique integer for this section,
+     *          'name' => String with the name as defined on routes.js on the front-end
+     *          'text_to_show' => String giving a human readable name
+     *          'params' => [ # Params for the URL
+     *              'param_name' => value,
+     *              ...
+     *          ],
+     *          [
+     *              ...
+     *          ],
+     *          ...
+     *      ]
+     * ]
      */
     public static function page_sections(){
         $out = [
@@ -62,6 +76,14 @@ class WebsiteHelper{
         return $out;
     }
 
+    /**
+     * Returns an array with all the sections for this website
+     * @see self::page_sections()
+     * @return array in the format [
+     *      'id' => 'Human readable name',
+     *      ...
+     * ]
+     */
     public static function dropdown_sections(){
         $out = [];
         foreach(self::page_sections() as $ps){
