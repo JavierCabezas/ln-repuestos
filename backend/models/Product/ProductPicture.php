@@ -6,6 +6,7 @@
  * Time: 8:52 PM
  */
 use Yii;
+use app\models\helpers\StringHelper;
 
 /**
  * This is the model class for table "product_picture".
@@ -19,6 +20,8 @@ use Yii;
  */
 class ProductPicture extends \yii\db\ActiveRecord
 {
+    public $imageFile;
+
     /**
      * @inheritdoc
      */
@@ -33,6 +36,8 @@ class ProductPicture extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, jpeg'],
+            [['imageFile'], 'safe'],
             [['product_id'], 'integer'],
             [['created_on'], 'safe'],
             [['picture_path'], 'string', 'max' => 128],
@@ -50,6 +55,7 @@ class ProductPicture extends \yii\db\ActiveRecord
             'product_id' => 'Producto',
             'picture_path' => 'Ubicación',
             'created_on' => 'Created On',
+            'imageFile' => 'Imagen'
         ];
     }
 
@@ -59,5 +65,24 @@ class ProductPicture extends \yii\db\ActiveRecord
     public function getProduct()
     {
         return $this->hasOne(Product::className(), ['id' => 'product_id']);
+    }
+
+    /**
+     * Returns the URL location of the image on the server
+     * @return string
+     */
+    public function getImage(){
+        return StringHelper::base_url().'img/products/'.$this->picture_path;
+    }
+
+    public function upload()
+    {
+        if ($this->validate()) {
+            $name = $this->product->seo_name .'_'. hash('md5', time()).'.'. $this->imageFile->extension;
+            $this->imageFile->saveAs('img/products/' . $name );
+            $this->picture_path = $name;
+            return true;
+        }
+        return false;
     }
 }

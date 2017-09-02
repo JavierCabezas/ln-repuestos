@@ -10,6 +10,8 @@ use app\models\product\ProductPicture;
 use yii\data\ActiveDataProvider;
 use yii\web\{Controller, NotFoundHttpException};
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+use app\models\product\ProductPictureSearch;
 
 /**
  * ProductPictureController implements the CRUD actions for ProductPicture model.
@@ -37,11 +39,12 @@ class ProductPictureController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => ProductPicture::find(),
-        ]);
+        $searchModel = new ProductPictureSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -70,13 +73,17 @@ class ProductPictureController extends Controller
             $model->product_id = $product_id;
         }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model
-            ]);
+        if(Yii::$app->request->isPost){
+            $model->load(Yii::$app->request->post());
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if($model->upload() && $model->save(false)) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
+
+        return $this->render('create', [
+            'model' => $model
+        ]);
     }
 
     /**

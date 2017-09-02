@@ -7,6 +7,8 @@
  */
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
+use app\models\product\Product;
 
 $this->title = 'Fotos de productos';
 $this->params['breadcrumbs'][] = $this->title;
@@ -21,12 +23,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'id',
-            'product_id',
-            'picture_path',
+            [
+                'attribute' => 'product_id',
+                'value' => function ($model) {
+                    return $model->product->name;
+                },
+                'filter' => ArrayHelper::map(Product::find()->all(), 'id', 'name')
+            ],
             'created_on',
 
             [

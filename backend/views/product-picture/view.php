@@ -8,7 +8,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
-$this->title = "Foto producto #".$model->id;
+$this->title = "Foto ". $model->product->name;
 $this->params['breadcrumbs'][] = ['label' => 'Fotos de productos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -17,8 +17,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Ir al listado de fotos', ['index'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Actualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => '¿Tienes seguridad de querer borrar esta foto?',
@@ -31,8 +32,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'product_id',
+            [
+                'attribute' => 'product_id',
+                'value' => $model->product->name
+            ],
             'created_on',
+            [
+                'attribute' => 'imageFile',
+                'value' => $model->image,
+                'format' => ['image',['height'=>'300']],
+            ]
         ],
     ]) ?>
 
