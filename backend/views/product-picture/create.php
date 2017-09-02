@@ -7,8 +7,8 @@
  */
 use yii\helpers\Html;
 
-$this->title = 'Create Product Picture';
-$this->params['breadcrumbs'][] = ['label' => 'Product Pictures', 'url' => ['index']];
+$this->title = 'Nueva foto de producto';
+$this->params['breadcrumbs'][] = ['label' => 'Fotos de productos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-picture-create">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
-        'model' => $model,
+        'model' => $model
     ]) ?>
 
 </div>

@@ -62,7 +62,7 @@ class Product extends \yii\db\ActiveRecord
             'description' => 'Descripción',
             'price' => 'Precio',
             'is_featured' => '¿Se muestra en portada?',
-            'is_ready' => 'Is Ready',
+            'is_ready' => '¿Está listo para publicación?',
             'created_on' => 'Fecha de creación',
         ];
     }

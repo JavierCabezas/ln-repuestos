@@ -8,8 +8,8 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Product Pictures', 'url' => ['index']];
+$this->title = "Foto producto #".$model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Fotos de productos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-picture-view">
@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '¿Tienes seguridad de querer borrar esta foto?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -32,7 +32,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'product_id',
-            'picture_path',
             'created_on',
         ],
     ]) ?>

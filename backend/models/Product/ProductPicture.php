@@ -47,8 +47,8 @@ class ProductPicture extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'product_id' => 'Product ID',
-            'picture_path' => 'Picture Path',
+            'product_id' => 'Producto',
+            'picture_path' => 'Ubicación',
             'created_on' => 'Created On',
         ];
     }

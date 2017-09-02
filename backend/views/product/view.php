@@ -1,5 +1,5 @@
 <?php
-use yii\helpers\Html;
+use yii\helpers\{Html, Url};
 use yii\widgets\DetailView;
 /**
  * Created by PhpStorm.
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-        <a href="#" class="btn btn-lg btn-primary pull-right">
+        <a href="<?= Url::to(['/product-picture/create', 'product_id' => $model->id]) ?>" class="btn btn-lg btn-primary pull-right">
             <span class="glyphicon glyphicon-picture"></span> Agregar fotos
         </a>
     </p>

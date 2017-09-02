@@ -8,7 +8,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
-$this->title = 'Product Pictures';
+$this->title = 'Fotos de productos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-picture-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Product Picture', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nueva foto de producto', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -29,7 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'picture_path',
             'created_on',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view}{delete}'
+            ],
         ],
     ]); ?>
 </div>
