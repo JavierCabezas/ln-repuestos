@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
+        <?= Html::a('Volver a listado de productos', ['index'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Actualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
@@ -46,6 +47,10 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'is_featured',
                 'value' => $model->is_featured ? 'Sí' : 'No'
+            ],
+            [
+                'attribute' => 'upon_request',
+                'value' => $model->upon_request ? 'Sí' : 'No'
             ],
             [
                 'attribute' => 'is_ready',

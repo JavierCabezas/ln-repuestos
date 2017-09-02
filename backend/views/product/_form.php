@@ -22,6 +22,8 @@ use app\models\helpers\CategoriesHelper;
 
     <?= $form->field($model, 'price')->textInput(['type' => 'number', 'min' => 0]) ?>
 
+    <?= $form->field($model, 'upon_request')->checkbox() ?>
+
     <?= $form->field($model, 'is_featured')->checkbox() ?>
 
     <div class="form-group">

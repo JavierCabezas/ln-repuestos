@@ -21,6 +21,7 @@ use Yii;
  * @property int $is_featured
  * @property int $is_ready
  * @property string $created_on
+ * @property int $upon_request
  *
  * @property ProductPicture[] $productPictures
  */
@@ -41,7 +42,7 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'description'], 'required'],
-            [['price', 'is_featured', 'is_ready'], 'integer'],
+            [['price', 'is_featured', 'is_ready', 'upon_request'], 'integer'],
             [['created_on'], 'safe'],
             [['category_id'], 'string', 'max' => 30],
             [['name', 'seo_name'], 'string', 'max' => 60],
@@ -64,6 +65,7 @@ class Product extends \yii\db\ActiveRecord
             'is_featured' => '¿Se muestra en portada?',
             'is_ready' => '¿Está listo para publicación?',
             'created_on' => 'Fecha de creación',
+            'upon_request' => '¿A Pedido?',
         ];
     }
 
@@ -107,6 +109,5 @@ class Product extends \yii\db\ActiveRecord
         if(ProductPicture::find()->where(['product_id'=>$this->id])->count() == 0){
             return 'No se han subido fotos del producto';
         }
-
     }
 }

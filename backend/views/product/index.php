@@ -23,8 +23,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             [
                 'attribute' => 'category_id',
@@ -39,6 +37,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'is_featured',
                 'value' => function ($model){
                     return $model->is_featured ? 'Sí' :' No';
+                },
+                'filter' => ['0' => 'No', '1' => 'Sí' ]
+            ],
+            [
+                'attribute' => 'upon_request',
+                'value' => function ($model){
+                    return $model->upon_request ? 'Sí' :' No';
                 },
                 'filter' => ['0' => 'No', '1' => 'Sí' ]
             ],
