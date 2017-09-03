@@ -1,5 +1,5 @@
 <template>
-    <div class="discounts-wrap">
+    <div class="discounts-wrap" v-if="false">
         <h3 class="component-ttl"><span>Ofertas Especiales</span></h3>
         <div class="flexslider discounts-list">
             <ul class="slides">
