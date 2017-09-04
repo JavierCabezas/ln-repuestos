@@ -1,7 +1,7 @@
 <template>
     <section class="container">
         <breadcrumbs :crumbs="crumbs"></breadcrumbs>
-        <h1 class="main-ttl"><span>Sobre Repuestos LN</span></h1>
+        <h1 class="main-ttl"><span>Sobre LN Repuestos</span></h1>
 
         <div class="row">
 
