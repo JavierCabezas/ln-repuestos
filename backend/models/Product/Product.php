@@ -7,6 +7,7 @@
  */
 use app\models\helpers\CategoriesHelper;
 use app\models\helpers\StringHelper;
+use yii2tech\ar\softdelete\SoftDeleteBehavior;
 use Yii;
 
 /**
@@ -27,6 +28,19 @@ use Yii;
  */
 class Product extends \yii\db\ActiveRecord
 {
+    public function behaviors()
+    {
+        return [
+            'softDeleteBehavior' => [
+                'class' => SoftDeleteBehavior::className(),
+                'softDeleteAttributeValues' => [
+                    'deleted_at' => date('Y-m-d h:i:s')
+                ],
+                'replaceRegularDelete' => true // mutate native `delete()` method
+            ],
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -34,6 +48,12 @@ class Product extends \yii\db\ActiveRecord
     {
         return 'product';
     }
+
+    public static function find()
+    {
+        return parent::find()->andWhere(['deleted_at' => null]);
+    }
+
 
     /**
      * @inheritdoc
