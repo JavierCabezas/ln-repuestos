@@ -23,11 +23,18 @@ use Yii;
  * @property int $is_ready
  * @property string $created_on
  * @property int $upon_request
+ * @property string $deleted_at
+ * @property int $tutorial_type
+ * @property string $tutorial_text
  *
  * @property ProductPicture[] $productPictures
  */
 class Product extends \yii\db\ActiveRecord
 {
+    const TUTORIAL_WITHOUT = 0;
+    const TUTORIAL_YOUTUBE = 1;
+    const TUTORIAL_TEXT = 2;
+
     public function behaviors()
     {
         return [
@@ -62,8 +69,9 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'description'], 'required'],
-            [['price', 'is_featured', 'is_ready', 'upon_request'], 'integer'],
-            [['created_on'], 'safe'],
+            [['price', 'is_featured', 'is_ready', 'upon_request', 'tutorial_type'], 'integer'],
+            [['created_on', 'deleted_at'], 'safe'],
+            [['tutorial_text'], 'string'],
             [['category_id'], 'string', 'max' => 30],
             [['name', 'seo_name'], 'string', 'max' => 60],
             [['description'], 'string', 'max' => 300],
@@ -86,6 +94,9 @@ class Product extends \yii\db\ActiveRecord
             'is_ready' => '¿Está listo para publicación?',
             'created_on' => 'Fecha de creación',
             'upon_request' => '¿A Pedido?',
+            'deleted_at' => 'Deleted At',
+            'tutorial_type' => 'Tipo de tutorial',
+            'tutorial_text' => 'Tutorial'
         ];
     }
 
@@ -116,6 +127,14 @@ class Product extends \yii\db\ActiveRecord
      */
     public function getCategory(){
         return CategoriesHelper::full_name($this->category_id);
+    }
+
+    public function getTutorialTypetext(){
+        switch($this->tutorial_type){
+            case self::TUTORIAL_WITHOUT: return 'Sin tutorial';
+            case self::TUTORIAL_TEXT: return 'Texto';
+            case self::TUTORIAL_YOUTUBE: return 'Youtube';
+        }
     }
 
     /**

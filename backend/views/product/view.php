@@ -56,6 +56,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'is_ready',
                 'value' =>  $model->is_ready ? 'Sí' : 'No (motivo: '.$model->reasonNotReady.')'
             ],
+            [
+                'attribute' => 'tutorial_type',
+                'value' =>  $model->tutorialTypeText
+            ],
+            [
+                'attribute' => 'tutorial_text',
+                'value' => $model->tutorial_text
+            ],
+            [
+                'attribute' => 'is_ready',
+                'value' =>  $model->is_ready ? 'Sí' : 'No (motivo: '.$model->reasonNotReady.')'
+            ],
             'created_on',
         ],
     ]) ?>

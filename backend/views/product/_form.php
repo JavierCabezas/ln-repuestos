@@ -8,6 +8,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\models\helpers\CategoriesHelper;
+$this->registerJsFile( '@web/js/product_create.js',  ['depends' => [\yii\web\JqueryAsset::className()]] );
+
 ?>
 
 <div class="product-form">
@@ -21,6 +23,15 @@ use app\models\helpers\CategoriesHelper;
     <?= $form->field($model, 'category_id')->dropDownList(CategoriesHelper::all_categories_flat(), ['prompt'=>''] ); ?>
 
     <?= $form->field($model, 'price')->textInput(['type' => 'number', 'min' => 0]) ?>
+
+    <?= $form->field($model, 'tutorial_type')->dropDownList([
+        \app\models\product\Product::TUTORIAL_WITHOUT => 'Sin tutorial',
+        \app\models\product\Product::TUTORIAL_YOUTUBE => 'Tutorial YouTube',
+        \app\models\product\Product::TUTORIAL_TEXT => 'Tutorial en Texto'
+    ],  ['id' => 'tutorial_dropdown']) ?>
+    <div id="path_field">
+        <?= $form->field($model, 'tutorial_text')->textarea() ?>
+    </div>
 
     <?= $form->field($model, 'upon_request')->checkbox() ?>
 
