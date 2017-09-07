@@ -7,7 +7,7 @@
 
 
         <div class="section-sb">
-            <catalog-categories :text_to_show="to_fill"></catalog-categories>
+            <catalog-categories text_to_show="to_fill"></catalog-categories>
         </div>
 
         <div class="section-cont">

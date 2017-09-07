@@ -12,11 +12,14 @@
 
                 <div class="prodlist-i-action">
                     <p class="prodlist-i-addwrap">
-                        <a href="#" class="prodlist-i-add">Pedir este producto</a>
+                        <a href="#" @click.prevent="solicitar(product.id)" class="prodlist-i-add">Solicitar este producto</a>
                     </p>
-                    <span class="prodlist-i-price">
-							<b>$59</b>
-													</span>
+                    <span v-if="!product.upon_request"class="prodlist-i-price">
+                        <b>$59</b>
+                    </span>
+                    <span v-if="product.upon_request"class="prodlist-i-price">
+                        <b>Producto a pedido</b>
+                    </span>
                 </div>
                 <p class="prodlist-i-info">
                     <a href="#" class="qview-btn prodlist-i-qview"><i class="fa fa-search"></i> Ver más detalles </a>
@@ -28,6 +31,11 @@
 
 <script>
     export default {
-        props: ['product']
+        props: ['product'],
+        methods: {
+            solicitar: function(product_id) {
+                alert("solicitado producto"+product_id);
+            }
+        }
     }
 </script>
