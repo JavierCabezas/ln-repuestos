@@ -1,22 +1,9 @@
 <template>
     <section class="container">
-        <ul class="b-crumbs">
-            <li>
-                <a href="index.html">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="catalog-list.html">
-                    Catalog
-                </a>
-            </li>
-            <li>
-                <span>Women</span>
-            </li>
-        </ul>
-        <h1 class="main-ttl"><span>Women</span></h1>
+        <breadcrumbs-products :category="category" :subcategory="subcategory" :subsubcategory="subsubcategory"></breadcrumbs-products>
 
+
+        <h1 class="main-ttl"><span>Women</span></h1>
         <div class="section-sb">
             <catalog-categories></catalog-categories>
         </div>
@@ -55,6 +42,7 @@
 <script>
     import CatalogThumb from './CatalogThumb.vue'
     import CatalogCategories from './CatalogCategories.vue'
+    import BreadcrumbsProducts from '../../other/BreadcrumbsProducts.vue'
 
     export default {
         computed: {
@@ -80,7 +68,8 @@
         },
         components: {
             CatalogThumb,
-            CatalogCategories
+            CatalogCategories,
+            BreadcrumbsProducts
         },
         methods: {
 
