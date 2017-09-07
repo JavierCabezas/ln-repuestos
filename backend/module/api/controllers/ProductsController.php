@@ -6,6 +6,7 @@
  * Time: 5:17 PM
  */
 use app\models\helpers\CategoriesHelper;
+use app\models\product\Product;
 use yii\web\Response;
 use yii\rest\Controller;
 
@@ -38,5 +39,25 @@ class ProductsController extends Controller
     public function actionNestedCategories(){
         Yii::$app->response->format = Response::FORMAT_JSON;
         return CategoriesHelper::all_categories();
+    }
+
+    /**
+     * Returns an array with
+     * @params filter: Todo define format
+     * @param $_GET['start_from']: Integer defining the first item to return in the total of filtered products
+     * @params $_GET['up_to']: Integer defining the last item to return in the total of filtered products
+     *
+     * If, for example, after the filter we have an array with 20 products and we set start_from = 3 and up_to = 7 we will
+     * get the third to the seventh from that array.
+     * Both are optional (meaning that we set start_from 3 and we don't set up to we will get everything from the third up to the 20th element)
+     * @return array
+     */
+    public function actionList(){
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $filters = $_GET['filters'] ?? null;
+        $start_from = $_GET['start_from'] ?? null;
+        $up_to = $_GET['up_to'] ?? null;
+
+        return Product::list($filters, $start_from, $up_to);
     }
 }

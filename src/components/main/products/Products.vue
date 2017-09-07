@@ -1,11 +1,13 @@
 <template>
     <section class="container">
+
         <breadcrumbs-products :category="category" :subcategory="subcategory" :subsubcategory="subsubcategory"></breadcrumbs-products>
 
-
         <h1 class="main-ttl"><span>Women</span></h1>
+
+
         <div class="section-sb">
-            <catalog-categories></catalog-categories>
+            <catalog-categories :text_to_show="to_fill"></catalog-categories>
         </div>
 
         <div class="section-cont">
@@ -24,7 +26,9 @@
                 </div>
                 <p class="pull-right"> Repuestos por página </p>
             </div>
-            <catalog-thumb :product="{'a': 'b'}"></catalog-thumb>
+
+
+            <catalog-thumb v-for="p in products" :product="p"></catalog-thumb>
 
             <!-- Pagination - start -->
             <ul class="pagi">
@@ -60,11 +64,12 @@
             return {
                 category: this.$route.params.category === undefined ? null : this.$route.params.category ,
                 subcategory: this.$route.params.subcategory === undefined ?  null : this.$route.params.subcategory,
-                subsubcategory: this.$route.params.subsubcategory === undefined ? null : this.$route.params.subsubcategory
+                subsubcategory: this.$route.params.subsubcategory === undefined ? null : this.$route.params.subsubcategory,
+                products: {}
             }
         },
         created: function () {
-
+            this.get_products();
         },
         components: {
             CatalogThumb,
@@ -72,7 +77,16 @@
             BreadcrumbsProducts
         },
         methods: {
-
+            get_products: function() {
+                let vm = this;
+                $.ajax({
+                    url: vm.url_backend + 'products/list',
+                    data: {  },
+                    success: function (result) {
+                        vm.products = result;
+                    }
+                });
+            }
         }
     }
 </script>

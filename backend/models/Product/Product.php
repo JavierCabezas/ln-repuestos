@@ -149,4 +149,49 @@ class Product extends \yii\db\ActiveRecord
             return 'No se han subido fotos del producto';
         }
     }
+
+    /**
+     * Returns an string representing the base64 encoded image of the first image of this product.
+     * @return string
+     */
+    public function getBase64Image(){
+        if(count($this->productPictures) > 0){
+            $im = file_get_contents($this->productPictures[0]->image);
+            return "data:image/png;base64,".base64_encode($im);
+        }else{
+            return null;
+        }
+    }
+
+    /**
+     * Returns an array with all the products
+     *
+     * @todo: Implement filter
+     * @todo: comment this function when I decide what details to implement
+     *
+     * @param $filter
+     * @param null $start_from
+     * @param null $to
+     * @return array
+     */
+    public static function list($filter, $start_from = null, $up_to = null){
+        $products = Product::find()->all();
+        $out = [];
+        foreach($products as $p){
+            array_push($out, [
+                'id'            => $p->id,
+                'name'          => $p->name,
+                'url'           => $p->seo_name,
+                'description'   => $p->description,
+                'price'         => $p->price,
+                'upon_request'  => $p->upon_request,
+                'picture'       => $p->base64Image
+            ]);
+        }
+        $start_from = $start_from === null ? 0 : intval($start_from) - 1;
+        $up_to = $up_to === null ? count($products) - 1 : intval($up_to) - 1;
+        array_splice($products, $start_from, $up_to);
+
+        return $out;
+    }
 }
