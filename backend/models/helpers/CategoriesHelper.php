@@ -239,6 +239,10 @@ class CategoriesHelper{
         ]
     ];
 
+    /**
+     * Returns an array with just the parent categories (meaning that it will ignore the sub and subsubcategories)
+     * @return array in the format:
+     */
     public static function parent_categories(){
         $out = [];
         foreach(self::$categories as $c){
@@ -277,6 +281,53 @@ class CategoriesHelper{
                     if(isset($son['s'])){
                         foreach($son['s'] as $grandson){
                             $out[$grandson['id']] = $parent_1 .' > '. $parent_2 .' > ' . $grandson['n'];
+                        }
+                    }
+                }
+            }
+        }
+        return $out;
+    }
+
+    /**
+     * Returns an array with all the avaiable categories with their respective parents.
+     * @return array in the format [
+     *      'id_category' (string) => [
+     *          'type' => 'category', 'subcategory' or 'subsubcategory',
+     *          'category' => If type is category: Name of this category
+     *                        Any other case: Name of the parent category
+     *          'subcategory' => If the type is:
+     *                          category: Non-existant
+     *                          subcategory: The name of this subcategory
+     *                          subsubcategory: Tne name of the parent subcategory of this sub-subcategory.
+     *          'subsubcategory' => If the type is:
+     *                          category: Non existant.
+     *                          subcategory: Non existant.
+     *                          subsubcategory: The name of this subsubcategory.
+     *      ]
+     * ]
+     */
+    public static function all_categories_with_parents_flat(){
+        $out = [];
+
+        foreach(self::$categories as $c){
+            $out[$c['id']] = [];
+            $out[$c['id']]['type'] = 'category';
+            $parent_1 = $c['id'];
+            if(isset($c['s'])){
+                foreach($c['s'] as $son){
+                    $out[$son['id']] = [];
+                    $out[$son['id']]['type'] = 'subcategory';
+                    $out[$son['id']]['subcategory'] = $son['id'];
+                    $out[$son['id']]['category'] = $parent_1;
+                    $parent_2 = $son['id'];
+                    if(isset($son['s'])){
+                        foreach($son['s'] as $grandson){
+                            $out[$grandson['id']] = [];
+                            $out[$grandson['id']]['type'] = 'subsubcategory';
+                            $out[$grandson['id']]['subsubcategory'] = $grandson['id'];
+                            $out[$grandson['id']]['subcategory'] = $parent_2;
+                            $out[$grandson['id']]['category'] = $parent_1;
                         }
                     }
                 }

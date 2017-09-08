@@ -176,22 +176,27 @@ class Product extends \yii\db\ActiveRecord
      */
     public static function list($filter, $start_from = null, $up_to = null){
         $products = Product::find()->all();
+        $cp = CategoriesHelper::all_categories_with_parents_flat();
+
         $out = [];
         foreach($products as $p){
             array_push($out, [
-                'id'            => $p->id,
-                'name'          => $p->name,
-                'url'           => $p->seo_name,
-                'description'   => $p->description,
-                'price'         => $p->price,
-                'upon_request'  => $p->upon_request,
-                'picture'       => $p->base64Image
+                'id'             => $p->id,
+                'name'           => $p->name,
+                'url'            => $p->seo_name,
+                'description'    => $p->description,
+                'price'          => $p->price,
+                'upon_request'   => $p->upon_request,
+                'picture'        => $p->base64Image,
+                'category'       => $cp[$p->category_id]['category'] ?? null,
+                'subcategory'    => $cp[$p->category_id]['subcategory'] ?? null,
+                'subsubcategory' => $cp[$p->category_id]['subsubcategory'] ?? null
             ]);
         }
 
-        $start_from = $start_from === null ? 0 : intval($start_from) - 1;
-        $up_to = $up_to === null ? count($products) - 1 : intval($up_to) - 1;
-        array_splice($out, $start_from, $up_to);
+        //$start_from = $start_from === null ? 0 : intval($start_from) - 1;
+        //$up_to = $up_to === null ? count($products) - 1 : intval($up_to) - 1;
+        //array_splice($out, $start_from, $up_to);
 
         return $out;
     }

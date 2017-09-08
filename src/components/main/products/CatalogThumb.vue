@@ -35,7 +35,8 @@
         methods: {
             solicitar: function(product_id) {
                 alert("solicitado producto"+product_id);
-            }
+            },
+
         }
     }
 </script>
