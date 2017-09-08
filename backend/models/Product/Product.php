@@ -194,9 +194,9 @@ class Product extends \yii\db\ActiveRecord
             ]);
         }
 
-        //$start_from = $start_from === null ? 0 : intval($start_from) - 1;
-        //$up_to = $up_to === null ? count($products) - 1 : intval($up_to) - 1;
-        //array_splice($out, $start_from, $up_to);
+        $start_from = $start_from === null ? 0 : intval($start_from) - 1;
+        $up_to = $up_to === null ? 0 : $up_to - $start_from;
+        array_splice($out, $start_from, $up_to);
 
         return $out;
     }
