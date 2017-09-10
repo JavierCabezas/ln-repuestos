@@ -42,7 +42,7 @@
         props: ['product'],
         filters: {
             cash: function(value) {
-                return "$"+value;
+                return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
             }
         },
         methods: {

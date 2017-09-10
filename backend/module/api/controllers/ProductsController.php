@@ -60,4 +60,21 @@ class ProductsController extends Controller
 
         return Product::list($filters, $start_from, $up_to);
     }
+
+    /**
+     * Returns an array with the data of the details of an specific product
+     * @param $_GET['product_id'] integer with the product identifier.
+     * @see app\models\product\Product\backend_data()
+     * @return array
+     */
+    public function actionGet(){
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $p_id = intval($_GET['product_id']);
+        $p = Product::find()->where(['seo_name' => $p_id])->one();
+        return [
+                'main'      => $p->backend,
+                'pictures'  => $p->pictures
+            ];
+
+    }
 }

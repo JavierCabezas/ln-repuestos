@@ -176,29 +176,52 @@ class Product extends \yii\db\ActiveRecord
      */
     public static function list($filter, $start_from = null, $up_to = null){
         $products = Product::find()->all();
-        $cp = CategoriesHelper::all_categories_with_parents_flat();
-
         $out = [];
         foreach($products as $p){
-            array_push($out, [
-                'id'             => $p->id,
-                'name'           => $p->name,
-                'url'            => $p->seo_name,
-                'description'    => $p->description,
-                'price'          => $p->price,
-                'upon_request'   => $p->upon_request,
-                'picture'        => $p->base64Image,
-                'seo_name'       => $p->seo_name,
-                'category'       => $cp[$p->category_id]['category'] ?? null,
-                'subcategory'    => $cp[$p->category_id]['subcategory'] ?? null,
-                'subsubcategory' => $cp[$p->category_id]['subsubcategory'] ?? null
-            ]);
+            array_push($out, $p->backend);
         }
 
         $start_from = $start_from === null ? 0 : intval($start_from) - 1;
         $up_to = $up_to === null ? 0 : $up_to - $start_from;
         array_splice($out, $start_from, $up_to);
 
+        return $out;
+    }
+
+    /**
+     * Returns the details of an specific product
+     * @return array
+     */
+    public function getBackend(){
+        $cp = CategoriesHelper::all_categories_with_parents_flat();
+        return [
+            'id'             => $this->id,
+            'name'           => $this->name,
+            'url'            => $this->seo_name,
+            'description'    => $this->description,
+            'price'          => $this->price,
+            'upon_request'   => $this->upon_request,
+            'picture'        => $this->base64Image,
+            'seo_name'       => $this->seo_name,
+            'category'       => $cp[$this->category_id]['category'] ?? null,
+            'subcategory'    => $cp[$this->category_id]['subcategory'] ?? null,
+            'subsubcategory' => $cp[$this->category_id]['subsubcategory'] ?? null
+        ];
+    }
+
+    /**
+     * Returns an array with all the secondary pictures (skipping the first one) encoded in base64.
+     * @return array
+     */
+    public function getPictures(){
+        $out = [];
+        if(count($this->productPictures) > 1) {
+            foreach ($this->productPictures as $pp) {
+                $im = file_get_contents($pp->image);
+                array_push($out, "data:image/png;base64," . base64_encode($im));
+            }
+            array_shift($out);
+        }
         return $out;
     }
 }
