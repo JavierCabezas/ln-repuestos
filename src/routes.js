@@ -21,6 +21,12 @@ const Product = resolve => {
     });
 };
 
+const ProductDetail = resolve => {
+    require.ensure(['./components/main/products/ProductDetail.vue'], () => {
+        resolve(require('./components/main/products/ProductDetail.vue'));
+    });
+};
+
 export const routes = [
     { path: '', component: Home, name:'home' },
     { path: '/sobre-nosotros', component: AboutUs, name:'about-us' },
@@ -29,6 +35,5 @@ export const routes = [
     { path: '/productos/categoria/:category', name:'products_category', component: Product },
     { path: '/productos/categoria/:category/subcategoria/:subcategory', name:'products_subcategory', component: Product },
     { path: '/productos/categoria/:category/subcategoria/:subcategory/subsubcategoria/:subsubcategory', name:'products_subsubcategory', component: Product },
-    { path: '/productos/categoria/:category/subcategoria/:subcategory/subsubcategoria/:subsubcategory/nombre_producto/:product_name', name:'products_product_name', component: Product }
-
+    { path: '/productos/categoria/:category/nombre/:product_name', name:'product_name', component: ProductDetail }
 ];

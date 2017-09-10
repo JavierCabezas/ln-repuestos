@@ -188,6 +188,7 @@ class Product extends \yii\db\ActiveRecord
                 'price'          => $p->price,
                 'upon_request'   => $p->upon_request,
                 'picture'        => $p->base64Image,
+                'seo_name'       => $p->seo_name,
                 'category'       => $cp[$p->category_id]['category'] ?? null,
                 'subcategory'    => $cp[$p->category_id]['subcategory'] ?? null,
                 'subsubcategory' => $cp[$p->category_id]['subsubcategory'] ?? null

@@ -20,6 +20,7 @@
                 <span>Aperiam nihil veniam</span>
             </li>
         </ul>
+
         <h1 class="main-ttl"><span>Aperiam nihil veniam</span></h1>
         <!-- Single Product - start -->
         <div class="prod-wrap">
@@ -465,14 +466,24 @@
     export default {
         data () {
             return {
-
+                category: this.$route.params.category,
+                product_id: this.$route.params.product_name
             }
         },
         created: function () {
-
+            this.get_product(this.product_id)
         },
         methods: {
-
+            get_product: function(product_id) {
+                let vm = this;
+                $.ajax({
+                    url: vm.url_backend + 'products/list',
+                    data: {  },
+                    success: function (result) {
+                        vm.products = result;
+                    }
+                });
+            }
         }
     }
 </script>
