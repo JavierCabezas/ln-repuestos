@@ -25,97 +25,7 @@
         <!-- Single Product - start -->
         <div class="prod-wrap">
 
-            <!-- Product Images -->
-            <div class="prod-slider-wrap">
-                <div class="prod-slider">
-                    <ul class="prod-slider-car">
-                        <li>
-                            <a data-fancybox-group="product" class="fancy-img" href="http://placehold.it/500x642">
-                                <img src="http://placehold.it/500x642" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-fancybox-group="product" class="fancy-img" href="http://placehold.it/500x722">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-fancybox-group="product" class="fancy-img" href="http://placehold.it/500x722">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-fancybox-group="product" class="fancy-img" href="http://placehold.it/500x722">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-fancybox-group="product" class="fancy-img" href="http://placehold.it/500x722">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-fancybox-group="product" class="fancy-img" href="http://placehold.it/500x722">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-fancybox-group="product" class="fancy-img" href="http://placehold.it/500x722">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-fancybox-group="product" class="fancy-img" href="http://placehold.it/500x722">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="prod-thumbs">
-                    <ul class="prod-thumbs-car">
-                        <li>
-                            <a data-slide-index="0" href="#">
-                                <img src="http://placehold.it/500x642" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-slide-index="1" href="#">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-slide-index="2" href="#">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-slide-index="3" href="#">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-slide-index="4" href="#">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-slide-index="5" href="#">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-slide-index="6" href="#">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a data-slide-index="7" href="#">
-                                <img src="http://placehold.it/500x722" alt="">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <slider v-if="is_loaded" :product="product"></slider>
 
             <!-- Product Description/Info -->
             <div class="prod-cont">
@@ -159,24 +69,28 @@
 
         </div>
 
-        <product-detail-related></product-detail-related>
+        <related></related>
     </section>
 </template>
 
 <script>
-    import ProductDetailRelated from './ProductDetailRelated.vue'
+    import Related from './ProductDetailRelated.vue'
+    import Slider from './ProductDetailSlider.vue'
 
     export default {
         data () {
             return {
                 category: this.$route.params.category,
                 product_id: this.$route.params.product_name,
-                product: {main: {}, pictures: {}}
+                product: {main: {}, pictures: {}},
+                is_loaded: false
             }
         },
         filters: {
             cash: function(value) {
-                return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                if(value){
+                    return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                }
             }
         },
         created: function () {
@@ -190,6 +104,7 @@
                     data: { product_id: product_id },
                     success: function (result) {
                         vm.product = result;
+                        vm.is_loaded = true;
                     }
                 });
             },
@@ -198,7 +113,8 @@
             }
         },
         components: {
-            ProductDetailRelated
+            Related,
+            Slider
         }
     }
 </script>
