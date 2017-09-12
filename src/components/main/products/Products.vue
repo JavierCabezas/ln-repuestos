@@ -28,7 +28,7 @@
             </div>
 
 
-            <catalog-thumb v-for="p in products" :product="p"></catalog-thumb>
+            <catalog-thumb v-for="p in products" :key="p.product_id" :product="p"></catalog-thumb>
 
             <!-- Pagination - start -->
             <ul class="pagi">

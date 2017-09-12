@@ -7,7 +7,7 @@
                         <img :src="product.main.picture" :alt="product.main.name">
                     </a>
                 </li>
-                <li v-for="pic in product.pictures">
+                <li v-if="product.pictures.lenght > 0" v-for="pic in product.pictures">
                     <a data-fancybox-group="product" class="fancy-img">
                         <img :src="pic" :alt="product.main.name">
                     </a>
@@ -21,7 +21,7 @@
                         <img :src="product.main.picture" :alt="product.main.name">
                     </a>
                 </li>
-                <li v-for="(pic, index) in product.pictures">
+                <li v-if="product.pictures.lenght > 0" v-for="(pic, index) in product.pictures">
                     <a :data-slide-index="index+1">
                         <img :src="pic" :alt="product.main.name">
                     </a>

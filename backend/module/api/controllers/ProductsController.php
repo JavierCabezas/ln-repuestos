@@ -69,8 +69,7 @@ class ProductsController extends Controller
      */
     public function actionGet(){
         Yii::$app->response->format = Response::FORMAT_JSON;
-        $p_id = intval($_GET['product_id']);
-        $p = Product::find()->where(['seo_name' => $p_id])->one();
+        $p = Product::find()->where('seo_name=:seo_name', [':seo_name' => $_GET['product_id']])->one();
         return [
                 'main'      => $p->backend,
                 'pictures'  => $p->pictures

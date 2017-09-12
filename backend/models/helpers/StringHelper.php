@@ -20,6 +20,7 @@ class StringHelper{
         $string = str_replace(array('í', 'Í'), 'i', $string);
         $string = str_replace(array('ó', 'Ó'), 'o', $string);
         $string = str_replace(array('ú', 'Ú'), 'u', $string);
+        $string = str_replace(array(',', '.'), ' ', $string);
         $string = str_replace(' ', '-', $string);
 
         $string = strtolower($string);
