@@ -12,7 +12,7 @@
                 </li>
 
                 <li @click="update()" v-for="son in categories.sons" v-if="categories.type === 'subcategory'">
-                    <router-link :to="{name:'products_subsubcategory', params: { 'subcategory': son.id }}">
+                    <router-link :to="{name:'products_subsubcategory', params: { 'subsubcategory': son.id }}">
                         <span class="categ-1-label">{{son.name}}</span>
                     </router-link>
                 </li>
