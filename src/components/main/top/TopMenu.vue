@@ -27,18 +27,18 @@
                 <button type="button" class="mainmenu-btn">Menu</button>
 
                 <ul class="mainmenu">
-                    <li> <router-link to="/"> Inicio </router-link> </li>
-                    <li> <router-link to="sobre-nosotros"> Sobre Nosotros </router-link> </li>
+                    <li> <router-link :to="{name: 'home'}"> Inicio </router-link> </li>
+                    <li> <router-link :to="{name: 'about-us'}"> Sobre Nosotros </router-link> </li>
 
                     <li class="menu-item-has-children">
-                        <router-link to="productos">Productos <i class="fa fa-angle-down"></i></router-link>
+                        <router-link :to="{name: 'products'}">Productos <i class="fa fa-angle-down"></i></router-link>
                         <ul class="sub-menu">
                             <li v-for="cat in categories">
                                 <router-link :to="{name: 'products_category', params:{category: cat.id}}"> {{cat.n}}</router-link>
                             </li>
                         </ul>
                     </li>
-                    <li> <router-link to="contacto"> Contacto </router-link> </li>
+                    <li> <router-link :to="{name: 'contact'}"> Contacto </router-link> </li>
 
 
                     <li class="mainmenu-more">
