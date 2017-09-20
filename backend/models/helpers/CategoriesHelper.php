@@ -266,9 +266,9 @@ class CategoriesHelper{
      * In case the product has a parent (or grandparent) it also shows them in the name.
      *  Ex: 'id' => Grandparent > Parent > Son
      *
-     * This function is intended to work with 3 levels (reason of it not being recursive) KISS
+     * This function is intended to work with 3 levels (Being this the reason of why the function is not recursive. KISS)
      */
-    public static function all_categories_flat(){
+    public static function all_categories_flat($show_parents = true){
         $out = [];
 
         foreach(self::$categories as $c){
@@ -276,11 +276,11 @@ class CategoriesHelper{
             $parent_1 = $c['n'];
             if(isset($c['s'])){
                 foreach($c['s'] as $son){
-                    $out[$son['id']] = $parent_1 . ' > ' . $son['n'];
+                    $out[$son['id']] = $show_parents ? $parent_1 . ' > ' . $son['n'] : $son['n'];
                     $parent_2 = $c['n'];
                     if(isset($son['s'])){
                         foreach($son['s'] as $grandson){
-                            $out[$grandson['id']] = $parent_1 .' > '. $parent_2 .' > ' . $grandson['n'];
+                            $out[$grandson['id']] = $show_parents ? $parent_1 .' > '. $parent_2 .' > ' . $grandson['n'] : $grandson['n'];
                         }
                     }
                 }
@@ -313,21 +313,31 @@ class CategoriesHelper{
         foreach(self::$categories as $c){
             $out[$c['id']] = [];
             $out[$c['id']]['type'] = 'category';
-            $parent_1 = $c['id'];
+            $out[$c['id']]['category_name'] = $c['n'];
+            $out[$c['id']]['category'] = $c['id'];
+            $parent_1_id = $c['id'];
+            $parent_1_name = $c['n'];
             if(isset($c['s'])){
                 foreach($c['s'] as $son){
                     $out[$son['id']] = [];
                     $out[$son['id']]['type'] = 'subcategory';
                     $out[$son['id']]['subcategory'] = $son['id'];
-                    $out[$son['id']]['category'] = $parent_1;
-                    $parent_2 = $son['id'];
+                    $out[$son['id']]['category'] = $parent_1_id;
+                    $out[$son['id']]['category_name'] = $parent_1_name;
+                    $out[$son['id']]['subcategory_name'] = $son['n'];
+                    $parent_2_id = $son['id'];
+                    $parent_2_name = $son['n'];
                     if(isset($son['s'])){
                         foreach($son['s'] as $grandson){
                             $out[$grandson['id']] = [];
+                            $out[$grandson['id']]['id'] = $grandson['id'];
+                            $out[$grandson['id']]['subsubcategory_name'] = $grandson['n'];
                             $out[$grandson['id']]['type'] = 'subsubcategory';
                             $out[$grandson['id']]['subsubcategory'] = $grandson['id'];
-                            $out[$grandson['id']]['subcategory'] = $parent_2;
-                            $out[$grandson['id']]['category'] = $parent_1;
+                            $out[$grandson['id']]['subcategory'] = $parent_2_id;
+                            $out[$grandson['id']]['category'] = $parent_1_id;
+                            $out[$grandson['id']]['category_name'] = $parent_1_name;
+                            $out[$grandson['id']]['subcategory_name'] = $parent_2_name;
                         }
                     }
                 }
@@ -335,6 +345,7 @@ class CategoriesHelper{
         }
         return $out;
     }
+
 
     public static function full_name($category_id){
         $flat = self::all_categories_flat();

@@ -10,11 +10,11 @@
                             <i class="fa fa-angle-right"></i>
                             <ul>
                                 <li v-for="son in cat.s">
-                                    <router-link :to="{name:'products_subcategory', params: {category: cat.id, subcategory: son.id}}"> {{son.n}} </router-link>
+                                    <router-link :to="{name:'products_subcategory', params: { subcategory: son.id}}"> {{son.n}} </router-link>
                                     <i v-if="son.s !== undefined" class="fa fa-angle-right"></i>
                                     <ul v-if="son.s !== undefined">
                                         <li v-for="grandson in son.s">
-                                            <router-link :to="{name: 'products_subsubcategory', params: {category: cat.id, subcategory: son.id, subsubcategory: grandson.id}}"> {{grandson.n}} </router-link>
+                                            <router-link :to="{name: 'products_subsubcategory', params: { subsubcategory: grandson.id }}"> {{grandson.n}} </router-link>
                                         </li>
                                     </ul>
                                 </li>

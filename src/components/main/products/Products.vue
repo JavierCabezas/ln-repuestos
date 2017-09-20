@@ -1,14 +1,10 @@
 <template>
     <section class="container">
 
-        <breadcrumbs-products :category="category" :subcategory="subcategory" :subsubcategory="subsubcategory"></breadcrumbs-products>
+        <breadcrumbs-products @menu_changed="update_products()"></breadcrumbs-products>
 
-        <h1 class="main-ttl"><span>Women</span></h1>
+        <catalog-categories @menu_changed="update_products()"></catalog-categories>
 
-
-        <div class="section-sb">
-            <catalog-categories text_to_show="to_fill"></catalog-categories>
-        </div>
 
         <div class="section-cont">
 
@@ -77,11 +73,18 @@
             BreadcrumbsProducts
         },
         methods: {
+            update_products: function (){
+                this.get_products();
+            },
             get_products: function() {
                 let vm = this;
                 $.ajax({
                     url: vm.url_backend + 'products/list',
-                    data: {  },
+                    data: {
+                        category: vm.$route.params.category,
+                        subcategory: vm.$route.params.subcategory,
+                        subsubcategory: vm.$route.params.subsubcategory
+                    },
                     success: function (result) {
                         vm.products = result;
                     }
