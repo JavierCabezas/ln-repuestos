@@ -5,27 +5,9 @@
         <catalog-categories></catalog-categories>
 
         <div class="section-cont">
-            <div class="section-top">
-                <div class="section-count pull-right">
-                    <p>12</p>
-                    <ul>
-                        <li><a href="#">12</a></li>
-                        <li><a href="#">24</a></li>
-                        <li><a href="#">48</a></li>
-                    </ul>
-                </div>
-                <p class="pull-right"> Repuestos por página </p>
-            </div>
-
+            <products-per-page @new_products_per_page="update_products_per_page"></products-per-page>
             <catalog-thumb v-for="p in products" :key="p.product_id" :product="p"></catalog-thumb>
-
-            <ul class="pagi">
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li class="pagi-next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-            </ul>
+            <paginator :active_page="active_page"></paginator>
         </div>
     </section>
 </template>
@@ -33,7 +15,9 @@
 <script>
     import CatalogThumb from './CatalogThumb.vue'
     import CatalogCategories from './CatalogCategories.vue'
+    import ProductsPerPage from './ProductsPerPage.vue'
     import BreadcrumbsProducts from '../../other/BreadcrumbsProducts.vue'
+    import Paginator from './ProductPaginator.vue'
     import { EventBus } from './../../../event-bus.js';
 
     export default {
@@ -53,7 +37,9 @@
                 category: this.$route.params.category === undefined ? null : this.$route.params.category ,
                 subcategory: this.$route.params.subcategory === undefined ?  null : this.$route.params.subcategory,
                 subsubcategory: this.$route.params.subsubcategory === undefined ? null : this.$route.params.subsubcategory,
-                products: {}
+                products: {},
+                products_per_page: 12,
+                active_page: 1
             }
         },
         created: function () {
@@ -66,9 +52,15 @@
         components: {
             CatalogThumb,
             CatalogCategories,
-            BreadcrumbsProducts
+            BreadcrumbsProducts,
+            ProductsPerPage,
+            Paginator
         },
         methods: {
+            update_products_per_page: function(new_products_per_page){
+                this.products_per_page = new_products_per_page;
+                this.get_products()
+            },
             get_products: function() {
                 let vm = this;
                 $.ajax({
