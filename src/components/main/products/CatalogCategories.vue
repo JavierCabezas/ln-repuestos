@@ -5,13 +5,13 @@
         <div class="section-sb-current">
             <h3><a href="#" @click.prevent=""> {{categories.parent.name}} </a></h3>
             <ul class="section-sb-list" id="section-sb-list">
-                <li @click="update()" v-for="son in categories.sons" v-if="categories.type === 'category'">
+                <li v-for="son in categories.sons" v-if="categories.type === 'category'">
                     <router-link :to="{name:'products_subcategory', params: {'subcategory': son.id }}">
                         <span class="categ-1-label">{{son.name}}</span>
                     </router-link>
                 </li>
 
-                <li @click="update()" v-for="son in categories.sons" v-if="categories.type === 'subcategory'">
+                <li v-for="son in categories.sons" v-if="categories.type === 'subcategory'">
                     <router-link :to="{name:'products_subsubcategory', params: { 'subsubcategory': son.id }}">
                         <span class="categ-1-label">{{son.name}}</span>
                     </router-link>
@@ -22,6 +22,8 @@
 </template>
 
 <script>
+    import { EventBus } from './../../../event-bus.js';
+
     export default {
         data () {
             return {
@@ -30,13 +32,14 @@
             }
         },
         created: function () {
+            let vm = this;
+
             this.get_categories();
+            EventBus.$on('updated_product_url', function() {
+                vm.get_categories();
+            });
         },
         methods: {
-            update: function() {
-                this.get_categories();
-                this.$emit('menu_changed');
-            },
             get_categories: function(){
                 let vm = this;
                 $.ajax({

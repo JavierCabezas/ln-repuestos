@@ -1,17 +1,11 @@
 <template>
     <section class="container">
 
-        <breadcrumbs-products @menu_changed="update_products()"></breadcrumbs-products>
-
-        <catalog-categories @menu_changed="update_products()"></catalog-categories>
-
+        <breadcrumbs-products></breadcrumbs-products>
+        <catalog-categories></catalog-categories>
 
         <div class="section-cont">
-
-            <!-- Catalog Topbar - start -->
             <div class="section-top">
-
-                <!-- Count per page -->
                 <div class="section-count pull-right">
                     <p>12</p>
                     <ul>
@@ -23,10 +17,8 @@
                 <p class="pull-right"> Repuestos por página </p>
             </div>
 
-
             <catalog-thumb v-for="p in products" :key="p.product_id" :product="p"></catalog-thumb>
 
-            <!-- Pagination - start -->
             <ul class="pagi">
                 <li class="active"><span>1</span></li>
                 <li><a href="#">2</a></li>
@@ -34,7 +26,6 @@
                 <li><a href="#">4</a></li>
                 <li class="pagi-next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
             </ul>
-            <!-- Pagination - end -->
         </div>
     </section>
 </template>
@@ -43,6 +34,7 @@
     import CatalogThumb from './CatalogThumb.vue'
     import CatalogCategories from './CatalogCategories.vue'
     import BreadcrumbsProducts from '../../other/BreadcrumbsProducts.vue'
+    import { EventBus } from './../../../event-bus.js';
 
     export default {
         computed: {
@@ -65,7 +57,11 @@
             }
         },
         created: function () {
+            let vm = this;
             this.get_products();
+            EventBus.$on('updated_product_url', function() {
+                vm.get_products();
+            });
         },
         components: {
             CatalogThumb,
@@ -73,9 +69,6 @@
             BreadcrumbsProducts
         },
         methods: {
-            update_products: function (){
-                this.get_products();
-            },
             get_products: function() {
                 let vm = this;
                 $.ajax({

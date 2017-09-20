@@ -55,8 +55,8 @@ class SiteController extends Controller
             $out['type'] = 'subsubcategory';
             foreach ($all_categories as $id => $c) {
                 if ($id === $subsubcategory) {
-                    $out['parent']['id'] =  $c['subcategory'];
-                    $out['parent']['name'] = $cat_names[$c['subcategory']];
+                    $out['parent']['id'] =  $c['subsubcategory'];
+                    $out['parent']['name'] = $cat_names[$c['subsubcategory']];
                 }
             }
         } elseif(!is_null($subcategory)){

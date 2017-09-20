@@ -29,6 +29,8 @@
 </template>
 
 <script>
+    import { EventBus } from './../../event-bus.js';
+
     export default {
         data () {
             return {
@@ -44,8 +46,11 @@
         },
         methods: {
             update: function() {
+                let vm = this;
                 this.get_breadcrumbs();
-                this.$emit('menu_changed');
+                EventBus.$on('updated_product_url', function() {
+                    vm.get_breadcrumbs();
+                });
             },
             get_breadcrumbs: function(){
                 let vm = this;

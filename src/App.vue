@@ -11,12 +11,21 @@
 <script>
     import TopMain from './components/main/top/TopMain.vue'
     import FooterMain from './components/main/footer/FooterMain.vue'
+    import { EventBus } from './event-bus.js';
 
     export default {
         name: 'app',
         data () {
             return {
                 categories: [ ],
+            }
+        },
+        watch: {
+            '$route': function (url) {
+                let urls = ['product_name', 'products_subsubcategory', 'products_subcategory', 'products_category', 'products', ];
+                if(jQuery.inArray(url.name, urls) !== -1){
+                    EventBus.$emit('updated_product_url');
+                }
             }
         },
         created: function () {
