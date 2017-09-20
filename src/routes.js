@@ -33,7 +33,7 @@ export const routes = [
     { path: '/contacto', component: Contact, name:'contact' },
     { path: '/productos', name:'products', component: Product },
     { path: '/productos/categoria/:category', name:'products_category', component: Product },
-    { path: '/productos/categoria/:category/subcategoria/:subcategory', name:'products_subcategory', component: Product },
-    { path: '/productos/categoria/:category/subcategoria/:subcategory/subsubcategoria/:subsubcategory', name:'products_subsubcategory', component: Product },
-    { path: '/productos/categoria/:category/nombre/:product_name', name:'product_name', component: ProductDetail }
+    { path: '/productos/subcategoria/:subcategory', name:'products_subcategory', component: Product },
+    { path: '/productos/subsubcategoria/:subsubcategory', name:'products_subsubcategory', component: Product },
+    { path: '/productos/nombre/:product_name', name:'product_name', component: ProductDetail }
 ];
