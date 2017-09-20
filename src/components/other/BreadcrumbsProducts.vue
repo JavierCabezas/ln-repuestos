@@ -1,27 +1,65 @@
 <template>
     <ul class="b-crumbs">
-        <li> <router-link to="inicio"> Inicio </router-link> </li>
-        <router-link v-if="category !== null" :to="{name:'products_category', params: {'category': category }}"> {{category | beautify }}</router-link>
-        <li v-if="category === null"> Productos </li>
+        <li @click="update()">
+            <router-link :to="{name: 'home'}">
+                Inicio
+            </router-link>
+        </li>
+
+        <li v-if="breadcrumbs.category !== null" @click="update()">
+            <router-link :to="{name:'products_category', params: {'category': breadcrumbs.category.path }}">
+                {{ breadcrumbs.category.name }}
+            </router-link>
+        </li>
+
+        <li v-if="breadcrumbs.subcategory !== null" @click="update()">
+            <router-link :to="{name:'products_subcategory', params: {'subcategory': breadcrumbs.subcategory.path }}">
+                {{ breadcrumbs.subcategory.name }}
+            </router-link>
+        </li>
+
+        <li v-if="breadcrumbs.subsubcategory !== null" @click="update()">
+            <router-link :to="{name:'products_subsubcategory', params: {'subsubcategory': breadcrumbs.subsubcategory.path }}">
+                {{ breadcrumbs.subsubcategory.name }}
+            </router-link>
+        </li>
+
+        <li> Productos </li>
     </ul>
 </template>
 
 <script>
     export default {
-        /*Crumbs should be in the format [
-         { 'title': String, 'path: 'string' },
-         {  'title': String, 'path: 'string' },
-         { 'title': String, 'path: 'string' },
-         ...
-         { 'title': String, 'path: null }
-         ]
-         */
-        props: ["category", "subcategory", "subsubcategory"],
-        filters: {
-            beautify: function (value) {
-                if (!value) return '';
-                value = value.toString();
-                return value.charAt(0).toUpperCase() + value.slice(1);
+        data () {
+            return {
+                breadcrumbs: {
+                    category: null,
+                    subcategory: null,
+                    subsubcategory: null
+                }
+            }
+        },
+        created: function () {
+            this.get_breadcrumbs();
+        },
+        methods: {
+            update: function() {
+                this.get_breadcrumbs();
+                this.$emit('menu_changed');
+            },
+            get_breadcrumbs: function(){
+                let vm = this;
+                $.ajax({
+                    url: vm.url_backend + 'site/breadcrumbs',
+                    data: {
+                        category: vm.$route.params.category,
+                        subcategory: vm.$route.params.subcategory,
+                        subsubcategory: vm.$route.params.subsubcategory
+                    },
+                    success: function (result) {
+                        vm.breadcrumbs = result;
+                    }
+                });
             }
         }
     }
