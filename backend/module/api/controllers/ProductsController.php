@@ -58,7 +58,15 @@ class ProductsController extends Controller
         $start_from = $_GET['start_from'] ?? null;
         $up_to = $_GET['up_to'] ?? null;
 
-        return Product::list($filters, $start_from, $up_to);
+        $out = [];
+        for($i = 0 ; $i < 10 ; $i+=1){
+            foreach(Product::list($filters, $start_from, $up_to) as $p){
+                array_push($out, $p);
+            }
+        }
+
+        
+        return $out;
     }
 
     /**

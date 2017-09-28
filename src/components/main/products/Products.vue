@@ -6,19 +6,23 @@
 
         <div class="section-cont">
             <products-per-page @new_products_per_page="update_products_per_page"></products-per-page>
-            <catalog-thumb v-for="p in products" :key="p.product_id" :product="p"></catalog-thumb>
-            <paginator :active_page="active_page"></paginator>
+            <catalog-thumb v-for="(p, index) in products" v-if="is_index_in_range(index)" :key="p.product_id" :product="p"></catalog-thumb>
+            <paginate
+                    :pageCount="products.length / products_per_page"
+                    :containerClass="'pagi'"
+                    :clickHandler="clickCallback">
+            </paginate>
         </div>
     </section>
 </template>
 
 <script>
+    import { EventBus } from './../../../event-bus.js';
     import CatalogThumb from './CatalogThumb.vue'
     import CatalogCategories from './CatalogCategories.vue'
     import ProductsPerPage from './ProductsPerPage.vue'
     import BreadcrumbsProducts from '../../other/BreadcrumbsProducts.vue'
-    import Paginator from './ProductPaginator.vue'
-    import { EventBus } from './../../../event-bus.js';
+    import Paginate from 'vuejs-paginate'
 
     export default {
         computed: {
@@ -37,7 +41,7 @@
                 category: this.$route.params.category === undefined ? null : this.$route.params.category ,
                 subcategory: this.$route.params.subcategory === undefined ?  null : this.$route.params.subcategory,
                 subsubcategory: this.$route.params.subsubcategory === undefined ? null : this.$route.params.subsubcategory,
-                products: {},
+                products: [],
                 products_per_page: 12,
                 active_page: 1
             }
@@ -54,7 +58,7 @@
             CatalogCategories,
             BreadcrumbsProducts,
             ProductsPerPage,
-            Paginator
+            Paginate
         },
         methods: {
             update_products_per_page: function(new_products_per_page){
@@ -74,6 +78,13 @@
                         vm.products = result;
                     }
                 });
+            },
+            clickCallback: function(page) {
+                this.active_page = page;
+            },
+            is_index_in_range(index){
+                let item_number = index +1;
+                return item_number > ( (this.active_page -1 ) * this.products_per_page ) && item_number <= ( (this.active_page ) * this.products_per_page)
             }
         }
     }
