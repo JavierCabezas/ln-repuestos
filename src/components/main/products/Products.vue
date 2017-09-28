@@ -63,7 +63,7 @@
         methods: {
             update_products_per_page: function(new_products_per_page){
                 this.products_per_page = new_products_per_page;
-                this.get_products()
+                this.active_page = 1;
             },
             get_products: function() {
                 let vm = this;
