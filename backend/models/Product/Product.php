@@ -113,6 +113,11 @@ class Product extends \yii\db\ActiveRecord
      */
     public function beforeSave($insert)
     {
+        $youtube_id = StringHelper::getYoutubeIdFromUrl($this->tutorial_text);
+        if($youtube_id){
+            $this->tutorial_text = $youtube_id;
+        }
+
         if (parent::beforeSave($insert)) {
            $this->seo_name = StringHelper::seo_url($this->name);
             return true;
@@ -194,17 +199,20 @@ class Product extends \yii\db\ActiveRecord
     public function getBackend(){
         $cp = CategoriesHelper::all_categories_with_parents_flat();
         return [
-            'id'             => $this->id,
-            'name'           => $this->name,
-            'url'            => $this->seo_name,
-            'description'    => $this->description,
-            'price'          => $this->price,
-            'upon_request'   => $this->upon_request,
-            'picture'        => $this->image,
-            'seo_name'       => $this->seo_name,
-            'category'       => $cp[$this->category_id]['category'] ?? null,
-            'subcategory'    => $cp[$this->category_id]['subcategory'] ?? null,
-            'subsubcategory' => $cp[$this->category_id]['subsubcategory'] ?? null
+            'id'                => $this->id,
+            'name'              => $this->name,
+            'url'               => $this->seo_name,
+            'description'       => $this->description,
+            'has_tutorial'      => $this->tutorial_text !== null,
+            'is_tutorial_video' => $this->tutorial_type == 1,
+            'tutorial'          => $this->tutorial_text,
+            'price'             => $this->price,
+            'upon_request'      => $this->upon_request,
+            'picture'           => $this->image,
+            'seo_name'          => $this->seo_name,
+            'category'          => $cp[$this->category_id]['category'] ?? null,
+            'subcategory'       => $cp[$this->category_id]['subcategory'] ?? null,
+            'subsubcategory'    => $cp[$this->category_id]['subsubcategory'] ?? null
         ];
     }
 

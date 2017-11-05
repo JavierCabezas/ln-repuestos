@@ -36,29 +36,26 @@
                     <li>
                         <a :class="{active: active_tab == 2}"
                            @click.prevent="active_tab = 2"
+                           v-if="product.main.has_tutorial"
                            id="prod-props" href="#">
-                            Features
-                        </a>
-                    </li>
-                    <li>
-                        <a v-if="parseInt(product.main.tutorial_type) > 0"
-                           href="#"
-                           @click.prevent="active_tab = 3">
-                            Video
+                            Tutorial
                         </a>
                     </li>
                 </ul>
                 <div class="prod-tab-cont">
-
                     <p class="prod-tab-mob" :class="{active: active_tab == 1}">Description</p>
                     <div class="prod-tab stylization">
                         <p v-if="active_tab == 1">{{product.main.description}}</p>
-                        <p v-if="active_tab == 2"> Tab 2</p>
-                        <p v-if="active_tab == 3"> Tab 3</p>
+                        <p v-if="active_tab == 2">
+                            <product-tutorial
+                                    v-if="product.main.has_tutorial"
+                                    :tutorial_text="product.main.tutorial"
+                                    :is_tutorial_video="product.main.is_tutorial_video"
+                            ></product-tutorial>
+                        </p>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <related></related>
@@ -69,6 +66,7 @@
     import Related from './ProductDetailRelated.vue'
     import Slider from './ProductDetailSlider.vue'
     import BreadcrumbsProducts from '../../other/BreadcrumbsProducts.vue'
+    import ProductTutorial from './ProductTutorial.vue'
 
     export default {
         data () {
@@ -109,7 +107,8 @@
         components: {
             Related,
             Slider,
-            BreadcrumbsProducts
+            BreadcrumbsProducts,
+            ProductTutorial
         }
     }
 </script>

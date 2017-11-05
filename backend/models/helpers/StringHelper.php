@@ -43,4 +43,28 @@ class StringHelper{
     public static function money($ammount){
         return "$".number_format($ammount, 0, ',', '.');
     }
+
+    /**
+     * Gets the youtube ID from the passed URL given by parameter.
+     * @param $url: Ex: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+     * @return string|bool:
+     * If succesfull it returns the string(dQw4w9WgXcQ) for the given example.
+     * False otherwise
+     */
+    public static function getYoutubeIdFromUrl($url) {
+        $parts = parse_url($url);
+        if(isset($parts['query'])){
+            parse_str($parts['query'], $qs);
+            if(isset($qs['v'])){
+                return $qs['v'];
+            }else if(isset($qs['vi'])){
+                return $qs['vi'];
+            }
+        }
+        if(isset($parts['path'])){
+            $path = explode('/', trim($parts['path'], '/'));
+            return $path[count($path)-1];
+        }
+        return false;
+    }
 }
