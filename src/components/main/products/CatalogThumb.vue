@@ -3,7 +3,7 @@
         <div class="prodlist-i">
             <router-link v-if="product.subcategory !== null" class="prodlist-i-img"
                          :to="{name:'product_name', params: {category: product.category, product_name: product.seo_name}}" >
-                <img :src="product.picture" :alt="product.name">
+                <img :src="url_server + product.picture" :alt="product.name">
             </router-link>
 
             <div class="prodlist-i-cont">

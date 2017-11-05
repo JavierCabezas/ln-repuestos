@@ -26,7 +26,7 @@ class SiteController extends Controller
             array_push($out, [
                 'title' => $s->title,
                 'subtitle' => $s->content,
-                'img_src' => $s->base64Image,
+                'img_src' => $s->image,
                 'has_button' => $s->linkBool,
                 'button_url' => $s->link_path
             ]);

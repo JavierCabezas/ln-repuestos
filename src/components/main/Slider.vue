@@ -3,7 +3,7 @@
         <div class="fr-slider">
             <ul class="slides">
                 <li v-for="s in slides">
-                    <img :src="s.img_src" :alt="s.title">
+                    <img :src="url_server + s.img_src" :alt="s.title">
                     <div class="fr-slider-cont">
                         <h3> {{ s.title }} </h3>
                         <p> {{ s.subtitle }}</p>

@@ -90,15 +90,6 @@ class Slider extends \yii\db\ActiveRecord
     }
 
     /**
-     * Returns an string representing the base64 encoded image of this instance of Slider.
-     * @return string
-     */
-    public function getBase64Image(){
-        $im = file_get_contents($this->imagePath);
-        return "data:image/png;base64,".base64_encode($im);
-    }
-
-    /**
      * Returns a boolean value indicating if this instance of Slider has a link (stupid mysql witout a real boolean value)
      * @return bool
      */

@@ -154,10 +154,9 @@ class Product extends \yii\db\ActiveRecord
      * Returns an string representing the base64 encoded image of the first image of this product.
      * @return string
      */
-    public function getBase64Image(){
+    public function getImage(){
         if(count($this->productPictures) > 0){
-            $im = file_get_contents($this->productPictures[0]->image);
-            return "data:image/png;base64,".base64_encode($im);
+            return StringHelper::base_url().'img/products/'.$this->productPictures[0]->picture_path;
         }else{
             return null;
         }
@@ -201,7 +200,7 @@ class Product extends \yii\db\ActiveRecord
             'description'    => $this->description,
             'price'          => $this->price,
             'upon_request'   => $this->upon_request,
-            'picture'        => $this->base64Image,
+            'picture'        => $this->image,
             'seo_name'       => $this->seo_name,
             'category'       => $cp[$this->category_id]['category'] ?? null,
             'subcategory'    => $cp[$this->category_id]['subcategory'] ?? null,
@@ -217,8 +216,7 @@ class Product extends \yii\db\ActiveRecord
         $out = [];
         if(count($this->productPictures) > 1) {
             foreach ($this->productPictures as $pp) {
-                $im = file_get_contents($pp->image);
-                array_push($out, "data:image/png;base64," . base64_encode($im));
+                array_push($out, $pp->image);
             }
             array_shift($out);
         }

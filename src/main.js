@@ -15,6 +15,9 @@ Vue.mixin({
         return {
             get url_backend() {
                 return "http://localhost/lnrepuestos/backend/web/index.php/api/";
+            },
+            get url_server() {
+                return "http://localhost/"
             }
         }
     }
