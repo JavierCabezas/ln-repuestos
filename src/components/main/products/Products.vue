@@ -1,7 +1,7 @@
 <template>
     <section class="container">
 
-        <breadcrumbs-products></breadcrumbs-products>
+        <breadcrumbs-products active_page="Productos"></breadcrumbs-products>
         <catalog-categories></catalog-categories>
 
         <div class="section-cont">

@@ -24,7 +24,7 @@
             </router-link>
         </li>
 
-        <li> Productos </li>
+        <li v-if="active_page !== null"> {{ active_page }}  </li>
     </ul>
 </template>
 
@@ -32,6 +32,11 @@
     import { EventBus } from './../../event-bus.js';
 
     export default {
+        props: {
+            active_page: {
+                default: null
+            }
+        },
         data () {
             return {
                 breadcrumbs: {
@@ -59,7 +64,8 @@
                     data: {
                         category: vm.$route.params.category,
                         subcategory: vm.$route.params.subcategory,
-                        subsubcategory: vm.$route.params.subsubcategory
+                        subsubcategory: vm.$route.params.subsubcategory,
+                        name: vm.$route.params.name
                     },
                     success: function (result) {
                         vm.breadcrumbs = result;

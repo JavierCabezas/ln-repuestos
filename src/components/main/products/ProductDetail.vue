@@ -1,25 +1,6 @@
 <template>
     <section class="container">
-        <ul class="b-crumbs">
-            <li>
-                <a href="index.html">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="catalog-list.html">
-                    Catalog
-                </a>
-            </li>
-            <li>
-                <a href="catalog-list.html">
-                    Women
-                </a>
-            </li>
-            <li>
-                <span>Aperiam nihil veniam</span>
-            </li>
-        </ul>
+        <breadcrumbs-products :active_page="product.main.name"></breadcrumbs-products>
 
         <h1 class="main-ttl"><span>{{product.main.name}}</span></h1>
         <!-- Single Product - start -->
@@ -46,23 +27,34 @@
             <!-- Product Tabs -->
             <div class="prod-tabs-wrap">
                 <ul class="prod-tabs">
-                    <li><a data-prodtab-num="1" class="active" href="#" data-prodtab="#prod-tab-1">Description</a></li>
-                    <li><a data-prodtab-num="2" id="prod-props" href="#" data-prodtab="#prod-tab-2">Features</a></li>
-                    <li><a data-prodtab-num="3" v-if="parseInt(product.main.tutorial_type) > 0" href="#" data-prodtab="#prod-tab-3">Video</a></li>
+                    <li>
+                        <a :class="{active: active_tab == 1}"
+                           href="#"
+                           @click.prevent="active_tab = 1"
+                        >Description</a>
+                    </li>
+                    <li>
+                        <a :class="{active: active_tab == 2}"
+                           @click.prevent="active_tab = 2"
+                           id="prod-props" href="#">
+                            Features
+                        </a>
+                    </li>
+                    <li>
+                        <a v-if="parseInt(product.main.tutorial_type) > 0"
+                           href="#"
+                           @click.prevent="active_tab = 3">
+                            Video
+                        </a>
+                    </li>
                 </ul>
                 <div class="prod-tab-cont">
 
-                    <p data-prodtab-num="1" class="prod-tab-mob active" data-prodtab="#prod-tab-1">Description</p>
-                    <div class="prod-tab stylization" id="prod-tab-1">
-                        <p>{{product.main.description}}</p>
-                    </div>
-                    <p data-prodtab-num="2" class="prod-tab-mob" data-prodtab="#prod-tab-2">Features</p>
-                    <div class="prod-tab prod-props" id="prod-tab-2">
-                        <!-- Tab 2-->
-                    </div>
-                    <p data-prodtab-num="3" class="prod-tab-mob" data-prodtab="#prod-tab-3">Video</p>
-                    <div class="prod-tab prod-tab-video" id="prod-tab-3">
-                        <!-- Tab 3 -->
+                    <p class="prod-tab-mob" :class="{active: active_tab == 1}">Description</p>
+                    <div class="prod-tab stylization">
+                        <p v-if="active_tab == 1">{{product.main.description}}</p>
+                        <p v-if="active_tab == 2"> Tab 2</p>
+                        <p v-if="active_tab == 3"> Tab 3</p>
                     </div>
                 </div>
             </div>
@@ -76,6 +68,7 @@
 <script>
     import Related from './ProductDetailRelated.vue'
     import Slider from './ProductDetailSlider.vue'
+    import BreadcrumbsProducts from '../../other/BreadcrumbsProducts.vue'
 
     export default {
         data () {
@@ -83,7 +76,8 @@
                 category: this.$route.params.category,
                 product_id: this.$route.params.product_name,
                 product: {main: {}, pictures: {}},
-                is_loaded: false
+                is_loaded: false,
+                active_tab: 1
             }
         },
         filters: {
@@ -114,7 +108,8 @@
         },
         components: {
             Related,
-            Slider
+            Slider,
+            BreadcrumbsProducts
         }
     }
 </script>

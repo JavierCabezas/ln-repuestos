@@ -4,12 +4,12 @@
             <ul class="prod-slider-car">
                 <li>
                     <a data-fancybox-group="product" class="fancy-img">
-                        <img :src="product.main.picture" :alt="product.main.name">
+                        <img :src="url_server+product.main.picture" :alt="product.main.name">
                     </a>
                 </li>
-                <li v-if="product.pictures.lenght > 0" v-for="pic in product.pictures">
+                <li v-for="pic in product.pictures">
                     <a data-fancybox-group="product" class="fancy-img">
-                        <img :src="pic" :alt="product.main.name">
+                        <img :src="url_server+pic" :alt="product.main.name">
                     </a>
                 </li>
             </ul>

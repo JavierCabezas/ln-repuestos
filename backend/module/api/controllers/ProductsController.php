@@ -64,8 +64,6 @@ class ProductsController extends Controller
                 array_push($out, $p);
             }
         }
-
-        
         return $out;
     }
 

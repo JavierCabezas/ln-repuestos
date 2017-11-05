@@ -156,7 +156,7 @@ class Product extends \yii\db\ActiveRecord
      */
     public function getImage(){
         if(count($this->productPictures) > 0){
-            return StringHelper::base_url().'img/products/'.$this->productPictures[0]->picture_path;
+            return $this->productPictures[0]->image;
         }else{
             return null;
         }
