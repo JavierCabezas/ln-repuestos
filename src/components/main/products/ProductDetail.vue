@@ -19,7 +19,10 @@
                         <b class="item_current_price">{{product.main.price | cash }}</b>
                     </p>
                     <p class="prod-addwrap">
-                        <a href="#" @click.prevent="enviar_solicitud()" class="prod-add" rel="nofollow">Solicitar</a>
+                        <router-link :to="{name:'contact_product', params: {'product_id': product.id }}"
+                                     class="prod-add" rel="nofollow">
+                            Solicitar
+                        </router-link>
                     </p>
                 </div>
             </div>
@@ -30,8 +33,9 @@
                     <li>
                         <a :class="{active: active_tab == 1}"
                            href="#"
-                           @click.prevent="active_tab = 1"
-                        >Description</a>
+                           @click.prevent="active_tab = 1">
+                            Descripción
+                        </a>
                     </li>
                     <li>
                         <a :class="{active: active_tab == 2}"
@@ -43,7 +47,7 @@
                     </li>
                 </ul>
                 <div class="prod-tab-cont">
-                    <p class="prod-tab-mob" :class="{active: active_tab == 1}">Description</p>
+                    <p class="prod-tab-mob" :class="{active: active_tab == 1}">Descripción</p>
                     <div class="prod-tab stylization">
                         <p v-if="active_tab == 1">{{product.main.description}}</p>
                         <p v-if="active_tab == 2">
@@ -100,9 +104,6 @@
                     }
                 });
             },
-            enviar_solicitud: function(){
-                alert("solicitado producto");
-            }
         },
         components: {
             Related,

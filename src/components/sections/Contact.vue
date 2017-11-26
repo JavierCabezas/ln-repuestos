@@ -13,6 +13,7 @@
 
         <!-- Contact Form -->
         <div class="contactform-wrap">
+
             <form action="#" class="form-validate">
                 <p class="contactform-field contactform-text">
                     <label class="contactform-label">Nombre</label>
@@ -53,6 +54,7 @@
                 crumbs: [
                     { 'title': 'Contacto',  'path': null }
                 ],
+                product_id: this.$route.params.product_id,
                 form: {
                     name: '',
                     email: '',
@@ -65,6 +67,11 @@
         components: {
             Breadcrumbs,
             Vin
+        },
+        created: function () {
+            if(this.product_id !== undefined){
+                console.log(this.product_id);
+            }
         },
         methods: {
             is_email: function(email) {

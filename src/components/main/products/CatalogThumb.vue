@@ -19,7 +19,10 @@
 
                 <div class="prodlist-i-action">
                     <p class="prodlist-i-addwrap">
-                        <a href="#" @click.prevent="solicitar(product.id)" class="prodlist-i-add">Solicitar este producto</a>
+                        <router-link :to="{name:'contact_product', params: {'product_id': product.id }}"
+                                     class="prodlist-i-add">
+                            Solicitar este producto
+                        </router-link>
                     </p>
                     <span class="prodlist-i-price">
                         <b v-if="!product.upon_request">{{ product.price | cash }}</b>
@@ -44,12 +47,6 @@
             cash: function(value) {
                 return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
             }
-        },
-        methods: {
-            solicitar: function(product_id) {
-                alert("solicitado producto"+product_id);
-            },
-
         }
     }
 </script>
