@@ -14,4 +14,17 @@ class Module extends \yii\base\Module
         parent::init();
         \Yii::$app->user->enableSession = false;
     }
+
+    public function behaviors()
+    {
+        return [
+            'corsFilter' => [
+                'class' => \yii\filters\Cors::className(),
+                'cors' => [
+                    'Origin' => ['http://localhost:8080'],
+                    'Access-Control-Allow-Origin' => true,
+                ]
+            ]
+        ];
+    }
 }
