@@ -69,7 +69,7 @@ class ProductsController extends Controller
 
     /**
      * Returns an array with the data of the details of an specific product
-     * @param $_GET['product_id'] integer with the product identifier.
+     * @param $_GET['product_id'] seo name of the product.
      * @see app\models\product\Product\backend_data()
      * @return array
      */
@@ -80,6 +80,17 @@ class ProductsController extends Controller
                 'main'      => $p->backend,
                 'pictures'  => $p->pictures
             ];
+    }
 
+    /**
+     * Returns the data for the product passed by id
+     * @param $_GET['id']: The product identifier
+     * @return mixed
+     */
+    public function actionGetById(){
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $pid = intval($_GET['id']);
+        $p = Product::find()->where(['id' => $pid])->one();
+        return $p->backend;
     }
 }

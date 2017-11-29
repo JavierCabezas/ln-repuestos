@@ -31,7 +31,7 @@ export const routes = [
     { path: '', component: Home, name:'home' },
     { path: '/sobre-nosotros', component: AboutUs, name:'about-us' },
     { path: '/contacto', component: Contact, name:'contact' },
-    { path: '/contacto/:product_name', component: Contact, name:'contact_product' },
+    { path: '/contacto/:product_id', component: Contact, name:'contact_product' },
     { path: '/productos', name:'products', component: Product },
     { path: '/productos/categoria/:category', name:'products_category', component: Product },
     { path: '/productos/subcategoria/:subcategory', name:'products_subcategory', component: Product },

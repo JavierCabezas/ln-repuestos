@@ -2,7 +2,7 @@
     <section class="container stylization maincont">
         <breadcrumbs :crumbs="crumbs"></breadcrumbs>
 
-        <h1 class="main-ttl"><span>Contacto</span></h1>
+        <h1 class="main-ttl"><span> Contacto</span></h1>
         <br>
 
         <p>Si necesitas contactarnos, por favor completa el siguiente formulario y nos comunicaremos a la brevedad.</p>
@@ -33,7 +33,8 @@
                 </p>
                 <p class="contactform-field contactform-textarea">
                     <label class="contactform-label">Mensaje</label>
-                    <span class="contactform-input"> <textarea placeholder="Tu mensaje o detalles para realización de cotización" v-model="form.message" name="mess"></textarea></span>
+                    <span class="contactform-input"> <textarea placeholder="Tu mensaje o detalles para realización de cotización" v-model="form.message" name="mess">
+                    </textarea></span>
                 </p>
                 <p class="contactform-submit">
                     <input value="Send" @click.prevent="send_form()" type="submit">
@@ -61,7 +62,8 @@
                     telephone: '',
                     vin: '',
                     message: ''
-                }
+                },
+                default_text: ''
             }
         },
         components: {
@@ -70,13 +72,24 @@
         },
         created: function () {
             if(this.product_id !== undefined){
-                console.log(this.product_id);
+                this.get_product_description(this.product_id);
             }
         },
         methods: {
             is_email: function(email) {
                 let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
                 return reg.test(email)
+            },
+            get_product_description(product_id){
+                let vm = this;
+                $.ajax({
+                    url: vm.url_backend + 'products/get-by-id',
+                    data: { id: product_id },
+                    method: 'GET',
+                    success: function (result) {
+                        vm.form.message = "Escribía para cotizar el repuesto.." + result.name;
+                    }
+                });
             },
             send_form: function() {
                 let vm = this;

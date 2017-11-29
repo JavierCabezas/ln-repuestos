@@ -19,9 +19,9 @@
                         <b class="item_current_price">{{product.main.price | cash }}</b>
                     </p>
                     <p class="prod-addwrap">
-                        <router-link :to="{name:'contact_product', params: {'product_id': product.id }}"
+                        <router-link :to="{name:'contact_product', params: {'product_id': product.main.id }}"
                                      class="prod-add" rel="nofollow">
-                            Solicitar
+                            Solicitar este producto
                         </router-link>
                     </p>
                 </div>
