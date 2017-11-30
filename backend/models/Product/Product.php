@@ -207,7 +207,7 @@ class Product extends \yii\db\ActiveRecord
             'is_tutorial_video' => $this->tutorial_type == 1,
             'tutorial'          => $this->tutorial_text,
             'price'             => $this->price,
-            'upon_request'      => $this->upon_request,
+            'upon_request'      => $this->upon_request == 1,
             'picture'           => $this->image,
             'seo_name'          => $this->seo_name,
             'category'          => $cp[$this->category_id]['category'] ?? null,

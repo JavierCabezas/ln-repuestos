@@ -87,7 +87,11 @@
                     data: { id: product_id },
                     method: 'GET',
                     success: function (result) {
-                        vm.form.message = "Escribía para cotizar el repuesto.." + result.name;
+                        if(result.upon_request){
+                            vm.form.message = "Escribía para comprar el producto " + result.name + " (Identificador =" + result.id+") \n";
+                        }else{
+                            vm.form.message = "Escribía para solicitar el producto " + result.name + " (Identificador =" + result.id+") \n";
+                        }
                     }
                 });
             },
