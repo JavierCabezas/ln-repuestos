@@ -566,7 +566,7 @@ body {
 	padding-right: 30px;
 }
 .topmenu .mainmenu > li > a:hover,
-.topmenu .mainmenu > li > a.active {
+.topmenu .mainmenu > li > a.router-link-active {
 	color: #3a89cf;
 }
 .topmenu .mainmenu > li.menu-item-has-children > a:after {
