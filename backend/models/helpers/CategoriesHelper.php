@@ -54,7 +54,7 @@ class CategoriesHelper{
                 ],
                 [
                     'n' => 'Soportes motor',
-                    'id' => 'sorpotes_motor'
+                    'id' => 'soportes_motor'
                 ],
                 [
                     'n' => 'Sistema de lubricación',
