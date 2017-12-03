@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        <related></related>
+        <related :products="product.related"></related>
     </section>
 </template>
 
@@ -77,7 +77,11 @@
             return {
                 category: this.$route.params.category,
                 product_id: this.$route.params.product_id,
-                product: {main: {}, pictures: {}},
+                product: {
+                    main: {},
+                    pictures: {},
+                    related: {}
+                },
                 is_loaded: false,
                 active_tab: 1
             }

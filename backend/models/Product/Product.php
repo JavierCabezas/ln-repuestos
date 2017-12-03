@@ -230,4 +230,23 @@ class Product extends \yii\db\ActiveRecord
         }
         return $out;
     }
+
+    /**
+     * Returns an array with all the backend data (according to the getBackend method) of this product.
+     * If limits the total to a max of 4 elements, giving them randomly.
+     * @see \app\models\product\Product::getBackend()
+     * @see \app\models\helpers\CategoriesHelper::related_categories()
+     * @return array
+     */
+    public function getRelated(){
+        $out = [];
+        $related = CategoriesHelper::related_categories($this->seo_name);
+        $related_products = Product::find()->where(['category_id' => $related])->all();
+        shuffle($related_products);
+        $arr_size = count($related_products) > 3 ? 4 : count($related_products);
+        for($i = 0; $i <= $arr_size - 1 ; $i += 1){
+            array_push($out, $related_products[$i]->backend);
+        }
+        return $out;
+    }
 }

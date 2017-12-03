@@ -70,7 +70,9 @@ class ProductsController extends Controller
     /**
      * Returns an array with the data of the details of an specific product
      * @param $_GET['product_id'] seo name of the product.
-     * @see app\models\product\Product\backend_data()
+     * @see \app\models\product\Product::getBackend()
+     * @see \app\models\product\Product::getPictures()
+     * @see \app\models\product\Product::getRelated()
      * @return array
      */
     public function actionGet(){
@@ -78,7 +80,8 @@ class ProductsController extends Controller
         $p = Product::find()->where('seo_name=:seo_name', [':seo_name' => $_GET['product_id']])->one();
         return [
                 'main'      => $p->backend,
-                'pictures'  => $p->pictures
+                'pictures'  => $p->pictures,
+                'related'   => $p->related
             ];
     }
 

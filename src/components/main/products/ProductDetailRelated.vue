@@ -222,6 +222,10 @@
     import ProductDetailRelated from './ProductDetailRelated.vue'
 
     export default {
-        props: ['related_products']
+        props: {
+            products: {
+                default: []
+            }
+        }
     }
 </script>

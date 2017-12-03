@@ -290,7 +290,7 @@ class CategoriesHelper{
     }
 
     /**
-     * Returns an array with all the avaiable categories with their respective parents.
+     * Returns an array with all the available categories with their respective parents.
      * @return array in the format [
      *      'id_category' (string) => [
      *          'type' => 'category', 'subcategory' or 'subsubcategory',
@@ -350,5 +350,82 @@ class CategoriesHelper{
     public static function full_name($category_id){
         $flat = self::all_categories_flat();
         return $flat[$category_id] ?? 'Categoría no válida';
+    }
+
+    /**
+     * Returns an array with all the related categories of the one passed by parameter.
+     * Related means any category that goes below that one in the cateogry tree.
+     * @param $category_id: the category id (as a string)
+     * @return array of strings
+     *
+     * Ex: If the category menu has the following structure:
+     *  private static $categories = [
+     *      [
+     *          'n' => 'Motor',
+     *          'id' => 'motor',
+     *          's' => [
+     *               [
+     *                   'n' => 'Block',
+     *                   'id' => 'block',
+     *                   's' => [
+     *                      [
+     *                          'n' => 'Empaquetaduras',
+     *                          'id' => 'empaquetaduras'
+     *                      ],
+     *                      [
+     *                          'n' => 'Retenes / Anillos',
+     *                          'id' => 'anillos'
+     *                      ],
+     *                      [
+     *                          'n' => 'Pistones',
+     *                          'id' => 'pistones'
+     *                      ],
+     *                      [
+     *                          'n' => 'Carter',
+     *                          'id' => 'carter'
+     *                      ],
+     *                      [
+     *                          'n' => 'Metales',
+     *                          'id' => 'metales'
+     *                      ]
+     *              ],
+     *              [
+     *                   'n' => 'Correas',
+     *                   'id' => 'correas',
+     *                   's' => [
+     *                      [
+     *                          'n' => 'Distribución',
+     *                          'id' => 'distribucion'
+     *                      ],
+     *                      [
+     *                          'n' => 'Accesorios',
+     *                          'id' => 'correas_accesorios'
+     *                      ],
+     *                   ]
+     *               ]
+     *
+     *    ],
+     *    ... //More entries
+     * ]
+     *
+     * Examples:
+     * 1)
+     * $category_id = motor'
+     * $out = [
+     *          'motor', 'block', 'empaquetaduras', 'anillos', 'pistones',
+     *          'carter', 'metales', 'correas', 'distribucion', 'correas_accesorios'
+     *  ]
+     *
+     * 2)
+     * $category_id = 'correas'
+     * $out = [ 'correas', 'distribucion', 'correas_accesorios' ]
+     *
+     * 3)
+     * $category_id = 'carter'
+     * $out = ['carter']
+     */
+    public static function related_categories($category_id){
+        $cp = CategoriesHelper::all_categories_with_parents_flat();
+        return [ 'filtro_combustible', 'radiadores', 'luces', 'sistema_electrico_otros' ];
     }
 }
