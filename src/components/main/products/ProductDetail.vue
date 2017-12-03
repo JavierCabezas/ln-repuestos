@@ -76,7 +76,7 @@
         data () {
             return {
                 category: this.$route.params.category,
-                product_id: this.$route.params.product_name,
+                product_id: this.$route.params.product_id,
                 product: {main: {}, pictures: {}},
                 is_loaded: false,
                 active_tab: 1
