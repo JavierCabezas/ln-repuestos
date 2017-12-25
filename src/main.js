@@ -10,6 +10,12 @@ const router = new VueRouter({
     routes
 });
 
+Vue.filter("cash", function(value) {
+    if(value){
+        return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+});
+
 Vue.mixin({
     data: function() {
         return {

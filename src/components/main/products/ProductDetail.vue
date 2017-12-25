@@ -86,13 +86,6 @@
                 active_tab: 1
             }
         },
-        filters: {
-            cash: function(value) {
-                if(value){
-                    return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-                }
-            }
-        },
         created: function () {
             this.get_product(this.product_id)
         },
