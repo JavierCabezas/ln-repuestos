@@ -18,7 +18,7 @@
                     <p class="prod-price">
                         <b class="item_current_price">{{product.main.price | cash }}</b>
                     </p>
-                    <p class="prod-addwrap">
+                    <p class="prod-addwrap" v-if="product.main.id !== undefined">
                         <router-link :to="{name:'contact_product', params: {'product_id': product.main.id }}"
                                      class="prod-add" rel="nofollow">
                             Solicitar este producto
