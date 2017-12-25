@@ -18,7 +18,7 @@
             <ul class="prod-thumbs-car">
                 <li>
                     <a data-slide-index="0">
-                        <img :src="product.main.picture" :alt="product.main.name">
+                        <img :src="url_server+product.main.picture" :alt="product.main.name">
                     </a>
                 </li>
                 <li v-if="product.pictures.lenght > 0" v-for="(pic, index) in product.pictures">
