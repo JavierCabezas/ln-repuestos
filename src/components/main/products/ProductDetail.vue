@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        <related :products="product.related"></related>
+        <related :products="product.related" v-if="product.related.length > 0"></related>
     </section>
 </template>
 
