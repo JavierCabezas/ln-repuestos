@@ -86,6 +86,12 @@
                 active_tab: 1
             }
         },
+        watch: {
+            '$route' (to, from) {
+                this.product_id = this.$route.params.product_id;
+                this.get_product(this.product_id)
+            }
+        },
         created: function () {
             this.get_product(this.product_id)
         },

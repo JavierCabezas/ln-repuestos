@@ -5,14 +5,14 @@
             <ul class="slides">
                 <li class="prod-rel-wrap">
                     <div class="prod-rel" v-for="product in products">
-                        <router-link class="prod-rel-img" tag="a"
+                        <router-link class="prod-rel-img"
                                      :to="{name:'product_name', params: {product_id: product.seo_name}}" >
                             <img :src="url_server+product.picture" :alt="product.name">
                         </router-link>
 
                         <div class="prod-rel-cont">
                             <h3>
-                                <router-link tag="a" :to="{name:'product_name', params: {product_id: product.seo_name}}" >
+                                <router-link :to="{name:'product_name', params: {product_id: product.seo_name}}" >
                                     {{product.name}}
                                 </router-link>
                             </h3>
