@@ -3,6 +3,12 @@
  */
 import Home from './components/main/Home.vue'
 
+const Index = resolve => {
+    require.ensure(['./components/sections/Index.vue'], () => {
+        resolve(require('./components/sections/Index.vue'));
+    });
+};
+
 const AboutUs = resolve => {
     require.ensure(['./components/sections/AboutUs.vue'], () => {
         resolve(require('./components/sections/AboutUs.vue'));
@@ -28,7 +34,8 @@ const ProductDetail = resolve => {
 };
 
 export const routes = [
-    { path: '', component: Home, name:'home' },
+    { path: '/', component: Index, name: 'index' },
+    { path: '/inicio', component: Home, name: 'home' },
     { path: '/sobre-nosotros', component: AboutUs, name:'about-us' },
     { path: '/contacto', component: Contact, name:'contact' },
     { path: '/contacto/:product_id', component: Contact, name:'contact_product' },
