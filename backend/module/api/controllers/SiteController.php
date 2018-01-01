@@ -88,9 +88,15 @@ class SiteController extends Controller
                 }
             }
         } else{
-            foreach($all_categories as $c){
+            $out['type'] = 'category';
+            $out['parent']['id'] = '#';
+            $out['parent']['name'] = 'Productos';
+            foreach($all_categories as $id => $c){
                 if($c['type'] === 'category'){
-//                    array_push($out['sons'], ['id' => $c[], 'name' => $cat_names[$id]]);
+                    array_push($out['sons'], [
+                        'id'          => $id,
+                        'name'        => $cat_names[$id],
+                    ]);
                 }
             }
         }
