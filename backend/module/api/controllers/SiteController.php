@@ -87,7 +87,7 @@ class SiteController extends Controller
                     $out['parent']['name'] = $cat_names[$id];
                 }
             }
-        } else{
+        } else {
             $out['type'] = 'category';
             $out['parent']['id'] = '#';
             $out['parent']['name'] = 'Productos';
