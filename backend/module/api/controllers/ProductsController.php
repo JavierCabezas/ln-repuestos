@@ -14,28 +14,6 @@ use Yii;
 
 class ProductsController extends Controller
 {
-    public function actionSpecialOffer(){
-        Yii::$app->response->format = Response::FORMAT_JSON;
-
-        $titles = [ "Four loko", "Fixie nostrud", "Master Cleanse", "Scenester hell", "Shabby chic", "Blue bottle", "Duis pitchfork", "Raclette portland", "Cardigan glossier", "Tumeric keffiyeh" ];
-        $sizes = ["99x120", "75x120", "65x120", "78x120", "81x120"];
-        $quantity = rand(10, 25);
-        $out = [];
-        for($i = 1; $i <= $quantity ; $i += 1){
-            shuffle($titles);
-            shuffle($sizes);
-            array_push($out, [
-                'id'        => $i,
-                'link'      => 'productos',
-                'img_src'   => "http://placehold.it/".$sizes[0],
-                'title'     => $titles[0],
-                'now'       => rand(100, 200),
-                'before'    => rand(50, 99)
-            ]);
-        }
-        return $out;
-    }
-
     public function actionNestedCategories(){
         Yii::$app->response->format = Response::FORMAT_JSON;
         return CategoriesHelper::all_categories();
@@ -64,6 +42,22 @@ class ProductsController extends Controller
                 array_push($out, $p);
             }
         }
+        return $out;
+    }
+
+    public function actionPopular(){
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $out = [];
+        $out['products'] = [];
+        $out['categories'] = CategoriesHelper::parent_categories();
+
+        foreach(Product::all() as $p){
+            if(!isset($out['products'][$p->category_id])){
+                $out['products'][$p->category_id] = [];
+            }
+            //@todo: Fix categories and get all products by category˚k
+        }
+
         return $out;
     }
 

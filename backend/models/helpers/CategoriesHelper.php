@@ -255,6 +255,7 @@ class CategoriesHelper{
         return self::$categories;
     }
 
+
     /**
      * Returns a flattened array with all the categories.
      * @return array in the format [
