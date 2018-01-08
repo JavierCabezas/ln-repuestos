@@ -8,7 +8,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
-use app\models\product\Product;
+use app\models\Product\Product;
 
 $this->title = 'Fotos de productos';
 $this->params['breadcrumbs'][] = $this->title;

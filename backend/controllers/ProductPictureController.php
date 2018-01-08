@@ -6,12 +6,12 @@
  * Time: 11:41 AM
  */
 use Yii;
-use app\models\product\ProductPicture;
+use app\models\Product\ProductPicture;
 use yii\data\ActiveDataProvider;
 use yii\web\{Controller, NotFoundHttpException};
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
-use app\models\product\ProductPictureSearch;
+use app\models\Product\ProductPictureSearch;
 
 /**
  * ProductPictureController implements the CRUD actions for ProductPicture model.

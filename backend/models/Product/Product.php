@@ -1,4 +1,4 @@
-<?php namespace app\models\product;
+<?php namespace app\models\Product;
 /**
  * Created by PhpStorm.
  * User: javier
@@ -234,7 +234,7 @@ class Product extends \yii\db\ActiveRecord
     /**
      * Returns an array with all the backend data (according to the getBackend method) of this product.
      * If limits the total to a max of 4 elements, giving them randomly.
-     * @see \app\models\product\Product::getBackend()
+     * @see \app\models\Product\Product::getBackend()
      * @see \app\models\helpers\CategoriesHelper::related_categories()
      * @return array
      */

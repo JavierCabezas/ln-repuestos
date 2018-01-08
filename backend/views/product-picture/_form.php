@@ -6,7 +6,7 @@
  * Time: 11:42 AM
  */
 use yii\helpers\{Html, ArrayHelper};
-use app\models\product\Product;
+use app\models\Product\Product;
 use yii\widgets\ActiveForm;
 ?>
 

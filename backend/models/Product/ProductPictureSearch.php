@@ -1,4 +1,4 @@
-<?php namespace app\models\product;
+<?php namespace app\models\Product;
 /**
  * Created by PhpStorm.
  * User: javier
@@ -8,10 +8,10 @@
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\product\ProductPicture;
+use app\models\Product\ProductPicture;
 
 /**
- * ProductPictureSearch represents the model behind the search form of `app\models\product\ProductPicture`.
+ * ProductPictureSearch represents the model behind the search form of `app\models\Product\ProductPicture`.
  */
 class ProductPictureSearch extends ProductPicture
 {

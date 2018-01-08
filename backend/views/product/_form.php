@@ -25,9 +25,9 @@ $this->registerJsFile( '@web/js/product_create.js',  ['depends' => [\yii\web\Jqu
     <?= $form->field($model, 'price')->textInput(['type' => 'number', 'min' => 0]) ?>
 
     <?= $form->field($model, 'tutorial_type')->dropDownList([
-        \app\models\product\Product::TUTORIAL_WITHOUT => 'Sin tutorial',
-        \app\models\product\Product::TUTORIAL_YOUTUBE => 'Tutorial YouTube',
-        \app\models\product\Product::TUTORIAL_TEXT => 'Tutorial en Texto'
+        \app\models\Product\Product::TUTORIAL_WITHOUT => 'Sin tutorial',
+        \app\models\Product\Product::TUTORIAL_YOUTUBE => 'Tutorial YouTube',
+        \app\models\Product\Product::TUTORIAL_TEXT => 'Tutorial en Texto'
     ],  ['id' => 'tutorial_dropdown']) ?>
     <div id="path_field">
         <?= $form->field($model, 'tutorial_text')->textarea() ?>

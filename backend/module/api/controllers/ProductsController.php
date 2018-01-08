@@ -6,7 +6,7 @@
  * Time: 5:17 PM
  */
 use app\models\helpers\CategoriesHelper;
-use app\models\product\Product;
+use app\models\Product\Product;
 use yii\web\Response;
 use yii\rest\Controller;
 
@@ -64,9 +64,9 @@ class ProductsController extends Controller
     /**
      * Returns an array with the data of the details of an specific product
      * @param $_GET['product_id'] seo name of the product.
-     * @see \app\models\product\Product::getBackend()
-     * @see \app\models\product\Product::getPictures()
-     * @see \app\models\product\Product::getRelated()
+     * @see \app\models\Product\Product::getBackend()
+     * @see \app\models\Product\Product::getPictures()
+     * @see \app\models\Product\Product::getRelated()
      * @return array
      */
     public function actionGet(){

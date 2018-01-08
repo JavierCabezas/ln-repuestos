@@ -1,4 +1,4 @@
-<?php namespace app\models\product;
+<?php namespace app\models\Product;
 /**
  * Created by PhpStorm.
  * User: javier

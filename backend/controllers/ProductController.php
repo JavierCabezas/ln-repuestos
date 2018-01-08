@@ -6,8 +6,8 @@
  * Time: 3:39 PM
  */
 use Yii;
-use app\models\product\Product;
-use app\models\product\ProductSearch;
+use app\models\Product\Product;
+use app\models\Product\ProductSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
