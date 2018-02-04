@@ -192,7 +192,7 @@ class CategoriesHelper{
             ]
         ],
         [
-            'n' => 'Susprensión',
+            'n' => 'Suspensión',
             'id' => 'suspension',
             's' => [
                 [
@@ -210,6 +210,10 @@ class CategoriesHelper{
                 [
                     'n' => 'Amortiguadores',
                     'id' => 'amortiguadores'
+                ],
+                [
+                    'n' => 'Mazas',
+                    'id' => 'mazas'
                 ],
                 [
                     'n' => 'Otros',
