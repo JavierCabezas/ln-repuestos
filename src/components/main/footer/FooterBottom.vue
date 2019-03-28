@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="footer-copyright">
-                    LN Repuestos © Todos los derechos reservados 2017
+                    LN Repuestos © Todos los derechos reservados {{ new Date().getFullYear() }}
                 </div>
             </div>
         </div>
