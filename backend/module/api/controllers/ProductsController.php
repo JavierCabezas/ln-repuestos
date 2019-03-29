@@ -32,17 +32,10 @@ class ProductsController extends Controller
      */
     public function actionList(){
         Yii::$app->response->format = Response::FORMAT_JSON;
-        $filters = $_GET['filters'] ?? null;
-        $start_from = $_GET['start_from'] ?? null;
-        $up_to = $_GET['up_to'] ?? null;
-
-        $out = [];
-        for($i = 0 ; $i < 10 ; $i+=1){
-            foreach(Product::list($filters, $start_from, $up_to) as $p){
-                array_push($out, $p);
-            }
-        }
-        return $out;
+        $category_id = $_GET['category'] ?? null;
+        $up_to = isset($_GET['up_to']) ? intval($_GET['up_to']) : null;
+        $start_from = isset($_GET['start_from']) ? intval($_GET['start_from']) : null;
+        return Product::list($category_id, $start_from, $up_to);
     }
 
     public function actionPopular(){

@@ -169,21 +169,16 @@ class Product extends \yii\db\ActiveRecord
 
     /**
      * Returns an array with all the products
-     *
-     * @todo: Implement filter
-     * @todo: comment this function when I decide what details to implement
-     *
-     * @param $filter
-     * @param null $start_from
-     * @param null $to
      * @return array
      */
-    public static function list($filter, $start_from = null, $up_to = null){
-        $products = Product::find()->all();
-        $out = [];
-        foreach($products as $p){
-            array_push($out, $p->backend);
+    public static function list($category_id = null, $start_from = null, $up_to = null){
+        if(is_null($category_id)){
+            $products = Product::find()->all();
+        } else {
+            $related_category = CategoriesHelper::related_categories($category_id);
+            $products = Product::find()->where(['category_id' => $related_category])->all();
         }
+        $out = array_map(function($a){ return $a->backend; }, $products);
 
         $start_from = $start_from === null ? 0 : intval($start_from) - 1;
         $up_to = $up_to === null ? 0 : $up_to - $start_from;

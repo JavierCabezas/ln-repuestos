@@ -358,21 +358,22 @@ class CategoriesHelper{
      * Examples:
      * 1)
      * $category_id = motor'
-     * $out = [
-     *          'motor', 'block', 'empaquetaduras', 'anillos', 'pistones',
-     *          'carter', 'metales', 'correas', 'distribucion', 'correas_accesorios'
-     *  ]
+     * $out = [ 'motor', 'block', 'correas' ]
      *
      * 2)
-     * $category_id = 'correas'
-     * $out = [ 'correas', 'distribucion', 'correas_accesorios' ]
-     *
-     * 3)
-     * $category_id = 'carter'
-     * $out = ['carter']
+     * $category_id = 'block'
+     * $out = ['block']
      */
     public static function related_categories($category_id){
-        $cp = CategoriesHelper::all_categories_with_parents_flat();
-        return [ 'filtro_combustible', 'radiadores', 'luces', 'sistema_electrico_otros' ];
+        $out = [];
+        array_push($out, $category_id);
+        foreach(self::$categories as $parent){
+            if($category_id == $parent['id']){
+                foreach($parent['s'] as $son){
+                    array_push($out, $son['id']);
+                }
+            }
+        }
+        return $out;
     }
 }
