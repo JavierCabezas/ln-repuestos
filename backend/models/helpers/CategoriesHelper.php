@@ -282,12 +282,6 @@ class CategoriesHelper{
             if(isset($c['s'])){
                 foreach($c['s'] as $son){
                     $out[$son['id']] = $show_parents ? $parent_1 . ' > ' . $son['n'] : $son['n'];
-                    $parent_2 = $c['n'];
-                    if(isset($son['s'])){
-                        foreach($son['s'] as $grandson){
-                            $out[$grandson['id']] = $show_parents ? $parent_1 .' > '. $parent_2 .' > ' . $grandson['n'] : $grandson['n'];
-                        }
-                    }
                 }
             }
         }
@@ -304,11 +298,6 @@ class CategoriesHelper{
      *          'subcategory' => If the type is:
      *                          category: Non-existant
      *                          subcategory: The name of this subcategory
-     *                          subsubcategory: Tne name of the parent subcategory of this sub-subcategory.
-     *          'subsubcategory' => If the type is:
-     *                          category: Non existant.
-     *                          subcategory: Non existant.
-     *                          subsubcategory: The name of this subsubcategory.
      *      ]
      * ]
      */
@@ -330,21 +319,6 @@ class CategoriesHelper{
                     $out[$son['id']]['category'] = $parent_1_id;
                     $out[$son['id']]['category_name'] = $parent_1_name;
                     $out[$son['id']]['subcategory_name'] = $son['n'];
-                    $parent_2_id = $son['id'];
-                    $parent_2_name = $son['n'];
-                    if(isset($son['s'])){
-                        foreach($son['s'] as $grandson){
-                            $out[$grandson['id']] = [];
-                            $out[$grandson['id']]['id'] = $grandson['id'];
-                            $out[$grandson['id']]['subsubcategory_name'] = $grandson['n'];
-                            $out[$grandson['id']]['type'] = 'subsubcategory';
-                            $out[$grandson['id']]['subsubcategory'] = $grandson['id'];
-                            $out[$grandson['id']]['subcategory'] = $parent_2_id;
-                            $out[$grandson['id']]['category'] = $parent_1_id;
-                            $out[$grandson['id']]['category_name'] = $parent_1_name;
-                            $out[$grandson['id']]['subcategory_name'] = $parent_2_name;
-                        }
-                    }
                 }
             }
         }
@@ -372,41 +346,9 @@ class CategoriesHelper{
      *               [
      *                   'n' => 'Block',
      *                   'id' => 'block',
-     *                   's' => [
-     *                      [
-     *                          'n' => 'Empaquetaduras',
-     *                          'id' => 'empaquetaduras'
-     *                      ],
-     *                      [
-     *                          'n' => 'Retenes / Anillos',
-     *                          'id' => 'anillos'
-     *                      ],
-     *                      [
-     *                          'n' => 'Pistones',
-     *                          'id' => 'pistones'
-     *                      ],
-     *                      [
-     *                          'n' => 'Carter',
-     *                          'id' => 'carter'
-     *                      ],
-     *                      [
-     *                          'n' => 'Metales',
-     *                          'id' => 'metales'
-     *                      ]
-     *              ],
      *              [
      *                   'n' => 'Correas',
      *                   'id' => 'correas',
-     *                   's' => [
-     *                      [
-     *                          'n' => 'Distribución',
-     *                          'id' => 'distribucion'
-     *                      ],
-     *                      [
-     *                          'n' => 'Accesorios',
-     *                          'id' => 'correas_accesorios'
-     *                      ],
-     *                   ]
      *               ]
      *
      *    ],

@@ -3703,6 +3703,7 @@ ul.b-crumbs {
 }
 .section-sb-current ul li.active > a {
 	font-weight: 500;
+	background: #EFF1FA;
 }
 .section-sb-current ul li ul {
 	display: none;

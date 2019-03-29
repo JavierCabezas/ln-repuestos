@@ -5,18 +5,14 @@
         <div class="section-sb-current">
             <h3><a href="#" @click.prevent=""> {{categories.parent.name}} </a></h3>
             <ul class="section-sb-list" id="section-sb-list">
-                <li v-for="son in categories.sons" v-if="categories.type === 'category'">
-                    <router-link :to="{name:'products_subcategory', params: {'subcategory': son.id }}">
+                <li v-for="son in categories.sons"
+                    v-if="categories.type === 'category'"
+                    :class="{active: son.id == selected_son}"
+                >
+                    <a href="#" @click.prevent="selected_son = son.id">
                         <span class="categ-1-label">{{son.name}}</span>
-                    </router-link>
+                    </a>
                 </li>
-
-                <li v-for="son in categories.sons" v-if="categories.type === 'subcategory'">
-                    <router-link :to="{name:'products_subsubcategory', params: { 'subsubcategory': son.id }}">
-                        <span class="categ-1-label">{{son.name}}</span>
-                    </router-link>
-                </li>
-
             </ul>
         </div>
     </div>
@@ -29,7 +25,8 @@
         data () {
             return {
                 categories: {},
-                categories_loaded: false
+                categories_loaded: false,
+                selected_son: ''
             }
         },
         created: function () {
@@ -46,9 +43,7 @@
                 $.ajax({
                     url: vm.url_backend + 'site/categories',
                     data: {
-                        category: vm.$route.params.category,
-                        subcategory: vm.$route.params.subcategory,
-                        subsubcategory: vm.$route.params.subsubcategory
+                        category: vm.$route.params.category
                     },
                     success: function (result) {
                         vm.categories = result;

@@ -18,12 +18,6 @@
             </router-link>
         </li>
 
-        <li v-if="breadcrumbs.subsubcategory !== null" @click="update()">
-            <router-link :to="{name:'products_subsubcategory', params: {'subsubcategory': breadcrumbs.subsubcategory.path }}">
-                {{ breadcrumbs.subsubcategory.name }}
-            </router-link>
-        </li>
-
         <li v-if="active_page !== null"> {{ active_page }}  </li>
     </ul>
 </template>
@@ -41,8 +35,7 @@
             return {
                 breadcrumbs: {
                     category: null,
-                    subcategory: null,
-                    subsubcategory: null
+                    subcategory: null
                 }
             }
         },
