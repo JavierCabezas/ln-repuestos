@@ -6,8 +6,9 @@
 
         <div class="section-cont">
             <products-per-page v-if="false" @new_products_per_page="update_products_per_page"></products-per-page>
+            <p v-if="products.length == 0"> Sin productos para esta categoría. </p>
             <catalog-thumb v-for="(p, index) in products"
-                           v-if="is_index_in_range(index)"
+                           v-else-if="is_index_in_range()"
                            :key="p.product_id"
                            :product="p"
             ></catalog-thumb>

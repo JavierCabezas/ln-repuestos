@@ -3,11 +3,8 @@
         <breadcrumbs :crumbs="crumbs"></breadcrumbs>
 
         <h1 class="main-ttl"><span> Contacto</span></h1>
-        <br>
 
-        <p>Si necesitas contactarnos, por favor completa el siguiente formulario y nos comunicaremos a la brevedad.</p>
-
-        <p>Si nos escribes por la cotización o de un repuesto en específico por favor ingresa el número de VIN (disponible en el <vin></vin>) para agilizar el trámite.</p>
+        <p>Si necesitas contactarnos, por favor completa el siguiente formulario y nos comunicaremos a la brevedad. Si nos escribes por la cotización o de un repuesto en específico por favor ingresa el número de VIN (disponible en el <vin></vin>) para agilizar el trámite.</p>
 
         <p>Recuerda que también podemos darte cotizaciones por productos que no tengamos en el sitio web.</p>
 

@@ -7893,8 +7893,8 @@ body .component-desc.component-desc-ct {
 	font-size: 14px;
 }
 .contactform-wrap .contactform-label {
-	width: 20%;
-	text-align: right;
+	width: 40%;
+	text-align: left;
 	padding-right: 15px;
 	margin: 0;
 	text-transform: uppercase;
