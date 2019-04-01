@@ -12,7 +12,7 @@
         <div class="contactform-wrap">
 
             <form action="#" class="form-validate">
-                <p class="contactform-field contactform-text">
+                <p class="contactform-field contactform-text" id="anchor_producto">
                     <label class="contactform-label">Nombre</label>
                     <span class="contactform-input"><input placeholder="Tu nombre" v-model="form.name" type="text" name="name"></span>
                 </p>
@@ -71,6 +71,11 @@
             if(this.product_id !== undefined){
                 this.get_product_description(this.product_id);
             }
+        },
+        mounted: function () {
+          if(this.product_id !== undefined) {
+            document.getElementById("anchor_producto").scrollIntoView();
+          }
         },
         methods: {
             is_email: function(email) {
