@@ -45,7 +45,11 @@
         props: ['product'],
         filters: {
             cash: function(value) {
+              if(value !== null){
                 return "$"+value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+              } else {
+                return '-';
+              }
             }
         }
     }
