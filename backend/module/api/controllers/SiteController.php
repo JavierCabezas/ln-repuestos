@@ -44,22 +44,13 @@ class SiteController extends Controller
         Yii::$app->response->format = Response::FORMAT_JSON;
         $category = !isset($_GET['category']) || $_GET['category'] == "" ? null : $_GET['category'];
         $subcategory = !isset($_GET['subcategory']) || $_GET['subcategory'] == "" ?  null : $_GET['subcategory'];
-        $subsubcategory = !isset($_GET['subsubcategory']) || $_GET['subsubcategory'] == "" ? null : $_GET['subsubcategory'];
 
         $all_categories = CategoriesHelper::all_categories_with_parents_flat();
         $cat_names = CategoriesHelper::all_categories_flat(false);
 
         $out = ['parent' => [], 'sons' => []];
 
-        if(!is_null($subsubcategory)) {
-            $out['type'] = 'subsubcategory';
-            foreach ($all_categories as $id => $c) {
-                if ($id === $subsubcategory) {
-                    $out['parent']['id'] =  $c['subsubcategory'];
-                    $out['parent']['name'] = $cat_names[$c['subsubcategory']];
-                }
-            }
-        } elseif(!is_null($subcategory)){
+        if(!is_null($subcategory)){
             $out['type'] = 'subcategory';
             foreach ($all_categories as $id => $c) {
                 if($c['type'] === 'subsubcategory' && $c['subcategory'] == $subcategory){

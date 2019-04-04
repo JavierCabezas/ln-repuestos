@@ -7,12 +7,6 @@
                     <ul class="topcatalog-list">
                         <li v-for="cat in categories">
                             <router-link :to="{name:'products_category', params: {category: cat.id}}"> {{cat.n}} </router-link>
-                            <i class="fa fa-angle-right"></i>
-                            <ul>
-                                <li v-for="son in cat.s">
-                                    <router-link :to="{name:'products_subcategory', params: { subcategory: son.id}}"> {{son.n}} </router-link>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </div>
