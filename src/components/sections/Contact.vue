@@ -6,13 +6,13 @@
 
         <p>Si necesitas contactarnos, por favor completa el siguiente formulario y nos comunicaremos a la brevedad. Si nos escribes por la cotización o de un repuesto en específico por favor ingresa el número de VIN (disponible en el <vin></vin>) para agilizar el trámite.</p>
 
-        <p>Recuerda que también podemos darte cotizaciones por productos que no tengamos en el sitio web.</p>
+        <p id="anchor_producto">Recuerda que también podemos darte cotizaciones por productos que no tengamos en el sitio web.</p>
 
         <!-- Contact Form -->
         <div class="contactform-wrap">
 
             <form action="#" class="form-validate">
-                <p class="contactform-field contactform-text" id="anchor_producto">
+                <p class="contactform-field contactform-text">
                     <label class="contactform-label">Nombre</label>
                     <span class="contactform-input"><input placeholder="Tu nombre" v-model="form.name" type="text" name="name"></span>
                 </p>
