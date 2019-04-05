@@ -42,13 +42,17 @@ class ProductsController extends Controller
         Yii::$app->response->format = Response::FORMAT_JSON;
         $out = [];
         $out['products'] = [];
-        $out['categories'] = CategoriesHelper::parent_categories();
 
-        foreach(Product::all() as $p){
-            if(!isset($out['products'][$p->category_id])){
-                $out['products'][$p->category_id] = [];
+        $allProducts = Product::find()->all();
+        shuffle($allProducts );
+        $out = [];
+        $limit = rand(8, 12);
+        foreach($allProducts as $key => $p){
+            if($key > $limit){
+                continue;
             }
-            //@todo: Fix categories and get all products by category˚k
+            $out[$key] = $p->toArray();
+            $out[$key]['picture'] = $p->image;
         }
 
         return $out;
