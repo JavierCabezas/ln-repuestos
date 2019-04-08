@@ -27,6 +27,12 @@ const Product = resolve => {
     });
 };
 
+const Howto = resolve => {
+  require.ensure(['./components/sections/Howto.vue'], () => {
+    resolve(require('./components/sections/Howto.vue'));
+  });
+};
+
 const ProductDetail = resolve => {
     require.ensure(['./components/main/products/ProductDetail.vue'], () => {
         resolve(require('./components/main/products/ProductDetail.vue'));
@@ -36,6 +42,7 @@ const ProductDetail = resolve => {
 export const routes = [
     { path: '/', component: Index, name: 'index' },
     { path: '/inicio', component: Home, name: 'home' },
+    { path: '/como-comprar', component: Howto, name: 'howto'},
     { path: '/sobre-nosotros', component: AboutUs, name:'about-us' },
     { path: '/contacto', component: Contact, name:'contact' },
     { path: '/contacto/:product_id', component: Contact, name:'contact_product' },

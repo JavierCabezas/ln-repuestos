@@ -3,7 +3,7 @@
         <div class="container">
             <nav class="topmenu">
                 <div class="topcatalog">
-                    <router-link to="producto" class="topcatalog-btn">Catálogo</router-link>
+                    <router-link to="producto" class="topcatalog-btn">Productos</router-link>
                     <ul class="topcatalog-list">
                         <li v-for="cat in categories">
                             <router-link :to="{name:'products_category', params: {category: cat.id}}"> {{cat.n}} </router-link>
@@ -15,18 +15,9 @@
 
                 <ul class="mainmenu">
                     <li> <router-link :to="{name: 'home'}"> Inicio </router-link> </li>
+                    <li> <router-link :to="{name: 'howto'}"> Como comprar</router-link> </li>
                     <li> <router-link :to="{name: 'about-us'}"> Sobre Nosotros </router-link> </li>
-
-                    <li class="menu-item-has-children">
-                        <router-link :to="{name: 'products'}">Productos <i class="fa fa-angle-down"></i></router-link>
-                        <ul class="sub-menu">
-                            <li v-for="cat in categories">
-                                <router-link :to="{name: 'products_category', params:{category: cat.id}}"> {{cat.n}}</router-link>
-                            </li>
-                        </ul>
-                    </li>
                     <li> <router-link :to="{name: 'contact'}"> Contacto </router-link> </li>
-
 
                     <li class="mainmenu-more">
                         <span>...</span>
