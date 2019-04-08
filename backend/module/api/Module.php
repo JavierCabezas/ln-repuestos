@@ -21,7 +21,7 @@ class Module extends \yii\base\Module
             'corsFilter' => [
                 'class' => \yii\filters\Cors::className(),
                 'cors' => [
-                    'Origin' => ['http://localhost:8080'],
+                    'Origin' => ['http://localhost:8080', 'http://lnrepuestos.cl', 'https://lnrespuestos.cl'],
                     'Access-Control-Allow-Origin' => true,
                 ]
             ]
