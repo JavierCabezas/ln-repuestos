@@ -25,11 +25,8 @@
                         4) El pago puede ser por tarjeta de crédito/débito por webpay o por transferencia
                         bancaria.
                     </li>
-                    <li>5) Si tiene alguna duda puede contactarnos por nuestro
-                        <router-link class="azul" :to="{name:'contact'}">formulario de contacto</router-link>,
-                        escribiéndonos a<a href="mailto:contacto@lnrepuestos.cl" target="_top">contacto@lnrepuestos</a>
-                        o contactándonos a nuestro Whatsapp en
-                        <a href="https://wa.me/56956433982" target="_top">+56 9 56433982</a>.
+                    <li>5) Si tiene alguna duda puede contactarnos por nuestro:
+                        <contact-info></contact-info>
                     </li>
                 </ul>
             </div>
@@ -41,6 +38,7 @@
 <script>
   import Breadcrumbs from '../other/Breadcrumbs.vue';
   import Vin from '../other/Vin.vue'
+  import ContactInfo from '../other/ContactInfo.vue';
 
   export default {
     data () {
@@ -51,6 +49,7 @@
       }
     },
     components: {
+      ContactInfo,
       Breadcrumbs,
       Vin
     }

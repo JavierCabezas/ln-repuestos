@@ -6,14 +6,17 @@
         <div class="row">
 
             <div class="stylization col-md-8 text-justify">
-                <p>Ofrecemos venta de repuestos importados para automóviles Volvo, originales y alternativos de comprobada calidad, tanto nuevos y usados, en stock y a pedido. </p>
-                <p>Tenemos experiencia comprobada de 5 años en el rubro.</p>
-                <p>Soporte técnico de Manual de Piezas y Partes de la marca, para garantizar el repuesto adecuado.</p>
-                <p>Servicio de scanner Volvo.</p>
-                <p>Estamos ubicados en Santiago, comuna de Las Condes.</p>
-                <p>Despachos, por pagar, a todo Chile.</p>
+                <p> <span class="fa fa-car"> </span> Ofrecemos venta de repuestos importados para automóviles Volvo, originales y alternativos de comprobada calidad, tanto nuevos y usados, en stock y a pedido. </p>
+                <p> <span class="fa fa-car"> </span> Tenemos experiencia comprobada de 5 años en el rubro.</p>
+                <p> <span class="fa fa-car"> </span> Soporte técnico de Manual de Piezas y Partes de la marca, para garantizar el repuesto adecuado.</p>
+                <p> <span class="fa fa-car"> </span> Servicio de scanner Volvo.</p>
+                <p> <span class="fa fa-car"> </span> Estamos ubicados en Santiago, comuna de Las Condes.</p>
+                <p> <span class="fa fa-car"> </span> Despachos, por pagar, a todo Chile.</p>
 
-                <p>Nuestra vía de contacto es el formulario de <span @click="go_up()"><router-link to="contacto">contacto</router-link></span> o el correo electrónico. Una vez recibida la consulta le responderemos en 24 horas, con su cotización y condiciones comerciales. </p>
+                <p><span class="fa fa-car"> </span> Nuestra vía de contacto es:
+                    <contact-info> </contact-info>
+                <p>
+                <p><span class="fa fa-car"> </span> Una vez recibida la consulta le responderemos en 24 horas, con su cotización y condiciones comerciales. </p>
 
             </div>
             <div class="col-md-4 container-img">
@@ -28,6 +31,7 @@
 <script>
     import Breadcrumbs from '../other/Breadcrumbs.vue';
     import Vin from '../other/Vin.vue'
+    import ContactInfo from '../other/ContactInfo.vue';
 
     export default {
         data () {
@@ -39,6 +43,7 @@
             }
         },
         components: {
+            ContactInfo,
             Breadcrumbs,
             Vin
         },

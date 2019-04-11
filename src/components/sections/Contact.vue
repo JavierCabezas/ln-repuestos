@@ -6,7 +6,7 @@
 
         <p>Si necesitas contactarnos, por favor completa el siguiente formulario y nos comunicaremos a la brevedad. Si nos escribes por la cotización o de un repuesto en específico por favor ingresa el número de VIN (disponible en el <vin></vin>) para agilizar el trámite.</p>
 
-        <p id="anchor_producto">Recuerda que también podemos darte cotizaciones por productos que no tengamos en el sitio web.</p>
+        <p >Recuerda que también podemos darte cotizaciones por productos que no tengamos en el sitio web.</p>
 
         <!-- Contact Form -->
         <div class="contactform-wrap">
