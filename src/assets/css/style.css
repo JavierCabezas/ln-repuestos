@@ -532,7 +532,7 @@ body {
 .topmenu .mainmenu-btn:after {
 	position: absolute;
 	top: 50%;
-	right: 15px;
+	right: 26px;
 	content: '\f107';
 	display: block;
 	line-height: 1;

@@ -3,7 +3,7 @@
         <div class="container">
             <nav class="topmenu">
                 <div class="topcatalog">
-                    <router-link to="producto" class="topcatalog-btn">Productos</router-link>
+                    <router-link :to="{name: 'products'}" class="topcatalog-btn">Productos</router-link>
                     <ul class="topcatalog-list">
                         <li v-for="cat in categories">
                             <router-link :to="{name:'products_category', params: {category: cat.id}}"> {{cat.n}} </router-link>
