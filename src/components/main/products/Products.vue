@@ -35,6 +35,9 @@
       has_category: function () {
         return this.category !== null;
       },
+      has_search_params: function () {
+        return this.search_params !== null;
+      },
       has_subcategory: function () {
         return this.subcategory !== null;
       },
@@ -43,9 +46,11 @@
       return {
         category: this.$route.params.category === undefined ? null : this.$route.params.category ,
         subcategory: this.$route.params.subcategory === undefined ?  null : this.$route.params.subcategory,
+        search_params: this.$route.params.search_params === undefined ?  null : this.$route.params.search_params,
         products: [],
         products_per_page: 12,
-        active_page: 1
+        active_page: 1,
+        ajaxData: null
       }
     },
     created: function () {
@@ -69,12 +74,18 @@
       },
       get_products: function() {
         let vm = this;
-        $.ajax({
-          url: vm.url_backend + 'products/list',
-          data: {
+        if(vm.has_search_params){
+          vm.ajaxData = { filter_params: vm.search_params };
+        } else {
+          vm.ajaxData = {
             category: vm.$route.params.category,
             subcategory: vm.$route.params.subcategory
-          },
+          };
+        }
+        console.log(vm.ajaxData);
+        $.ajax({
+          url: vm.url_backend + 'products/list',
+          data: vm.ajaxData,
           success: function (result) {
             console.log(result);
             vm.products = result;
