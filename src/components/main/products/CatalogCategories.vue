@@ -1,17 +1,17 @@
 <template>
     <div class="section-sb" v-if="categories_loaded">
-        <h1 class="main-ttl"><span> {{categories.parent.name}} </span></h1>
 
+        <h1 class="main-ttl"> Categorías </h1>
+        <h3 v-if="selected_son !== ''"> {{selected_son}} </h3>
         <div class="section-sb-current">
-            <h3><a href="#" @click.prevent=""> {{categories.parent.name}} </a></h3>
             <ul class="section-sb-list" id="section-sb-list">
-                <li v-for="son in categories.sons"
-                    v-if="categories.type === 'category'"
-                    :class="{active: son.id == selected_son}"
-                >
-                    <a href="#" @click.prevent="selected_son = son.id">
-                        <span class="categ-1-label">{{son.name}}</span>
-                    </a>
+                <li v-for="son in categories">
+                    <router-link :class="{active: son.id === selected_son}"
+                                 :to="{name:'products_category', params: {'category': son.id }}"
+                                 @click.prevent="pick_category(son.id)"
+                    >
+                        <span class="categ-1-label">{{son.n}}</span>
+                    </router-link>
                 </li>
             </ul>
         </div>
@@ -31,23 +31,22 @@
         },
         created: function () {
             let vm = this;
-
             this.get_categories();
             EventBus.$on('updated_product_url', function() {
                 vm.get_categories();
             });
         },
         methods: {
+            pick_category: function(son_id) {
+              this.selected_son = son_id;
+            },
             get_categories: function(){
                 let vm = this;
                 $.ajax({
-                    url: vm.url_backend + 'site/categories',
-                    data: {
-                        category: vm.$route.params.category
-                    },
+                    url: vm.url_backend + 'products/nested-categories',
                     success: function (result) {
-                        vm.categories = result;
-                        vm.categories_loaded = true;
+                      vm.categories = result;
+                      vm.categories_loaded = true;
                     }
                 });
             }
