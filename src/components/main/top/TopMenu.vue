@@ -49,6 +49,8 @@
 </template>
 
 <script>
+  import {EventBus} from './../../../event-bus.js';
+
   export default {
     data() {
       return {
@@ -59,6 +61,7 @@
     methods: {
       go_to_search_product: function () {
         this.$router.push({ name: 'products_search', params: { search_params: this.search_params } })
+        EventBus.$emit('updated_product_url');
         if ($('body').hasClass('search-show')) {
           $('body').removeClass('search-show');
         }
