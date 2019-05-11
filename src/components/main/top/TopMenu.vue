@@ -59,6 +59,9 @@
     methods: {
       go_to_search_product: function () {
         this.$router.push({ name: 'products_search', params: { search_params: this.search_params } })
+        if ($('body').hasClass('search-show')) {
+          $('body').removeClass('search-show');
+        }
       }
     }
   }

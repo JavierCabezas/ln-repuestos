@@ -220,13 +220,6 @@ $(document).ready(function () {
             return false;
     });
 
-    // Search Close
-    $('body.search-show').on('click', '#topsearch-btn', function () {
-        if ($('body').hasClass('search-show')) {
-            $('body').removeClass('search-show');
-        }
-        return false;
-    });
     $('html').on('click', 'body.search-show', function () {
         $('body').removeClass('search-show');
     });

@@ -171,12 +171,22 @@ class Product extends \yii\db\ActiveRecord
      * Returns an array with all the products
      * @return array
      */
-    public static function list($category_id = null, $start_from = null, $up_to = null){
-        if(is_null($category_id)){
+    public static function list($search_params = null, $start_from = null, $up_to = null){
+        if(is_null($search_params)){
             $products = Product::find()->all();
         } else {
-            $related_category = CategoriesHelper::related_categories($category_id);
-            $products = Product::find()->where(['category_id' => $related_category])->all();
+            if(is_integer($search_params)){
+                $category_id = intval($search_params);
+                $related_category = CategoriesHelper::related_categories($category_id);
+                $products = Product::find()->where(['category_id' => $related_category])->all();
+            } else {
+                $products = Product::find()
+                    ->where(['like', 'name', "%$search_params%", false])
+                    ->orWhere(['like', 'description', "%$search_params%", false])
+                    ->orWhere(['like', 'category_id', "%$search_params%", false])
+                ->all();
+            }
+
         }
         $out = array_map(function($a){ return $a->backend; }, $products);
 
