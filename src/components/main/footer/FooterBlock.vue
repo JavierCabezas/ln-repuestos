@@ -1,7 +1,7 @@
 <template>
     <div class="f-block-wrap">
         <div class="f-block" @click="go_up()">
-            <router-link :to="block.path" class="f-block-btn">
+            <router-link :to="{name: block.name}" class="f-block-btn">
                 <div class="iframe-img">
                     <img :src="block.img_src" :alt="block.section_name">
                 </div>

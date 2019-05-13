@@ -7,7 +7,7 @@
 
             <div class="stylization col-md-8 text-justify">
                 <p> <span class="fa fa-car"> </span> Ofrecemos venta de repuestos importados para automóviles Volvo, originales y alternativos de comprobada calidad, tanto nuevos y usados, en stock y a pedido. </p>
-                <p> <span class="fa fa-car"> </span> Tenemos experiencia comprobada de 5 años en el rubro.</p>
+                <p> <span class="fa fa-car"> </span> Tenemos experiencia comprobada desde 2012 en el rubro.</p>
                 <p> <span class="fa fa-car"> </span> Soporte técnico de Manual de Piezas y Partes de la marca, para garantizar el repuesto adecuado.</p>
                 <p> <span class="fa fa-car"> </span> Servicio de scanner Volvo.</p>
                 <p> <span class="fa fa-car"> </span> Estamos ubicados en Santiago, comuna de Las Condes.</p>

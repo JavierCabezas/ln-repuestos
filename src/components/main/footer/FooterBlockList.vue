@@ -16,28 +16,32 @@
                         "icon_name": "home",
                         "section_name": "Inicio",
                         "section_subtext": "Últimos productos, promociones y novedades",
-                        "path": "/"
+                        "path": "/",
+                        "name": 'index'
                     },
                     2: {
                         "img_src": "src/assets/img/footer/sobre-nosotros.png",
                         "icon_name": "question",
                         "section_name": "Sobre Nosotros",
                         "section_subtext": "Información comercial y de nuestra empresa",
-                        "path": "sobre-nosotros"
+                        "path": "sobre-nosotros",
+                        "name": "about-us"
                     },
                     3: {
                         "img_src": "src/assets/img/footer/listado-productos.png",
                         "icon_name": "shopping-bag",
                         "section_name": "Productos",
                         "section_subtext": "Listdo de productos disponibles para su venta",
-                        "path": "productos"
+                        "path": "productos",
+                        "name": "products"
                     },
                     4: {
                         "img_src": "src/assets/img/footer/contacto.png",
                         "icon_name": "envelope",
                         "section_name": "Contacto",
                         "section_subtext": "Ponte en contacto con nosotros.",
-                        "path": "contacto"
+                        "path": "contacto",
+                        "name": "contact"
                     }
                 },
             }

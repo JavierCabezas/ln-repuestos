@@ -7,7 +7,7 @@
             <a href="mailto:contacto@lnrepuestos.cl" target="_top">contacto@lnrepuestos</a>.
         </li>
         <li><i class="fa fa-phone"></i> Telefónico: <a href="tel:232498622" target="_top">
-            2 3249 8622
+            +56 2 3249 8622
         </a>.
         </li>
         <li>
