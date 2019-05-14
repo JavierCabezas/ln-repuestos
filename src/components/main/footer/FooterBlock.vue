@@ -9,7 +9,9 @@
                     <i class="fa" :class="'fa-'+block.icon_name"></i>
                 </div>
             </router-link>
-            <p class="f-info-ttl">{{block.section_name}}</p>
+            <router-link tag="a" :to="{name: block.name}" class="f-info-ttl">
+                {{ block.section_name }}
+            </router-link>
             <p>{{block.section_subtext}}</p>
         </div>
     </div>
