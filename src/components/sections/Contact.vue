@@ -34,7 +34,7 @@
                     </textarea></span>
                 </p>
                 <p class="contactform-submit">
-                    <input value="Send" @click.prevent="send_form()" type="submit">
+                    <input value="Enviar" @click.prevent="send_form()" type="submit">
                 </p>
             </form>
         </div>

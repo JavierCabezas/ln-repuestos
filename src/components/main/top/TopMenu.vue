@@ -54,7 +54,7 @@
   export default {
     data() {
       return {
-        search_params: '',
+        search_params: ''
       }
     },
     props: ['categories'],

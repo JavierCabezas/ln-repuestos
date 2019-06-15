@@ -6,8 +6,12 @@
         <div class="row">
 
             <div class="stylization col-md-8 text-justify">
-                <p> <span class="fa fa-car"> </span> Ofrecemos venta de repuestos importados para automóviles Volvo, originales y alternativos de comprobada calidad, tanto nuevos y usados, en stock y a pedido. </p>
-                <p> <span class="fa fa-car"> </span> Tenemos experiencia comprobada desde 2012 en el rubro.</p>
+                <p> <span class="fa fa-car"> </span>
+                    Ofrecemos venta de repuestos importados para automóviles Volvo, Audi y BMW, originales y
+                    alternativos de comprobada calidad, tanto nuevos y usados, en stock y a pedido.
+                </p>
+                <p> <span class="fa fa-car"> </span>
+                    Tenemos experiencia comprobada desde 2012 en el rubro.</p>
                 <p> <span class="fa fa-car"> </span> Soporte técnico de Manual de Piezas y Partes de la marca, para garantizar el repuesto adecuado.</p>
                 <p> <span class="fa fa-car"> </span> Servicio de scanner Volvo.</p>
                 <p> <span class="fa fa-car"> </span> Estamos ubicados en Santiago, comuna de Las Condes.</p>
@@ -21,7 +25,17 @@
             </div>
             <div class="col-md-4 container-img">
                 <img :src="img_logo_volvo" class="img-responsive" alt="LN Repuestos - Especialistas en Volvo">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img :src="img_logo_bmw" class="img-responsive" alt="LN Repuestos - Repuestos BMW">
+                    </div>
+                    <div class="col-md-7">
+                        <p>&nbsp;</p>
+                        <img :src="img_logo_audi" class="img-responsive" alt="LN Repuestos - Repuestos Audi">
+                    </div>
+                </div>
             </div>
+
 
         </div>
 
@@ -40,6 +54,8 @@
                     { 'title': 'Sobre Nosotros',  'path': null }
                 ],
                 img_logo_volvo: 'src/assets/img/logo-volvo.png',
+                img_logo_audi: 'src/assets/img/audi-logo.png',
+                img_logo_bmw: 'src/assets/img/logo-bmw.png',
             }
         },
         components: {
