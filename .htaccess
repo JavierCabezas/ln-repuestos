@@ -1,0 +1,3 @@
+Redirect /producto /redirects/products.php
+Redirect /sobre /redirects/products.php
+Redirect /contacto /redirects/contacto.php

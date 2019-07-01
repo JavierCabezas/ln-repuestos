@@ -20,10 +20,10 @@ Vue.mixin({
     data: function() {
         return {
             get url_backend() {
-                return "http://localhost/repuestos/backend/web/index.php/api/";
+                return "https://lnrepuestos.cl/backend/web/index.php/api/";
             },
             get url_server() {
-                return "http://localhost/"
+                return "https://lnrepuestos.cl/"
             }
         }
     }

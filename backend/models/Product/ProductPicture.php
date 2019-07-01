@@ -72,7 +72,7 @@ class ProductPicture extends \yii\db\ActiveRecord
      * @return string
      */
     public function getImage(){
-        return StringHelper::base_url().'img/products/'.$this->picture_path;
+        return str_replace('index.php', '', Yii::$app->homeUrl).'img/products/'.$this->picture_path;
     }
 
     public function upload()

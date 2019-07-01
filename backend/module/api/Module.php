@@ -15,13 +15,15 @@ class Module extends \yii\base\Module
         \Yii::$app->user->enableSession = false;
     }
 
+    
+    
     public function behaviors()
     {
         return [
             'corsFilter' => [
-                'class' => \yii\filters\Cors::className(),
+                'class' => \yii\filters\Cors::class,
                 'cors' => [
-                    'Origin' => ['http://localhost:8080', 'http://lnrepuestos.cl', 'https://lnrespuestos.cl'],
+                    'Origin' => ['*'],
                     'Access-Control-Allow-Origin' => true,
                 ]
             ]
