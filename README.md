@@ -8,6 +8,8 @@
 # install dependencies
 npm install
 
+npm run build --legacy-peer-deps
+
 # serve with hot reload at localhost:8080
 npm run dev
 

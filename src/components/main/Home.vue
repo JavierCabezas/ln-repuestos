@@ -5,13 +5,14 @@
                 <slider></slider>
                 <p> Somos <b>LN Repuestos</b>:</p>
                 <p>
-                    Ofrecemos venta de repuestos importados para automóviles Volvo, Audi y BMW,
-                    originales y alternativos de comprobada calidad, en stock y a pedido. Adicionalmente de Mini,
-                    pero tan solo a pedido (15 días hábiles).
-                    Tenemos experiencia comprobada desde
-                    2012 en el rubro.
+                    Repuestos para automóviles Volvo, amplio stock, originales y alternativos de comprobada calidad.
+                    Repuestos Audi, BMW y Mini, a pedido, plazo estimado de 15 días .
                 </p>
-                <p>Despachos, por pagar, a todo Chile.</p>
+                <p>No trabajamos partes y piezas de carrocería</p>
+                <p>
+                    Tenemos experiencia comprobada desde 2012 en el rubro.
+                    Despachos a todo Chile.
+                </p>
                 <p>&nbsp;</p>
                 <popular-products></popular-products>
                 <newsletter section="top"></newsletter>
