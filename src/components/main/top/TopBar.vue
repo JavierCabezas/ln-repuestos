@@ -8,8 +8,8 @@
                     </a>
                 </li>
                 <li class="hide_selectivo">
-                    <a href="tel:232498622" target="_top">
-                        <i class="fa fa-phone"></i> 2 3249 8622
+                    <a href="tel:224709425" target="_top">
+                        <i class="fa fa-phone"></i> 2 2470 9425
                     </a>
                 </li>
                 <li>
