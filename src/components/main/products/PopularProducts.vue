@@ -1,7 +1,7 @@
 <template>
     <div class="fr-pop-wrap">
 
-        <h3 class="component-ttl"><span>Repuestos de mantenimiento</span></h3>
+        <h3 class="component-ttl"><span>Productos populares</span></h3>
 
         <div class="fr-pop-tab-cont">
 

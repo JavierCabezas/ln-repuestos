@@ -4,6 +4,8 @@
 
         <h1 class="main-ttl"><span> Contacto</span></h1>
 
+        <h3> Estamos de vacaciones desde el 8 al 28 Septiembre. </h3>
+
         <p>Si necesitas contactarnos, por favor completa el siguiente formulario y nos comunicaremos a la brevedad. Si nos escribes por la cotización o de un repuesto en específico por favor ingresa el número de VIN (disponible en el <vin></vin>) para agilizar el trámite.</p>
 
         <p >Recuerda que también podemos darte cotizaciones por productos que no tengamos en el sitio web.</p>
