@@ -11,7 +11,6 @@
                     2012 en el rubro.
                 </p>
 
-                <h3> Estamos de vacaciones desde el 8 al 28 Septiembre. </h3>
                 <p>Despachos, por pagar, a todo Chile.</p>
                 <p>&nbsp;</p>
                 <popular-products></popular-products>
