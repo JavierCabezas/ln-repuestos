@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <li><span class="fa fa-globe"></span>
+        <li v-if="show_contact_form"><span class="fa fa-globe"></span>
             <router-link class="azul" :to="{name:'contact'}">Formulario de contacto</router-link>.
         </li>
         <li><span class="fa fa-envelope"></span> Correo electrónico a
@@ -16,3 +16,16 @@
         </li>
     </ul>
 </template>
+
+
+<script>
+export default {
+  props: {
+    show_contact_form: {
+      type: Boolean,
+      default: true
+    }
+  }
+}
+</script>
+

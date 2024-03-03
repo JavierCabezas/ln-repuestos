@@ -7,19 +7,17 @@
 
             <div class="stylization col-md-8 text-justify">
                 <p> <span class="fa fa-car"> </span>
-                    Ofrecemos venta de repuestos importados para automóviles Volvo, Audi y BMW, originales y
-                    alternativos de comprobada calidad, tanto nuevos y usados, en stock y a pedido.
+                  Somos importadores de repuestos para automóviles marca Volvo y otras marcas Europeas a pedido.
+                  Vendemos repuestos originales y alternativos, de marcas reconocidas y procedentes, en su mayoría, de Europa.
                 </p>
                 <p> <span class="fa fa-car"> </span>
-                    Tenemos experiencia comprobada desde 2012 en el rubro.</p>
-                <p> <span class="fa fa-car"> </span> Soporte técnico de Manual de Piezas y Partes de la marca, para garantizar el repuesto adecuado.</p>
-                <p> <span class="fa fa-car"> </span> Servicio de scanner Volvo.</p>
-                <p> <span class="fa fa-car"> </span> Estamos ubicados en Santiago, comuna de Las Condes.</p>
-                <p> <span class="fa fa-car"> </span> Despachos, por pagar, a todo Chile.</p>
+                  Tenemos experiencia comprobada en el rubro, desde el año 2013.
+                </p>
+                <p> <span class="fa fa-car"> </span> Hacemos envíos a todo Chile, con flete por pagar.</p>
 
                 <p><span class="fa fa-car"> </span> Nuestra vía de contacto es:
                     <contact-info> </contact-info>
-                <p><span class="fa fa-car"> </span> Una vez recibida la consulta le responderemos en 24 horas, con su cotización y condiciones comerciales. </p>
+                  <span class="fa fa-car"> </span> Una vez recibida la consulta le responderemos en 24 horas, con su cotización y condiciones comerciales. </p>
 
             </div>
             <div class="col-md-4 container-img">

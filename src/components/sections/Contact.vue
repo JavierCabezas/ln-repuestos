@@ -4,9 +4,13 @@
 
         <h1 class="main-ttl"><span> Contacto</span></h1>
 
-        <p>Si necesitas contactarnos, por favor completa el siguiente formulario y nos comunicaremos a la brevedad. Si nos escribes por la cotización o de un repuesto en específico por favor ingresa el número de VIN (disponible en el <vin></vin>) para agilizar el trámite.</p>
+        <p>Si necesitas contactarnos, puede hacerlo via Whatsap , mail, telefónico o completando  el siguiente formulario y nos comunicaremos a la brevedad. Si nos escribes por la cotización o de un repuesto en específico por favor ingresa el número de VIN (disponible en el <vin></vin>) para agilizar el trámite.</p>
 
         <p >Recuerda que también podemos darte cotizaciones por productos que no tengamos en el sitio web.</p>
+
+        <p>Además puedes encontrarnos en:
+          <contact-info :show_contact_form="false"> </contact-info>
+        </p>
 
         <!-- Contact Form -->
         <div class="contactform-wrap">
@@ -45,6 +49,7 @@
 <script>
     import Breadcrumbs from '../other/Breadcrumbs.vue';
     import Vin from '../other/Vin.vue'
+    import ContactInfo from "../other/ContactInfo.vue";
 
     export default {
         data () {
@@ -64,6 +69,7 @@
             }
         },
         components: {
+          ContactInfo,
             Breadcrumbs,
             Vin
         },

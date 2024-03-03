@@ -14,7 +14,7 @@
                 <p>Despachos, por pagar, a todo Chile.</p>
                 <p>&nbsp;</p>
                 <popular-products></popular-products>
-                <newsletter section="top"></newsletter>
+                <newsletter v-if="false" section="top"></newsletter>
             </section>
         </main>
     </div>

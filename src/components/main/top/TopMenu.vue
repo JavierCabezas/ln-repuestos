@@ -19,7 +19,7 @@
                         <router-link :to="{name: 'home'}"> Inicio</router-link>
                     </li>
                     <li>
-                        <router-link :to="{name: 'howto'}"> Como comprar</router-link>
+                        <router-link v-if="false" :to="{name: 'howto'}"> Como comprar</router-link>
                     </li>
                     <li>
                         <router-link :to="{name: 'about-us'}"> Sobre Nosotros</router-link>
