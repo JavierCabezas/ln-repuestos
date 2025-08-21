@@ -32,15 +32,6 @@
             </div>
             <div class="col-md-4 container-img">
                 <img :src="img_logo_volvo" class="img-responsive" alt="LN Repuestos - Especialistas en Volvo">
-                <div class="row">
-                    <div class="col-md-5">
-                        <img :src="img_logo_bmw" class="img-responsive" alt="LN Repuestos - Repuestos BMW">
-                    </div>
-                    <div class="col-md-7">
-                        <p>&nbsp;</p>
-                        <img :src="img_logo_audi" class="img-responsive" alt="LN Repuestos - Repuestos Audi">
-                    </div>
-                </div>
             </div>
         </div>
     </section>

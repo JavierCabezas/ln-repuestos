@@ -5,10 +5,8 @@
                 <slider></slider>
                 <p> Somos <b>LN Repuestos</b>:</p>
                 <p>
-                    Ofrecemos venta de repuestos importados para automóviles Volvo, Audi y BMW,
-                    originales y alternativos de comprobada calidad, en stock y a pedido.
-                    Además, tenemos experiencia comprobada desde
-                    2012 en el rubro.
+                    Venta de repuestos nuevos,  importados para automóviles Volvo;  originales y alternativos de comprobada calidad. Amplio stock disponible. Tenemos experiencia comprobada desde 2012 en el rubro.
+Despachos, por pagar, a todo Chile.
                 </p>
 
                 <p>Despachos, por pagar, a todo Chile.</p>
