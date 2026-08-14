@@ -1,0 +1,64 @@
+name: lnrepuestos
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: lnrepuestos-db
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ${DB_NAME:-lnrepuestos}
+      MYSQL_USER: ${DB_USER:-lnrepuestos}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-lnrepuestos}
+    ports:
+      # Host 13306 to avoid clashing with the user's other MySQL containers (3306/3307).
+      - "13306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  web:
+    build:
+      context: ./docker/backend
+    container_name: lnrepuestos-web
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-lnrepuestos}
+      DB_USER: ${DB_USER:-lnrepuestos}
+      DB_PASSWORD: ${DB_PASSWORD:-lnrepuestos}
+      COOKIE_VALIDATION_KEY: ${COOKIE_VALIDATION_KEY:-dev-cookie-validation-key-please-change}
+    volumes:
+      # Mount the whole project so the Vue SPA (index.html, dist/) and the Yii backend
+      # both live under the same origin — matching src/main.js's hardcoded URL
+      # http://localhost/repuestos/backend/web/index.php/api/.
+      - .:/var/www/html/repuestos
+    ports:
+      # Bind to host port 80 so the frontend's hardcoded API URL works unchanged.
+      # Nothing else on this machine is currently on port 80.
+      - "80:80"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    # Node 20 LTS — needed for Webpack 5 / Vue Loader 15 / Babel 7.
+    image: node:20-alpine
+    container_name: lnrepuestos-frontend
+    working_dir: /app
+    volumes:
+      - .:/app
+    # One-shot build that writes ./dist/build.js next to index.html so the SPA
+    # can be served by Apache. Use `docker compose run --rm frontend npm run dev`
+    # to iterate with webpack-dev-server.
+    command: sh -c "npm install --legacy-peer-deps && npm run build"
+
+volumes:
+  db_data:
+    name: lnrepuestos_db_data

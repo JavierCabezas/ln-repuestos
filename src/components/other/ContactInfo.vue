@@ -6,8 +6,8 @@
         <li><span class="fa fa-envelope"></span> Correo electrónico a
             <a href="mailto:contacto@lnrepuestos.cl" target="_top">contacto@lnrepuestos</a>.
         </li>
-        <li><i class="fa fa-phone"></i> Telefónico: <a href="tel:432646557" target="_top">
-            +56 4 3264 6557
+        <li><i class="fa fa-phone"></i> Telefónico: <a href="tel:233777609" target="_top">
+            +56 2 3377 7609
         </a>.
         </li>
         <li>

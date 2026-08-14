@@ -1,0 +1,10 @@
+.git
+.idea
+.DS_Store
+node_modules
+dist
+backend/vendor
+backend/runtime/*
+!backend/runtime/.gitkeep
+composer-setup.php
+package-lock.json
