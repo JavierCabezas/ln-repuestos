@@ -3,6 +3,7 @@ name: lnrepuestos
 services:
   db:
     image: mysql:5.7
+    platform: linux/amd64
     container_name: lnrepuestos-db
     command:
       - --character-set-server=utf8mb4

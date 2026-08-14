@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         exif \
     && a2enmod rewrite \
     && curl -sS https://getcomposer.org/installer \
-        | php -- --install-dir=/usr/local/bin --filename=composer --version=2.2.21 \
+        | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.27 \
     && rm -rf /var/lib/apt/lists/*
 
 COPY apache-vhost.conf /etc/apache2/sites-available/000-default.conf
